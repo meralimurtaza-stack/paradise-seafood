@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import QuizClient from "./QuizClient";
 
 export const metadata: Metadata = {
-  title: "Seafood Quiz — How Well Do You Know Your Seafood? | Paradise Seafood",
+  title: "Name That Seafood — Visual Quiz | Paradise Seafood",
   description:
-    "Think you know seafood? Take our 10-question quiz in 90 seconds. Are you an Executive Chef or a Kitchen Porter? Challenge your kitchen team!",
+    "Can you identify 10 seafood species from photos alone? 90 seconds on the clock. Are you an Executive Chef or a Kitchen Porter? Challenge your kitchen team!",
   openGraph: {
-    title: "How Well Do You Know Your Seafood?",
+    title: "Name That Seafood | Paradise Seafood",
     description:
-      "10 questions. 90 seconds. Are you an Executive Chef or a Kitchen Porter? Take the quiz!",
+      "Can you identify 10 seafood species from photos? 90 seconds. Take the quiz!",
   },
 };
 

@@ -10,97 +10,61 @@ import { ArrowIcon } from "@/components/icons";
 /* ─── Data ─── */
 
 interface Question {
-  question: string;
+  image: string;
   options: string[];
   answer: number; // index
-  image: string;
 }
 
 const QUESTIONS: Question[] = [
   {
-    question: "What size grade means 'under 5 per kg'?",
-    options: ["U5", "5/0", "Sub-5", "Grade 5"],
-    answer: 0,
     image: "/images/products/cod.png",
+    options: ["Cod", "Haddock", "Pollock", "Hake"],
+    answer: 0,
   },
   {
-    question: "What does MSC certification stand for?",
-    options: [
-      "Marine Safety Commission",
-      "Marine Stewardship Council",
-      "Maritime Seafood Council",
-      "Marine Standards Certificate",
-    ],
-    answer: 1,
-    image: "/images/products/salmon.png",
-  },
-  {
-    question: "Which country are Fines de Claire oysters from?",
-    options: ["UK", "Ireland", "France", "Spain"],
-    answer: 2,
-    image: "/images/products/halibut.png",
-  },
-  {
-    question: "What's the Japanese name for yellowtail?",
-    options: ["Maguro", "Hamachi", "Unagi", "Hirame"],
-    answer: 1,
     image: "/images/products/tuna.png",
-  },
-  {
-    question: "What cut of tuna is the fattiest belly portion?",
-    options: ["Akami", "Chutoro", "Toro", "Saku"],
-    answer: 2,
-    image: "/images/products/swordfish.png",
-  },
-  {
-    question: "What does IQF stand for?",
-    options: [
-      "Instant Quick Freeze",
-      "Individually Quick Frozen",
-      "Industrial Quality Fish",
-      "International Quality Frozen",
-    ],
+    options: ["Salmon", "Tuna", "Swordfish", "Marlin"],
     answer: 1,
-    image: "/images/products/cod-fillet.png",
   },
   {
-    question: "Langoustines are also known as?",
-    options: [
-      "Rock Lobster",
-      "Dublin Bay Prawns",
-      "Tiger Prawns",
-      "Crevettes",
-    ],
-    answer: 1,
-    image: "/images/products/sea-bass.png",
-  },
-  {
-    question: "Which fish is also called 'rock eel' or 'huss'?",
-    options: ["Conger Eel", "Dogfish", "Monkfish", "Catfish"],
-    answer: 1,
-    image: "/images/products/monkfish.png",
-  },
-  {
-    question: "What makes diver-caught scallops premium?",
-    options: [
-      "They're bigger",
-      "Less environmental damage and grit",
-      "They're from deeper water",
-      "They're always organic",
-    ],
-    answer: 1,
-    image: "/images/products/dover-sole.png",
-  },
-  {
-    question: "What does 'H&G' mean in fish preparation?",
-    options: [
-      "Halved and Grilled",
-      "Hand-picked and Graded",
-      "Headed and Gutted",
-      "Hooked and Gathered",
-    ],
-    answer: 2,
     image: "/images/products/salmon-fillet.png",
+    options: ["Trout", "Sea Bass", "Salmon", "Arctic Char"],
+    answer: 2,
+  },
+  {
+    image: "/images/products/monkfish.png",
+    options: ["Monkfish", "Cod", "Halibut", "Turbot"],
+    answer: 0,
+  },
+  {
+    image: "/images/products/dover-sole.png",
+    options: ["Plaice", "Lemon Sole", "Dover Sole", "Turbot"],
+    answer: 2,
+  },
+  {
+    image: "/images/products/sea-bass.png",
+    options: ["Sea Bream", "Sea Bass", "Barramundi", "Snapper"],
+    answer: 1,
+  },
+  {
+    image: "/images/products/halibut.png",
+    options: ["Halibut", "Turbot", "Brill", "Cod"],
+    answer: 0,
+  },
+  {
+    image: "/images/products/swordfish.png",
+    options: ["Tuna", "Marlin", "Swordfish", "Mahi Mahi"],
+    answer: 2,
+  },
+  {
+    image: "/images/products/sea-bream.png",
+    options: ["Sea Bass", "Red Snapper", "Sea Bream", "Dorade"],
+    answer: 2,
+  },
+  {
+    image: "/images/products/john-dory.png",
+    options: ["Turbot", "John Dory", "Brill", "Plaice"],
+    answer: 1,
   },
 ];
 
@@ -113,11 +77,33 @@ function getTitle(score: number): string {
   return "Executive Chef";
 }
 
-function getTitleEmoji(score: number): string {
-  if (score <= 3) return "\u{1F9F9}";
-  if (score <= 6) return "\u{1F52A}";
-  if (score <= 8) return "\u{1F468}\u{200D}\u{1F373}";
-  return "\u{1F451}";
+function getTitleIcon(score: number) {
+  if (score <= 3)
+    return (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="text-brand-muted">
+        <path d="M3 21h18M5 21V7l7-4 7 4v14" />
+        <rect x="9" y="13" width="6" height="8" rx="1" />
+      </svg>
+    );
+  if (score <= 6)
+    return (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+        <path d="M7 21h10M9 21v-4a3 3 0 0 1 6 0v4" />
+        <path d="M4 11c0-3.87 3.13-7 7-7h2c3.87 0 7 3.13 7 7v1H4v-1z" />
+      </svg>
+    );
+  if (score <= 8)
+    return (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V20H6z" />
+        <line x1="6" y1="17" x2="18" y2="17" />
+      </svg>
+    );
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-brand-gold">
+      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+    </svg>
+  );
 }
 
 /* ─── Timer Circle ─── */
@@ -137,13 +123,7 @@ function TimerCircle({
 
   return (
     <div className="relative flex h-[72px] w-[72px] items-center justify-center">
-      <svg
-        width="72"
-        height="72"
-        viewBox="0 0 72 72"
-        className="-rotate-90"
-      >
-        {/* Track */}
+      <svg width="72" height="72" viewBox="0 0 72 72" className="-rotate-90">
         <circle
           cx="36"
           cy="36"
@@ -152,7 +132,6 @@ function TimerCircle({
           stroke="rgba(255,255,255,0.06)"
           strokeWidth="3"
         />
-        {/* Progress */}
         <circle
           cx="36"
           cy="36"
@@ -177,6 +156,17 @@ function TimerCircle({
   );
 }
 
+/* ─── Eye icon for the question prompt ─── */
+
+function EyeIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="text-brand-gold">
+      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+      <circle cx="12" cy="12" r="3" />
+    </svg>
+  );
+}
+
 /* ─── Main Component ─── */
 
 type Phase = "landing" | "quiz" | "results";
@@ -195,8 +185,8 @@ export default function QuizClient() {
   const [submitted, setSubmitted] = useState(false);
   const [copied, setCopied] = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const [fadeKey, setFadeKey] = useState(0);
 
-  // Start timer
   const startTimer = useCallback(() => {
     timerRef.current = setInterval(() => {
       setTimeLeft((prev) => {
@@ -209,7 +199,7 @@ export default function QuizClient() {
     }, 1000);
   }, []);
 
-  // Auto-submit when time runs out
+  // Auto-submit on timeout
   useEffect(() => {
     if (timeLeft === 0 && phase === "quiz") {
       setTimeTaken(TOTAL_TIME);
@@ -217,7 +207,6 @@ export default function QuizClient() {
     }
   }, [timeLeft, phase]);
 
-  // Cleanup
   useEffect(() => {
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
@@ -233,6 +222,7 @@ export default function QuizClient() {
     setTimeLeft(TOTAL_TIME);
     setTimeTaken(0);
     setSubmitted(false);
+    setFadeKey(0);
     startTimer();
   };
 
@@ -245,18 +235,16 @@ export default function QuizClient() {
     updated[current] = optionIndex;
     setAnswers(updated);
 
-    // Capture time immediately for the last question
     const isLast = current >= QUESTIONS.length - 1;
     const capturedTime = TOTAL_TIME - timeLeft;
 
-    // Auto-advance after 1.2s
     setTimeout(() => {
       if (!isLast) {
         setCurrent(current + 1);
         setSelected(null);
         setRevealed(false);
+        setFadeKey((k) => k + 1);
       } else {
-        // Quiz complete — use time captured at answer moment
         setTimeTaken(capturedTime);
         if (timerRef.current) clearInterval(timerRef.current);
         setPhase("results");
@@ -282,14 +270,14 @@ export default function QuizClient() {
   };
 
   const handleShare = async () => {
-    const text = `I scored ${score}/10 in ${timeTaken} seconds on the Paradise Seafood quiz — ${getTitle(score)}! Think you can beat me?`;
+    const text = `I identified ${score}/10 seafood species in ${timeTaken} seconds on the Paradise Seafood quiz \u2014 ${getTitle(score)}! Can you beat me?`;
     const url = typeof window !== "undefined" ? window.location.href : "";
 
     if (navigator.share) {
       try {
-        await navigator.share({ title: "Seafood Quiz", text, url });
+        await navigator.share({ title: "Name That Seafood", text, url });
       } catch {
-        // fallback to clipboard
+        // fallback
       }
     }
 
@@ -298,7 +286,7 @@ export default function QuizClient() {
       setCopied(true);
       setTimeout(() => setCopied(false), 2500);
     } catch {
-      // silent fail
+      // silent
     }
   };
 
@@ -308,37 +296,52 @@ export default function QuizClient() {
       <div className="min-h-screen bg-brand-dark">
         <Navbar />
         <section className="relative flex min-h-[calc(100vh-80px)] items-center justify-center overflow-hidden px-6">
+          {/* Collage of species images as faded background */}
+          <div className="pointer-events-none absolute inset-0 grid grid-cols-5 grid-rows-2 opacity-[0.07]">
+            {[
+              "cod", "tuna", "salmon-fillet", "monkfish", "dover-sole",
+              "sea-bass", "halibut", "swordfish", "sea-bream", "john-dory",
+            ].map((name) => (
+              <div key={name} className="relative overflow-hidden">
+                <Image
+                  src={`/images/products/${name}.png`}
+                  alt=""
+                  fill
+                  className="object-cover"
+                  quality={30}
+                  sizes="20vw"
+                />
+              </div>
+            ))}
+          </div>
+
           {/* Background glow */}
           <div
             className="pointer-events-none absolute inset-0"
             style={{
               background:
-                "radial-gradient(ellipse 60% 50% at 50% 40%, rgba(184,155,94,0.08) 0%, transparent 70%), radial-gradient(ellipse 40% 30% at 30% 70%, rgba(10,126,140,0.06) 0%, transparent 60%)",
+                "radial-gradient(ellipse 60% 50% at 50% 40%, rgba(184,155,94,0.1) 0%, transparent 70%), radial-gradient(ellipse 40% 40% at 50% 50%, rgba(12,17,23,0.9) 0%, transparent 80%)",
             }}
           />
 
           <div className="relative mx-auto max-w-[640px] text-center">
             {/* Badge */}
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-gold/20 bg-brand-gold/[0.06] px-4 py-1.5">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-brand-gold">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M12 6v6l4 2" />
-              </svg>
+              <EyeIcon />
               <span className="text-[12px] font-semibold uppercase tracking-[2px] text-brand-gold">
-                90 Second Challenge
+                Visual Challenge
               </span>
             </div>
 
-            <h1 className="mb-5 font-serif text-[clamp(36px,6vw,64px)] font-bold leading-[1.08] text-brand-cream">
-              Think You Know{" "}
-              <span className="italic text-brand-gold">Seafood?</span>
-              <br />
-              Prove It.
+            <h1 className="mb-3 font-serif text-[clamp(36px,6vw,64px)] font-bold leading-[1.08] text-brand-cream">
+              Name That{" "}
+              <span className="italic text-brand-gold">Seafood</span>
             </h1>
 
             <p className="mb-10 text-[17px] leading-relaxed text-brand-muted">
-              10 questions. 90 seconds. Are you an Executive Chef or a Kitchen
-              Porter?
+              Can you identify 10 seafood species from photos alone?
+              <br className="hidden sm:block" />
+              90 seconds on the clock. Are you an Executive Chef or a Kitchen Porter?
             </p>
 
             <button
@@ -366,7 +369,7 @@ export default function QuizClient() {
             {/* Stats */}
             <div className="mt-14 flex items-center justify-center gap-8 text-[13px] text-brand-muted">
               <span className="flex items-center gap-1.5">
-                <span className="text-brand-gold">10</span> Questions
+                <span className="text-brand-gold">10</span> Photos
               </span>
               <span className="h-3 w-px bg-white/10" />
               <span className="flex items-center gap-1.5">
@@ -391,15 +394,15 @@ export default function QuizClient() {
     return (
       <div className="min-h-screen bg-brand-dark">
         <Navbar />
-        <section className="relative flex min-h-[calc(100vh-80px)] items-center justify-center overflow-hidden px-6 py-12">
-          {/* Background image */}
-          <div className="absolute inset-0">
+        <section className="relative flex min-h-[calc(100vh-80px)] flex-col overflow-hidden px-6 py-8">
+          {/* Full-screen product image background */}
+          <div className="absolute inset-0" key={`bg-${fadeKey}`}>
             <Image
               src={q.image}
               alt=""
               fill
-              className="object-cover"
-              style={{ opacity: 0.12 }}
+              className="object-cover animate-[fadeIn_0.5s_ease-out]"
+              style={{ opacity: 0.2 }}
               quality={60}
               sizes="100vw"
               priority
@@ -408,95 +411,109 @@ export default function QuizClient() {
               className="absolute inset-0"
               style={{
                 background:
-                  "radial-gradient(ellipse at 50% 50%, rgba(12,17,23,0.7) 0%, rgba(12,17,23,0.95) 70%)",
+                  "linear-gradient(to top, rgba(12,17,23,0.95) 0%, rgba(12,17,23,0.6) 40%, rgba(12,17,23,0.75) 100%)",
               }}
             />
           </div>
 
-          <div className="relative mx-auto w-full max-w-[680px]">
+          <div className="relative mx-auto flex w-full max-w-[680px] flex-1 flex-col">
             {/* Top bar: progress + timer */}
-            <div className="mb-10 flex items-center justify-between">
-              {/* Progress info */}
+            <div className="mb-6 flex items-center justify-between">
               <div>
                 <span className="text-[13px] font-semibold uppercase tracking-[3px] text-brand-gold">
                   Question {current + 1}
                   <span className="text-brand-muted"> / {QUESTIONS.length}</span>
                 </span>
               </div>
-
-              {/* Timer */}
               <TimerCircle timeLeft={timeLeft} total={TOTAL_TIME} />
             </div>
 
             {/* Progress bar */}
-            <div className="mb-10 h-[3px] w-full overflow-hidden rounded-full bg-white/[0.06]">
+            <div className="mb-8 h-[3px] w-full overflow-hidden rounded-full bg-white/[0.06]">
               <div
                 className="h-full rounded-full transition-all duration-500 ease-out"
                 style={{
-                  width: `${((current + 1) / QUESTIONS.length) * 100}%`,
+                  width: `${((current + (revealed ? 1 : 0)) / QUESTIONS.length) * 100}%`,
                   background:
                     "linear-gradient(90deg, #B89B5E 0%, #96793E 100%)",
                 }}
               />
             </div>
 
-            {/* Question */}
-            <h2 className="mb-10 font-serif text-[clamp(24px,4vw,38px)] font-bold leading-[1.2] text-brand-cream">
-              {q.question}
-            </h2>
+            {/* Main content: image + question */}
+            <div className="flex flex-1 flex-col items-center justify-center" key={`q-${fadeKey}`}>
+              {/* Featured image */}
+              <div className="relative mb-8 h-[200px] w-full max-w-[480px] overflow-hidden rounded-2xl border border-white/[0.08] sm:h-[260px]">
+                <Image
+                  src={q.image}
+                  alt="What seafood is this?"
+                  fill
+                  className="object-cover animate-[fadeIn_0.4s_ease-out]"
+                  quality={80}
+                  sizes="(max-width: 768px) 100vw, 480px"
+                  priority
+                />
+                {/* Subtle vignette */}
+                <div className="absolute inset-0 rounded-2xl shadow-[inset_0_0_60px_rgba(12,17,23,0.3)]" />
+              </div>
 
-            {/* Options */}
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {q.options.map((opt, i) => {
-                let optionClass =
-                  "group relative rounded-xl border px-6 py-4.5 text-left text-[15px] font-medium transition-all duration-300 cursor-pointer ";
+              {/* Question */}
+              <div className="mb-8 flex items-center gap-2.5">
+                <EyeIcon />
+                <h2 className="font-serif text-[clamp(22px,3.5vw,32px)] font-bold text-brand-cream">
+                  What seafood is this?
+                </h2>
+              </div>
 
-                if (revealed) {
-                  if (i === q.answer) {
-                    optionClass +=
-                      "border-emerald-500/40 bg-emerald-500/10 text-emerald-300";
-                  } else if (i === selected && i !== q.answer) {
-                    optionClass +=
-                      "border-red-500/40 bg-red-500/10 text-red-300";
+              {/* Options */}
+              <div className="grid w-full max-w-[520px] grid-cols-2 gap-3">
+                {q.options.map((opt, i) => {
+                  let optionClass =
+                    "group relative rounded-xl border px-5 py-4 text-center text-[15px] font-medium transition-all duration-300 cursor-pointer ";
+
+                  if (revealed) {
+                    if (i === q.answer) {
+                      optionClass +=
+                        "border-emerald-500/40 bg-emerald-500/10 text-emerald-300 scale-[1.02]";
+                    } else if (i === selected && i !== q.answer) {
+                      optionClass +=
+                        "border-red-500/40 bg-red-500/10 text-red-300 scale-[0.98]";
+                    } else {
+                      optionClass +=
+                        "border-white/[0.04] bg-white/[0.01] text-white/25";
+                    }
                   } else {
                     optionClass +=
-                      "border-white/[0.04] bg-white/[0.01] text-white/30";
+                      "border-white/[0.08] bg-white/[0.04] text-brand-cream hover:border-brand-gold/30 hover:bg-brand-gold/[0.08] hover:scale-[1.02] active:scale-[0.98]";
                   }
-                } else {
-                  optionClass +=
-                    "border-white/[0.08] bg-white/[0.03] text-brand-cream hover:border-brand-gold/30 hover:bg-brand-gold/[0.06]";
-                }
 
-                return (
-                  <button
-                    key={i}
-                    onClick={() => handleSelect(i)}
-                    disabled={revealed}
-                    className={optionClass}
-                  >
-                    <span className="mr-3 inline-flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border border-current/20 text-[12px] font-bold opacity-60">
-                      {String.fromCharCode(65 + i)}
-                    </span>
-                    {opt}
+                  return (
+                    <button
+                      key={i}
+                      onClick={() => handleSelect(i)}
+                      disabled={revealed}
+                      className={optionClass}
+                    >
+                      {opt}
 
-                    {/* Correct/wrong indicator */}
-                    {revealed && i === q.answer && (
-                      <span className="absolute right-4 top-1/2 -translate-y-1/2">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" className="text-emerald-400">
-                          <path d="M20 6L9 17l-5-5" />
-                        </svg>
-                      </span>
-                    )}
-                    {revealed && i === selected && i !== q.answer && (
-                      <span className="absolute right-4 top-1/2 -translate-y-1/2">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" className="text-red-400">
-                          <path d="M18 6L6 18M6 6l12 12" />
-                        </svg>
-                      </span>
-                    )}
-                  </button>
-                );
-              })}
+                      {revealed && i === q.answer && (
+                        <span className="absolute right-3 top-1/2 -translate-y-1/2">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" className="text-emerald-400">
+                            <path d="M20 6L9 17l-5-5" />
+                          </svg>
+                        </span>
+                      )}
+                      {revealed && i === selected && i !== q.answer && (
+                        <span className="absolute right-3 top-1/2 -translate-y-1/2">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" className="text-red-400">
+                            <path d="M18 6L6 18M6 6l12 12" />
+                          </svg>
+                        </span>
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </section>
@@ -511,13 +528,13 @@ export default function QuizClient() {
     <div className="min-h-screen bg-brand-dark">
       <Navbar />
       <section className="relative overflow-hidden px-6 pb-20 pt-16">
-        {/* Background glow */}
+        {/* Background glow based on score */}
         <div
           className="pointer-events-none absolute inset-0"
           style={{
             background:
               score >= 9
-                ? "radial-gradient(ellipse 60% 50% at 50% 30%, rgba(184,155,94,0.12) 0%, transparent 70%)"
+                ? "radial-gradient(ellipse 60% 50% at 50% 30%, rgba(184,155,94,0.15) 0%, transparent 70%)"
                 : score >= 7
                   ? "radial-gradient(ellipse 60% 50% at 50% 30%, rgba(184,155,94,0.08) 0%, transparent 70%)"
                   : "radial-gradient(ellipse 60% 50% at 50% 30%, rgba(10,126,140,0.06) 0%, transparent 70%)",
@@ -526,18 +543,18 @@ export default function QuizClient() {
 
         <div className="relative mx-auto max-w-[600px] text-center">
           {/* Title badge */}
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-gold/20 bg-brand-gold/[0.06] px-5 py-2">
-            <span className="text-[20px]">{getTitleEmoji(score)}</span>
+          <div className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-brand-gold/20 bg-brand-gold/[0.06] px-5 py-2.5">
+            {getTitleIcon(score)}
             <span className="text-[13px] font-bold uppercase tracking-[2px] text-brand-gold">
               {title}
             </span>
           </div>
 
           {/* Score */}
-          <h1 className="mb-3 font-serif text-[clamp(32px,5vw,56px)] font-bold leading-[1.1] text-brand-cream">
-            You scored{" "}
+          <h1 className="mb-3 font-serif text-[clamp(30px,5vw,52px)] font-bold leading-[1.15] text-brand-cream">
+            You identified{" "}
             <span className="text-brand-gold">{score}/10</span> in{" "}
-            <span className="text-brand-gold">{timeTaken}</span> seconds
+            <span className="text-brand-gold">{timeTaken}s</span>
           </h1>
 
           <p className="mb-12 font-serif text-[clamp(20px,3vw,28px)] italic text-brand-gold">
@@ -572,20 +589,32 @@ export default function QuizClient() {
             </div>
           </div>
 
-          {/* Answer review */}
-          <div className="mb-12 rounded-[14px] border border-white/[0.06] bg-white/[0.02] px-6 py-6 text-left">
-            <h3 className="mb-4 text-[12px] font-semibold uppercase tracking-[3px] text-brand-gold">
+          {/* Answer review with thumbnails */}
+          <div className="mb-12 rounded-[14px] border border-white/[0.06] bg-white/[0.02] px-5 py-6 text-left sm:px-6">
+            <h3 className="mb-5 text-[12px] font-semibold uppercase tracking-[3px] text-brand-gold">
               Your Answers
             </h3>
-            <div className="space-y-2.5">
+            <div className="space-y-3">
               {QUESTIONS.map((q, i) => {
                 const correct = answers[i] === q.answer;
                 return (
                   <div
                     key={i}
-                    className="flex items-start gap-3 text-[13px]"
+                    className="flex items-center gap-3 text-[13px]"
                   >
-                    <span className="mt-0.5 flex-shrink-0">
+                    {/* Thumbnail */}
+                    <div className="relative h-10 w-10 flex-shrink-0 overflow-hidden rounded-lg border border-white/[0.06]">
+                      <Image
+                        src={q.image}
+                        alt={q.options[q.answer]}
+                        fill
+                        className="object-cover"
+                        quality={40}
+                        sizes="40px"
+                      />
+                    </div>
+
+                    <span className="flex-shrink-0">
                       {correct ? (
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" className="text-emerald-400">
                           <path d="M20 6L9 17l-5-5" />
@@ -596,13 +625,18 @@ export default function QuizClient() {
                         </svg>
                       )}
                     </span>
-                    <div>
-                      <span className={correct ? "text-brand-cream" : "text-white/50"}>
-                        {q.question}
+
+                    <div className="min-w-0">
+                      <span className={correct ? "text-brand-cream" : "text-white/40"}>
+                        {correct
+                          ? q.options[q.answer]
+                          : answers[i] !== null
+                            ? q.options[answers[i] as number]
+                            : "No answer"}
                       </span>
                       {!correct && (
-                        <span className="ml-1 text-brand-gold">
-                          {q.options[q.answer]}
+                        <span className="ml-1.5 text-brand-gold">
+                          &rarr; {q.options[q.answer]}
                         </span>
                       )}
                     </div>
@@ -613,7 +647,7 @@ export default function QuizClient() {
           </div>
 
           {/* WhatsApp capture */}
-          <div className="mb-10 rounded-[14px] border border-brand-gold/15 bg-brand-gold/[0.04] px-7 py-8">
+          <div className="mb-10 rounded-[14px] border border-brand-gold/15 bg-brand-gold/[0.04] px-6 py-8 sm:px-7">
             {!submitted ? (
               <>
                 <h3 className="mb-2 font-serif text-[22px] font-bold text-brand-cream">
@@ -671,9 +705,7 @@ export default function QuizClient() {
               <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
               <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
             </svg>
-            {copied
-              ? "Link copied!"
-              : "Challenge your kitchen team"}
+            {copied ? "Link copied!" : "Challenge your kitchen team"}
           </button>
 
           {/* CTAs */}
