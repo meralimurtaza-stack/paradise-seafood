@@ -1,0 +1,953 @@
+{
+  "meta": {
+    "description": "Species information for Paradise Seafood product pages. Each entry provides About, Why Chefs Love It, and Health & Nutrition content for SEO and user value.",
+    "usage": "Map products to species data using the subcategory/image_key field. Display on subcategory pages and individual product pages."
+  },
+  "species": {
+    "cod": {
+      "name": "Cod",
+      "about": "A cornerstone of British cuisine with firm white flesh and a mild, clean flavour. Takes on seasoning beautifully. Works across every cooking method — battered for fish and chips, roasted with herbs, pan-fried for fine dining, or flaked into chowders and fish pies.",
+      "chefs": [
+        "Consistent portion sizes from 110g to 900g+ means easy menu costing",
+        "MSC certified options available for sustainability-conscious menus",
+        "Loins and fillets hold their shape under heat — no flaking apart mid-service",
+        "Year-round availability means it's a reliable menu staple"
+      ],
+      "stats": [
+        {"stat": "20g", "label": "protein per 100g"},
+        {"stat": "82", "label": "calories per 100g"},
+        {"stat": "<1g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "Virtually zero fat — one of the leanest fish available",
+        "Excellent source of vitamin B12 for energy and nerve function",
+        "Rich in selenium which supports thyroid function and immune health",
+        "High in iodine and phosphorus for bone health"
+      ]
+    },
+    "salmon": {
+      "name": "Salmon",
+      "about": "The most versatile fish in any kitchen. Scottish salmon is prized for its rich flavour and buttery texture. Equally at home raw as sashimi, cured as gravadlax, pan-seared skin-side down, or hot-smoked for brunch service. Loch Duart and organic options for premium menus.",
+      "chefs": [
+        "Available in every cut — whole, fillet, supreme, loin, steak",
+        "Supremes come portion-ready so there's zero prep waste",
+        "The colour on the plate is unmatched — that deep orange-pink sells itself",
+        "Skin crisps up perfectly for that textural contrast diners love"
+      ],
+      "stats": [
+        {"stat": "20g", "label": "protein per 100g"},
+        {"stat": "208", "label": "calories per 100g"},
+        {"stat": "13g", "label": "healthy fats per 100g"}
+      ],
+      "health": [
+        "One of the richest sources of omega-3 fatty acids — supports heart health and reduces inflammation",
+        "High in vitamin D which most people are deficient in",
+        "Contains astaxanthin, a powerful antioxidant that gives it the pink colour",
+        "Rich in B vitamins including B12, B6, and niacin"
+      ]
+    },
+    "sea-bass": {
+      "name": "Sea Bass",
+      "about": "Elegant and refined with delicate white flesh and subtle sweetness. A fine dining staple that pairs beautifully with Mediterranean and Asian flavours. Available farmed (consistent supply, competitive price) and wild (superior flavour, premium price point).",
+      "chefs": [
+        "Skin scores and crisps beautifully — the most photogenic fish on any plate",
+        "Farmed bass available in 6 size grades means you pick the exact portion for your menu",
+        "Wild bass commands a premium price point that lifts your average spend",
+        "Fillets are virtually boneless — minimal prep time"
+      ],
+      "stats": [
+        {"stat": "18g", "label": "protein per 100g"},
+        {"stat": "97", "label": "calories per 100g"},
+        {"stat": "2g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "Low calorie at just 97 calories per 100g",
+        "Good source of omega-3s for heart and brain health",
+        "Rich in selenium which supports immune function",
+        "Contains magnesium for muscle and nerve function"
+      ]
+    },
+    "halibut": {
+      "name": "Halibut",
+      "about": "The king of flatfish. Dense, meaty flesh that holds up to any cooking method — roasting, pan-frying, steaming, even braising. Highly prized for its clean flavour and satisfying, almost steak-like texture. Available wild and farmed, whole or as supremes.",
+      "chefs": [
+        "Thick dense flesh means it won't overcook easily — forgiving during busy service",
+        "Supremes come in 100g to 200g portions for precise menu costing",
+        "White, clean presentation on the plate",
+        "One of the highest-margin fish on any fine dining menu"
+      ],
+      "stats": [
+        {"stat": "22g", "label": "protein per 100g"},
+        {"stat": "110", "label": "calories per 100g"},
+        {"stat": "2g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "One of the highest protein fish at 22g per 100g",
+        "Excellent source of niacin (vitamin B3) which supports metabolism",
+        "Rich in phosphorus for strong bones and teeth",
+        "Contains selenium and magnesium for immune and muscle health"
+      ]
+    },
+    "monkfish": {
+      "name": "Monkfish",
+      "about": "Known as \"poor man's lobster\" for its firm, sweet, lobster-like flesh. The tail is the prized cut — meaty, boneless, and incredibly versatile. Holds up brilliantly to roasting whole, wrapping in pancetta or Parma ham, grilling, or cutting into medallions.",
+      "chefs": [
+        "Zero pin bones — the easiest fish to prep in any kitchen",
+        "Holds its shape on the grill and in stews where other fish would fall apart",
+        "The texture is unique — firm and meaty, satisfying even for diners who \"don't like fish\"",
+        "Tails from 300g to 4kg+ for any menu format from tapas to sharing plates"
+      ],
+      "stats": [
+        {"stat": "18g", "label": "protein per 100g"},
+        {"stat": "76", "label": "calories per 100g"},
+        {"stat": "<1g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "Extremely lean — under 1g of fat per 100g",
+        "High protein at 18g per 100g with minimal calories",
+        "Good source of vitamin B12 and phosphorus",
+        "One of the best fish choices for low-fat and high-protein diets"
+      ]
+    },
+    "tuna": {
+      "name": "Tuna",
+      "about": "From sashimi-grade loins to seared steaks, tuna is one of the most prized fish in global cuisine. The deep ruby-red flesh and rich, almost meaty flavour set it apart. Best served rare or raw — overcooking is the only way to ruin it. Toro (belly) is the fattiest, most luxurious cut.",
+      "chefs": [
+        "Sushi-grade tuna commands premium prices with minimal prep — slice and plate",
+        "The colour on the plate is dramatic and Instagram-worthy",
+        "A 30-second sear per side is all it needs — fastest premium dish in any kitchen",
+        "Versatile across Japanese, Mediterranean, and modern European menus"
+      ],
+      "stats": [
+        {"stat": "25g", "label": "protein per 100g"},
+        {"stat": "130", "label": "calories per 100g"},
+        {"stat": "5g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "Exceptionally high protein — 25g per 100g, one of the highest of any fish",
+        "Rich in vitamin D and selenium for immune and bone health",
+        "Contains iron which is unusual for fish — good for energy levels",
+        "Omega-3s support brain function and cardiovascular health"
+      ]
+    },
+    "haddock": {
+      "name": "Haddock",
+      "about": "A British classic with softer, slightly sweeter flesh than cod. The backbone of the smoked fish world — natural smoked haddock is one of the most beloved breakfast and brunch ingredients in the UK. Fresh haddock works beautifully battered, poached, or in fish pies.",
+      "chefs": [
+        "MSC certified options available across all size grades",
+        "Smoked haddock is a breakfast and brunch menu essential — kedgeree, Arnold Bennett omelette, chowder",
+        "Lighter texture than cod gives variety to fish-heavy menus",
+        "Competitive price point with strong customer demand"
+      ],
+      "stats": [
+        {"stat": "19g", "label": "protein per 100g"},
+        {"stat": "90", "label": "calories per 100g"},
+        {"stat": "<1g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "Very low fat at under 1g per 100g",
+        "Excellent source of vitamin B12 — a single portion provides over 100% of daily needs",
+        "Rich in selenium for thyroid and immune support",
+        "High in iodine which supports thyroid health"
+      ]
+    },
+    "hake": {
+      "name": "Hake",
+      "about": "A favourite across Spanish, Portuguese, and increasingly British kitchens. Hake has delicate, flaky white flesh with a slightly sweeter flavour than cod. Supremes are the preferred cut — belly-trimmed and portion-ready. Often overlooked but gaining serious traction on fine dining menus.",
+      "chefs": [
+        "MSC certified whole hake available — strong sustainability story",
+        "Supremes come belly-trimmed and portion-ready, minimal waste",
+        "Lighter and more delicate than cod — ideal for spring and summer menus",
+        "Popular across Mediterranean cuisine — pairs with olive oil, peppers, chorizo"
+      ],
+      "stats": [
+        {"stat": "18g", "label": "protein per 100g"},
+        {"stat": "82", "label": "calories per 100g"},
+        {"stat": "<1g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "Very low in fat and calories — one of the lightest white fish",
+        "Good source of vitamin B12 and B6 for energy",
+        "Rich in phosphorus for bone health",
+        "Contains selenium and iodine for thyroid function"
+      ]
+    },
+    "turbot": {
+      "name": "Turbot",
+      "about": "The most prized flatfish in European cuisine. Turbot has firm, snow-white flesh with a rich, almost nutty flavour that chefs adore. Available wild-caught from UK waters and farmed from Spain. Traditionally roasted on the bone for maximum flavour.",
+      "chefs": [
+        "The prestige fish — having turbot on your menu signals serious fine dining",
+        "Firm flesh holds up to roasting on the bone, the classic French presentation",
+        "Wild turbot commands top prices and justifies a premium menu position",
+        "Available from under 1kg to 5kg+ — suitable for individual portions or sharing dishes"
+      ],
+      "stats": [
+        {"stat": "17g", "label": "protein per 100g"},
+        {"stat": "95", "label": "calories per 100g"},
+        {"stat": "3g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "Good source of lean protein with moderate fat content",
+        "Rich in omega-3 fatty acids compared to other white fish",
+        "Excellent source of vitamin B12 and B6",
+        "Contains phosphorus, selenium, and magnesium"
+      ]
+    },
+    "dover-sole": {
+      "name": "Dover Sole",
+      "about": "The classic fish of fine French cuisine. Dover sole has firm, dense flesh with a distinctive, refined flavour that improves with a day or two of resting. Traditionally pan-fried whole in butter (à la meunière) or served on the bone for tableside filleting.",
+      "chefs": [
+        "The ultimate tableside theatre — served whole and filleted in front of the guest",
+        "Flesh actually improves 1-2 days after catch — rare quality for fish",
+        "Six size grades from 320g to 670g+ for precise menu positioning",
+        "Simple butter, lemon, and capers is all it needs — the fish does the talking"
+      ],
+      "stats": [
+        {"stat": "17g", "label": "protein per 100g"},
+        {"stat": "86", "label": "calories per 100g"},
+        {"stat": "1.5g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "Low in fat and calories while being high in protein",
+        "Good source of vitamin B12 for nerve health",
+        "Contains selenium and phosphorus",
+        "Mild flavour makes it ideal for guests who find stronger fish off-putting"
+      ]
+    },
+    "sea-bream": {
+      "name": "Sea Bream",
+      "about": "Gilt-head sea bream is one of the most popular fish in Mediterranean cuisine. Beautiful silver and gold scales, delicate white flesh, and a mild sweet flavour. Available farmed (consistent quality and price) and wild black bream (deeper flavour, UK waters).",
+      "chefs": [
+        "One of the most beautiful whole fish to present — the gold markings are stunning",
+        "Farmed bream comes in multiple size grades from 300g to 1kg for precise portioning",
+        "Crisps beautifully when pan-fried or grilled — similar to sea bass but at a better price point",
+        "Wild black bream offers a premium upgrade for seasonal specials"
+      ],
+      "stats": [
+        {"stat": "17g", "label": "protein per 100g"},
+        {"stat": "100", "label": "calories per 100g"},
+        {"stat": "2.5g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "Good source of lean protein with moderate healthy fats",
+        "Contains omega-3 fatty acids for heart health",
+        "Rich in selenium and vitamin B12",
+        "Low calorie option at 100 calories per 100g"
+      ]
+    },
+    "john-dory": {
+      "name": "John Dory",
+      "about": "One of the great fish for fine dining. John Dory has firm, white, delicately flavoured flesh that's often compared to Dover sole in quality. Recognisable by the distinctive dark spot on each side — legend says it's Saint Peter's thumbprint. Low yield but exceptional eating.",
+      "chefs": [
+        "Exceptional flesh quality rivals Dover sole at a lower price point",
+        "The story of Saint Peter's thumbprint is a menu narrative that guests love",
+        "Firm fillets that hold up to pan-frying and don't break apart",
+        "Available in four size grades from under 350g to 908g+"
+      ],
+      "stats": [
+        {"stat": "17g", "label": "protein per 100g"},
+        {"stat": "85", "label": "calories per 100g"},
+        {"stat": "1g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "Very lean white fish with minimal fat",
+        "Good source of protein and vitamin B12",
+        "Contains selenium for immune support",
+        "Low calorie at just 85 per 100g"
+      ]
+    },
+    "plaice": {
+      "name": "Plaice",
+      "about": "A beloved British flatfish with thin, delicate flesh and a mild sweet flavour. Recognisable by the orange spots on its dark brown skin. Best pan-fried, grilled, or baked — its gentle flavour pairs with butter, capers, and herbs. A traditional favourite that's making a comeback on modern menus.",
+      "chefs": [
+        "The orange-spotted skin is distinctive and attractive on the plate",
+        "Delicate flavour that works as a lighter alternative to cod or haddock",
+        "Available whole and as fillets in multiple size grades",
+        "Competitive price point makes it a strong value option for set menus"
+      ],
+      "stats": [
+        {"stat": "16g", "label": "protein per 100g"},
+        {"stat": "79", "label": "calories per 100g"},
+        {"stat": "1g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "Very low in fat and calories",
+        "Good source of vitamin B12 and selenium",
+        "Contains iodine for thyroid function",
+        "Gentle on the stomach — easy to digest"
+      ]
+    },
+    "red-mullet": {
+      "name": "Red Mullet",
+      "about": "A jewel of Mediterranean cuisine with vibrant red-pink scales and a distinctive, slightly earthy flavour. Prized across French, Italian, and Greek cooking. Best cooked whole — the liver is considered a delicacy. Works beautifully pan-fried, grilled, or baked en papillote.",
+      "chefs": [
+        "Stunning visual impact — the red colour is dramatic on any plate",
+        "The liver is a delicacy in French cuisine — adds depth to sauces",
+        "Small fish means quick cooking — ideal for starters and sharing plates",
+        "Available whole in four size grades and as butterfly fillets"
+      ],
+      "stats": [
+        {"stat": "18g", "label": "protein per 100g"},
+        {"stat": "109", "label": "calories per 100g"},
+        {"stat": "4g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "Good source of omega-3 fatty acids for a small fish",
+        "Rich in iron compared to most white fish",
+        "Contains vitamin A and selenium",
+        "High in protein relative to its size"
+      ]
+    },
+    "red-snapper": {
+      "name": "Red Snapper",
+      "about": "A tropical reef fish prized for its firm, moist, mildly sweet flesh. The vivid red skin is stunning and edible when crisped. Popular across Caribbean, Asian, and Latin American cuisines. Works beautifully whole — steamed, grilled, or baked with bold flavours.",
+      "chefs": [
+        "The bright red skin is one of the most visually striking presentations in seafood",
+        "Firm flesh holds up to bold flavours — chilli, ginger, lime, coconut",
+        "Available whole from 300g to 6kg — from individual portions to dramatic sharing plates",
+        "Fillets are thick and meaty with clean white flesh"
+      ],
+      "stats": [
+        {"stat": "20g", "label": "protein per 100g"},
+        {"stat": "100", "label": "calories per 100g"},
+        {"stat": "1.5g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "High in protein with very low fat content",
+        "Good source of selenium and vitamin A",
+        "Contains potassium for heart health",
+        "Rich in omega-3 fatty acids"
+      ]
+    },
+    "mackerel": {
+      "name": "Mackerel",
+      "about": "One of the most nutritious fish in the sea and one of the most beautiful — iridescent blue-green tiger stripes that shimmer. An oily fish with rich, bold flavour that stands up to smoking, grilling, and strong accompaniments like mustard, horseradish, and beetroot. Incredibly sustainable and British.",
+      "chefs": [
+        "One of the most sustainable fish — fast-growing, abundant in British waters",
+        "The bold flavour means it pairs with strong accompaniments that would overpower delicate fish",
+        "Line-caught mackerel is a powerful provenance story for your menu",
+        "V-boned fillets available for quick prep — 80g per fillet, ideal for starters"
+      ],
+      "stats": [
+        {"stat": "19g", "label": "protein per 100g"},
+        {"stat": "205", "label": "calories per 100g"},
+        {"stat": "14g", "label": "healthy fats per 100g"}
+      ],
+      "health": [
+        "One of the highest omega-3 fish — over 2.5g per 100g",
+        "Excellent source of vitamin D — critical for bone health",
+        "Rich in vitamin B12, B6, and niacin for energy",
+        "Contains selenium and iodine for thyroid function"
+      ]
+    },
+    "sardines": {
+      "name": "Sardines",
+      "about": "Small, silvery, and packed with flavour. Fresh sardines are a world apart from the tinned version. Best grilled whole over charcoal, barbecued, or baked with garlic and herbs. A staple of Portuguese and Mediterranean cuisine. MSC certified options available.",
+      "chefs": [
+        "Incredibly affordable — high-impact dish at a low food cost",
+        "MSC certified options for sustainability-focused menus",
+        "Grill or barbecue whole in minutes — minimal prep, maximum flavour",
+        "Butterfly fillets available for more refined presentations"
+      ],
+      "stats": [
+        {"stat": "21g", "label": "protein per 100g"},
+        {"stat": "208", "label": "calories per 100g"},
+        {"stat": "12g", "label": "healthy fats per 100g"}
+      ],
+      "health": [
+        "Extremely rich in omega-3 fatty acids",
+        "One of the few fish where you eat the bones — excellent calcium source",
+        "High in vitamin D and B12",
+        "Contains CoQ10, an antioxidant that supports heart health"
+      ]
+    },
+    "skate": {
+      "name": "Skate",
+      "about": "Skate wings have a unique texture — long strands of flesh that pull away from the cartilage. The flavour is sweet and mild, slightly nutty. Classically served with brown butter, capers, and lemon (skate au beurre noir). Available double-skinned and ready for the pan.",
+      "chefs": [
+        "A classic French bistro dish that never goes out of style",
+        "The unique texture gives variety to any fish menu",
+        "Available in four size grades from under 350g to 908g+ wings",
+        "Double-skinned wings are ready to cook — no further prep needed"
+      ],
+      "stats": [
+        {"stat": "17g", "label": "protein per 100g"},
+        {"stat": "89", "label": "calories per 100g"},
+        {"stat": "1g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "Low in fat and calories with good protein content",
+        "The cartilage structure means it's rich in collagen",
+        "Contains vitamin B12 and selenium",
+        "Good source of phosphorus for bone health"
+      ]
+    },
+    "trout": {
+      "name": "Trout",
+      "about": "From wild brown trout to farmed rainbow, trout offers a lighter, more delicate alternative to salmon. Beautiful speckled skin with a pink lateral stripe. Works well pan-fried, baked, or hot-smoked. Sea-reared trout bridges the gap between salmon and trout — rich flavour with trout's elegance.",
+      "chefs": [
+        "Sea-reared trout offers salmon-like richness at a lower price point",
+        "Beautiful whole fish presentation — the speckled skin is stunning",
+        "Rainbow trout supremes available in three sizes for precise portioning",
+        "Wild brown trout is a seasonal delicacy that commands a premium"
+      ],
+      "stats": [
+        {"stat": "19g", "label": "protein per 100g"},
+        {"stat": "141", "label": "calories per 100g"},
+        {"stat": "6g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "Rich in omega-3 fatty acids — higher than most white fish",
+        "Excellent source of vitamin D and B12",
+        "Contains potassium and phosphorus for heart and bone health",
+        "Lower mercury levels than larger predatory fish"
+      ]
+    },
+    "swordfish": {
+      "name": "Swordfish",
+      "about": "A bold, meaty fish with dense, steak-like flesh. Swordfish loins are cut into thick steaks that hold up to grilling, chargrilling, and barbecuing. The flavour is rich and slightly sweet. Best served medium — still slightly pink in the centre.",
+      "chefs": [
+        "The most \"steak-like\" fish — appeals to meat lovers and fish sceptics alike",
+        "Thick loins and steaks hold up to the grill without falling apart",
+        "Supremes available in three sizes for consistent portioning",
+        "A summer menu hero — perfect for outdoor dining and barbecue events"
+      ],
+      "stats": [
+        {"stat": "20g", "label": "protein per 100g"},
+        {"stat": "121", "label": "calories per 100g"},
+        {"stat": "4g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "High in protein with moderate healthy fat content",
+        "Excellent source of selenium — one portion provides full daily needs",
+        "Rich in vitamin D and niacin (B3)",
+        "Contains zinc and potassium for immune and heart health"
+      ]
+    },
+    "hamachi": {
+      "name": "Hamachi (Yellowtail)",
+      "about": "A Japanese premium fish prized for sashimi and sushi. Hamachi has buttery, pink-cream flesh with beautiful fat marbling — often compared to wagyu beef in the fish world. The fat content gives it a rich, melt-in-the-mouth quality that's unmistakable.",
+      "chefs": [
+        "The sashimi fish — hamachi crudo is one of the most popular starters in modern fine dining",
+        "Fat marbling means it literally melts in the mouth — diners remember this fish",
+        "Works raw, seared, or as tataki — versatile across Japanese and fusion menus",
+        "Whole fish and fillets available for different volume needs"
+      ],
+      "stats": [
+        {"stat": "23g", "label": "protein per 100g"},
+        {"stat": "146", "label": "calories per 100g"},
+        {"stat": "5g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "High in protein with healthy monounsaturated fats",
+        "Rich in omega-3 fatty acids and EPA/DHA",
+        "Excellent source of vitamin D and B vitamins",
+        "Contains selenium, iron, and niacin"
+      ]
+    },
+    "lobster": {
+      "name": "Lobster",
+      "about": "The ultimate luxury shellfish. Sweet, succulent meat from the claws and tail. Native British lobster has a darker shell and richer, more complex flavour than imported Canadian. Available live in five sizes from 450g to 900g+, plus cooked and as tails.",
+      "chefs": [
+        "Nothing says \"special occasion\" like lobster — it lifts your entire menu's perceived value",
+        "Live lobster guarantees freshness and gives theatre to open kitchens",
+        "Native vs imported gives you two price points for different menu positions",
+        "The shell makes a stock that elevates every sauce in your kitchen"
+      ],
+      "stats": [
+        {"stat": "20g", "label": "protein per 100g"},
+        {"stat": "89", "label": "calories per 100g"},
+        {"stat": "<2g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "High protein, low fat, low calorie at just 89 per 100g",
+        "Extremely rich in zinc — supports immune health and wound healing",
+        "Excellent source of vitamin B12 and copper",
+        "Contains EPA and DHA omega-3 fatty acids for heart health"
+      ]
+    },
+    "langoustine": {
+      "name": "Langoustine",
+      "about": "Also known as Dublin Bay prawns or Norway lobster, langoustines are one of Britain's most prized shellfish. Delicate, sweet flesh in slender claws and tails. Scottish langoustines are world-renowned — sweeter and more refined than any prawn. Best served simply to let the natural flavour shine.",
+      "chefs": [
+        "Scottish langoustines are considered some of the best shellfish in the world",
+        "The sweetness and delicacy surpasses any prawn — a genuine luxury ingredient",
+        "Available live for ultimate freshness and raw dipped for convenience",
+        "Tails, claws, and shells all have value — zero waste if you make bisque from the shells"
+      ],
+      "stats": [
+        {"stat": "17g", "label": "protein per 100g"},
+        {"stat": "78", "label": "calories per 100g"},
+        {"stat": "<1g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "Very low in fat and calories with good protein content",
+        "Rich in zinc and selenium for immune support",
+        "Contains vitamin B12 and copper",
+        "Good source of phosphorus for bone health"
+      ]
+    },
+    "scallop": {
+      "name": "Scallop",
+      "about": "Sweet, buttery, and delicate — the jewel of shellfish. King scallops seared for 90 seconds per side is one of the simplest and most impressive dishes a chef can serve. Diver-caught are premium — hand-collected with minimal seabed impact, less grit, better flavour.",
+      "chefs": [
+        "The ultimate \"less is more\" ingredient — three scallops and a purée makes a £16 starter",
+        "Sear time is under 3 minutes — fastest premium starter during service",
+        "Diver-caught is a genuine sustainability story for your menu",
+        "The coral (roe) adds colour and makes a beautiful sauce"
+      ],
+      "stats": [
+        {"stat": "17g", "label": "protein per 100g"},
+        {"stat": "69", "label": "calories per 100g"},
+        {"stat": "<1g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "One of the lowest calorie shellfish at just 69 calories per 100g",
+        "Excellent source of vitamin B12 — one of the richest shellfish sources",
+        "High in magnesium and potassium for heart health",
+        "Rich in zinc and selenium for immune support"
+      ]
+    },
+    "oyster": {
+      "name": "Oyster",
+      "about": "Eaten raw with lemon, Tabasco, or mignonette — oysters are pure terroir. You can taste the sea they came from. Mersea rocks, Maldon, Fines de Claire, and natives each have distinct character. The ultimate bar snack and the classiest way to start any meal.",
+      "chefs": [
+        "Highest margin item on any seafood menu — minimal prep, maximum price",
+        "An oyster bar or raw bar elevates your restaurant's positioning instantly",
+        "Seasonal natives give you a rotating menu talking point",
+        "They sell drinks — oysters and champagne is the most profitable pairing in hospitality"
+      ],
+      "stats": [
+        {"stat": "9g", "label": "protein per 100g"},
+        {"stat": "68", "label": "calories per 100g"},
+        {"stat": "2g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "The single richest food source of zinc — six oysters provide 5x your daily needs",
+        "Extremely high in vitamin B12, iron, and copper",
+        "Low calorie at just 68 per 100g",
+        "Contains unique antioxidants found only in shellfish"
+      ]
+    },
+    "crab": {
+      "name": "Crab",
+      "about": "British brown crab is one of the great ingredients of our coastline. Sweet white meat from the claws and legs, rich brown meat from the body. Available whole live, cooked, dressed, and as picked meat. Devon crab meat is the gold standard. Spider crab and velvet crab also available.",
+      "chefs": [
+        "White and brown meat give you two distinct ingredients from one animal",
+        "Dressed crab is a classic starter that never goes out of fashion",
+        "Picked meat saves hours of prep — Devon white meat is the cleanest available",
+        "Crab claws make an impressive visual centrepiece for sharing platters"
+      ],
+      "stats": [
+        {"stat": "18g", "label": "protein per 100g"},
+        {"stat": "87", "label": "calories per 100g"},
+        {"stat": "1g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "High in protein with very low fat and calories",
+        "Excellent source of zinc and copper for immune function",
+        "Rich in vitamin B12 and selenium",
+        "Contains omega-3 fatty acids and chromium"
+      ]
+    },
+    "prawns": {
+      "name": "Prawns",
+      "about": "The workhorse of professional kitchens worldwide. From fresh raw tiger prawns to frozen king prawns in every format — shell-on, peeled and deveined, head-on, cooked, block, and IQF. Sizes from U5 giants to 41/50 cocktail prawns. Used in everything from Thai curries to prawn cocktails to paella.",
+      "chefs": [
+        "Every size and format means one supplier covers all your prawn needs",
+        "Frozen IQF means zero waste — defrost what you need, keep the rest",
+        "Fresh tiger prawns for premium presentations, frozen for volume dishes",
+        "The most universally liked protein across every cuisine and every diner"
+      ],
+      "stats": [
+        {"stat": "24g", "label": "protein per 100g"},
+        {"stat": "99", "label": "calories per 100g"},
+        {"stat": "<1g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "Very high in protein at 24g per 100g with minimal fat",
+        "Rich in selenium — one portion provides over 50% of daily needs",
+        "Good source of zinc and vitamin B12",
+        "Contains astaxanthin antioxidant which gives prawns their colour"
+      ]
+    },
+    "king-prawns": {
+      "name": "King Prawns",
+      "about": "The frozen king prawn is the backbone of commercial kitchens. Available in every conceivable format — fresh water and sea water, block and IQF, headless shell-on, peeled and deveined, head-on shell-on, cooked and raw. Sizes from U5 (giants) to 41/50 (small). Origins spanning Asia, Bangladesh, Mediterranean, and Argentina.",
+      "chefs": [
+        "The most versatile frozen protein — works in any cuisine from Asian to European",
+        "IQF format means individual prawns defrost in minutes for quick service",
+        "Block format offers better value for high-volume dishes like curries and paella",
+        "Consistent sizing means uniform cooking and plating every time"
+      ],
+      "stats": [
+        {"stat": "24g", "label": "protein per 100g"},
+        {"stat": "99", "label": "calories per 100g"},
+        {"stat": "<1g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "Very high in protein with virtually no fat",
+        "Rich in selenium and zinc for immune health",
+        "Good source of vitamin B12 and iodine",
+        "Low calorie and low carbohydrate"
+      ]
+    },
+    "squid": {
+      "name": "Squid",
+      "about": "From crispy calamari to chargrilled whole squid, this is one of the most versatile cephalopods in the kitchen. Available as clean tubes, whole baby squid, and chipirones. The key rule: cook it for 30 seconds or 30 minutes — anything in between and it's rubber.",
+      "chefs": [
+        "Calamari is one of the highest-margin starters on any menu",
+        "Baby squid (chipirones) grill beautifully whole for Mediterranean sharing plates",
+        "Tubes come cleaned and ready to stuff, slice into rings, or score and sear",
+        "Available frozen year-round — no seasonal gaps"
+      ],
+      "stats": [
+        {"stat": "18g", "label": "protein per 100g"},
+        {"stat": "92", "label": "calories per 100g"},
+        {"stat": "1.5g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "High in protein with low fat content",
+        "Rich in vitamin B12 — one of the highest among shellfish",
+        "Good source of copper, selenium, and zinc",
+        "Contains riboflavin (B2) for energy metabolism"
+      ]
+    },
+    "octopus": {
+      "name": "Octopus",
+      "about": "Once a niche ingredient, octopus is now a fine dining staple. Spanish and Mediterranean origins. The secret to tender octopus is slow braising — then finishing on a hot grill or plancha for char. Available whole in block format and as baby octopus for different applications.",
+      "chefs": [
+        "Chargrilled octopus is one of the most Instagram-worthy dishes in modern cuisine",
+        "Slow-braised then grilled gives the perfect tender-crisp contrast",
+        "Baby octopus works beautifully in salads, stews, and as tapas",
+        "Can be prepped in advance — braise on Monday, grill to order all week"
+      ],
+      "stats": [
+        {"stat": "15g", "label": "protein per 100g"},
+        {"stat": "82", "label": "calories per 100g"},
+        {"stat": "1g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "Low calorie and low fat with good protein",
+        "Extremely rich in vitamin B12 — one of the highest food sources",
+        "High in iron compared to most seafood",
+        "Contains selenium, copper, and zinc"
+      ]
+    },
+    "smoked-salmon": {
+      "name": "Smoked Salmon",
+      "about": "One of Britain's great artisan products. Traditional cold-smoking over oak produces a silky texture and complex flavour that elevates any plate. Available long-sliced, D-cut, as whole sides, and in organic, oak-smoked, and Severn varieties. Kiln-roast (hot smoked) offers a flakier, more rustic alternative.",
+      "chefs": [
+        "A breakfast, brunch, starter, and canapé essential — used across every day-part",
+        "Long-sliced sides give you maximum coverage with minimal waste",
+        "Organic and oak-smoked options for premium menu positioning",
+        "Shelf life is significantly longer than fresh fish — reduces waste"
+      ],
+      "stats": [
+        {"stat": "18g", "label": "protein per 100g"},
+        {"stat": "117", "label": "calories per 100g"},
+        {"stat": "4g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "Retains most of fresh salmon's omega-3 benefits through smoking",
+        "High in protein at 18g per 100g",
+        "Rich in vitamin D — one of the few food sources",
+        "Note: higher sodium than fresh due to curing — serve in appropriate portions"
+      ]
+    },
+    "smoked-haddock": {
+      "name": "Smoked Haddock",
+      "about": "A British institution. Natural undyed smoked haddock has a pale golden colour and delicate smoky flavour. The backbone of classic dishes — kedgeree, Arnold Bennett omelette, cullen skink, and fish pie. MSC certified options available. Yellow-dyed is available but natural is the premium choice.",
+      "chefs": [
+        "Essential for brunch menus — kedgeree and Arnold Bennett omelette are classics that sell",
+        "MSC certified options available for sustainability messaging",
+        "Natural undyed is the premium choice — yellow dyed is available for traditional fish and chip shops",
+        "Poaches beautifully in milk — the cooking liquid becomes the base for your sauce"
+      ],
+      "stats": [
+        {"stat": "19g", "label": "protein per 100g"},
+        {"stat": "101", "label": "calories per 100g"},
+        {"stat": "1g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "High protein with very low fat",
+        "Excellent source of vitamin B12 and selenium",
+        "Rich in iodine for thyroid health",
+        "Note: contains higher sodium than fresh haddock due to smoking process"
+      ]
+    },
+    "caviar": {
+      "name": "Caviar",
+      "about": "The pinnacle of luxury. Beluga, Oscietra, and Sevruga each offer a different experience — from creamy and buttery to briny and intense. Served chilled on a mother-of-pearl spoon, traditionally with blinis, crème fraîche, and champagne. Available in 20g to 50g tins.",
+      "chefs": [
+        "Nothing else on your menu carries the same cachet — caviar is the ultimate luxury signal",
+        "Small tins (20g-30g) make it accessible as a garnish rather than a standalone course",
+        "Three varieties (Beluga, Oscietra, Sevruga) give you a range of price points",
+        "Pairs with champagne — the most profitable combination in hospitality"
+      ],
+      "stats": [
+        {"stat": "25g", "label": "protein per 100g"},
+        {"stat": "264", "label": "calories per 100g"},
+        {"stat": "18g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "Extremely nutrient-dense — rich in omega-3s, B12, vitamin A, and selenium",
+        "High in iron at 12mg per 100g",
+        "Contains vitamin D and choline which supports brain function",
+        "One of nature's most concentrated sources of essential fatty acids"
+      ]
+    },
+    "mussels": {
+      "name": "Mussels",
+      "about": "One of the most sustainable and affordable shellfish. Rope-grown mussels are farmed with minimal environmental impact. Classic moules marinières (mussels in white wine, garlic, and cream) is one of the great dishes of French cuisine. Available rope-grown and wild, in 2kg and 5kg bags.",
+      "chefs": [
+        "One of the best food-cost ratios in seafood — high impact, low cost",
+        "Moules frites is a menu staple that customers order repeatedly",
+        "Rope-grown is a strong sustainability story — low environmental impact",
+        "Cook from raw in under 5 minutes — ideal for quick service"
+      ],
+      "stats": [
+        {"stat": "12g", "label": "protein per 100g"},
+        {"stat": "86", "label": "calories per 100g"},
+        {"stat": "2g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "Rich in iron — one of the best shellfish sources",
+        "Excellent source of vitamin B12 and selenium",
+        "High in manganese and zinc for immune health",
+        "Sustainable protein source with very low carbon footprint"
+      ]
+    },
+    "clams": {
+      "name": "Clams",
+      "about": "From delicate palourdes to dramatic razor clams, clams add elegance to any seafood menu. Vongole (clams with spaghetti) is one of Italy's great pasta dishes. Available in five varieties — amandes, palourdes, razor (medium and small), and Venus surf clams.",
+      "chefs": [
+        "Spaghetti alle vongole is one of the simplest and most beloved pasta dishes",
+        "Razor clams are visually dramatic — grilled with garlic butter is a showstopper",
+        "Multiple varieties give you options from rustic to refined",
+        "Quick to cook — most clams open in 3-4 minutes"
+      ],
+      "stats": [
+        {"stat": "14g", "label": "protein per 100g"},
+        {"stat": "74", "label": "calories per 100g"},
+        {"stat": "1g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "Extremely high in vitamin B12 — one of the richest food sources",
+        "Rich in iron, especially for shellfish",
+        "Good source of selenium and manganese",
+        "Low calorie and low fat"
+      ]
+    },
+    "soft-shell-crab": {
+      "name": "Soft Shell Crab",
+      "about": "Whole crabs harvested just after moulting, when the new shell is still soft and entirely edible. Deep-fried, the entire crab becomes crispy and delicious. A favourite in Japanese tempura, Vietnamese banh mi, and American po'boys. Available frozen in four sizes from Thailand.",
+      "chefs": [
+        "Deep-fry from frozen in 3 minutes — one of the quickest proteins to serve",
+        "The entire crab is edible — no waste, no shell cracking, no fuss",
+        "Visually dramatic on the plate — a whole crab you eat in one go",
+        "Four sizes available from whales (9s) to hotels (18s) for different menu positions"
+      ],
+      "stats": [
+        {"stat": "17g", "label": "protein per 100g"},
+        {"stat": "90", "label": "calories per 100g"},
+        {"stat": "1.5g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "Good source of protein with low fat before frying",
+        "Rich in zinc and copper for immune function",
+        "Contains vitamin B12 and selenium",
+        "High in calcium due to eating the entire shell"
+      ]
+    },
+    "king-crab": {
+      "name": "King Crab",
+      "about": "The most impressive shellfish you can put on a table. Massive leg clusters from Norway and Russia, with sweet, snow-white meat inside dramatic red-orange shells. Available raw and cooked. A centrepiece ingredient that turns any meal into an event.",
+      "chefs": [
+        "The most dramatic presentation in all of seafood — the sheer size impresses every guest",
+        "Sweet, delicate meat that needs almost nothing — melted butter and lemon",
+        "Available raw (Norway) and cooked (Russia) for different kitchen setups",
+        "A single cluster feeds two people as a starter or one as a main — easy portioning"
+      ],
+      "stats": [
+        {"stat": "19g", "label": "protein per 100g"},
+        {"stat": "84", "label": "calories per 100g"},
+        {"stat": "1g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "High protein with very low fat and calories",
+        "Extremely rich in zinc — supports immune function",
+        "Excellent source of vitamin B12 and copper",
+        "Contains omega-3 fatty acids and selenium"
+      ]
+    },
+    "black-cod": {
+      "name": "Black Cod (Sablefish)",
+      "about": "Made famous by Nobu's miso black cod, this is one of the most luxurious fish in modern fine dining. Silky, buttery flesh with a high fat content that melts in the mouth. MSC certified from USA/Canada. Available frozen headed and gutted.",
+      "chefs": [
+        "Nobu's miso black cod put this fish on the global fine dining map — instant menu recognition",
+        "The high fat content means it's almost impossible to overcook — incredibly forgiving",
+        "MSC certified — a premium fish with a genuine sustainability story",
+        "Marinates beautifully — miso, sake, soy, and brown sugar all work perfectly"
+      ],
+      "stats": [
+        {"stat": "13g", "label": "protein per 100g"},
+        {"stat": "195", "label": "calories per 100g"},
+        {"stat": "15g", "label": "healthy fats per 100g"}
+      ],
+      "health": [
+        "Exceptionally high in omega-3 fatty acids — one of the richest fish sources",
+        "The high fat content is almost entirely healthy unsaturated fats",
+        "Rich in vitamin A, D, and E",
+        "Contains selenium and phosphorus"
+      ]
+    },
+    "chilean-sea-bass": {
+      "name": "Chilean Sea Bass (Patagonian Toothfish)",
+      "about": "One of the most premium frozen fish in the world. Thick, snow-white fillets with a rich, buttery flavour and large, moist flakes. MSC certified from the Falkland Islands. Despite the name, it's not actually a bass — it's a deep-water species from the Southern Ocean.",
+      "chefs": [
+        "One of the highest-value fish on any menu — commands premium prices",
+        "MSC certified from the Falkland Islands — a powerful sustainability and provenance story",
+        "The thick fillets are incredibly forgiving — stays moist even if slightly overcooked",
+        "Works with bold Asian flavours (miso, ginger) and classic European preparations equally well"
+      ],
+      "stats": [
+        {"stat": "16g", "label": "protein per 100g"},
+        {"stat": "182", "label": "calories per 100g"},
+        {"stat": "12g", "label": "healthy fats per 100g"}
+      ],
+      "health": [
+        "Very high in omega-3 fatty acids — comparable to salmon",
+        "Rich in vitamin D and vitamin A",
+        "Contains selenium and phosphorus for immune and bone health",
+        "The high fat content provides sustained energy"
+      ]
+    },
+    "samphire": {
+      "name": "Samphire",
+      "about": "The quintessential seafood garnish. Samphire grows wild along the British coastline and has a crisp, salty, sea-spray flavour that pairs perfectly with any fish dish. Also known as sea asparagus. Available farmed (year-round) and wild (seasonal, more intense flavour).",
+      "chefs": [
+        "The ultimate finishing touch for any fish plate — adds colour, texture, and seasoning in one",
+        "Wild samphire is seasonal — a talking point for your menu that signals ingredient knowledge",
+        "Quick blanch in unsalted water (it's naturally salty) is all it needs",
+        "Works raw in salads or wilted as a warm garnish"
+      ],
+      "stats": [
+        {"stat": "3g", "label": "protein per 100g"},
+        {"stat": "22", "label": "calories per 100g"},
+        {"stat": "0g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "Extremely low calorie at just 22 per 100g",
+        "Rich in vitamins A and C for immune health",
+        "Contains iodine, iron, and calcium",
+        "High fibre content for digestive health"
+      ]
+    },
+    "anchovy": {
+      "name": "Anchovy",
+      "about": "Far more than a pizza topping. Quality anchovies — white anchovies in oil, garlic anchovies, smoked anchovies — are a foundation ingredient in Mediterranean cuisine. They add umami depth to dressings, sauces, and butters. Fresh whole anchovies are available for grilling and frying.",
+      "chefs": [
+        "The secret weapon of professional kitchens — add umami depth without anyone knowing it's there",
+        "Seven varieties available from white in oil to smoked to salted — each has a different application",
+        "Essential for Caesar dressing, bagna cauda, puttanesca, and tapenade",
+        "Fresh whole anchovies deep-fried are a spectacular bar snack"
+      ],
+      "stats": [
+        {"stat": "20g", "label": "protein per 100g"},
+        {"stat": "131", "label": "calories per 100g"},
+        {"stat": "5g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "Rich in omega-3 fatty acids for heart and brain health",
+        "Extremely high in calcium — one of the best sources among fish",
+        "Contains iron and selenium",
+        "High in niacin and vitamin B12 for energy"
+      ]
+    },
+    "roe": {
+      "name": "Roe & Tobiko",
+      "about": "The jewels of Japanese cuisine. Tobiko (flying fish roe) comes in orange, green (wasabi), and yellow varieties. Masago (capelin roe) is smaller and more affordable. Used as garnish for sushi, poke bowls, canapés, and as a finishing touch on any seafood dish.",
+      "chefs": [
+        "Instant visual luxury — a spoonful of tobiko transforms any dish",
+        "Three colours (orange, green, yellow) for different visual effects",
+        "Masago is a more affordable alternative that works in high-volume applications",
+        "Long shelf life frozen — defrost what you need, keep the rest"
+      ],
+      "stats": [
+        {"stat": "13g", "label": "protein per 100g"},
+        {"stat": "72", "label": "calories per 100g"},
+        {"stat": "2g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "Good source of protein with low fat",
+        "Rich in omega-3 fatty acids",
+        "Contains vitamin B12 and selenium",
+        "High in phosphorus and riboflavin"
+      ]
+    },
+    "lemon-sole": {
+      "name": "Lemon Sole",
+      "about": "A delicate, sweet-flavoured flatfish that's more affordable than Dover sole but still delivers elegance on the plate. Smooth, light-brown skin and thin, tender fillets. Best pan-fried in butter or baked simply. A classic British fish that's been served in restaurants for generations.",
+      "chefs": [
+        "Delivers a Dover sole-like experience at a significantly lower price point",
+        "Whole fish presentation is elegant — works for both fine dining and brasserie menus",
+        "Quick to cook — thin fillets need just 2-3 minutes per side",
+        "Available whole in two size grades and as frozen fillets year-round"
+      ],
+      "stats": [
+        {"stat": "16g", "label": "protein per 100g"},
+        {"stat": "81", "label": "calories per 100g"},
+        {"stat": "1g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "Very low in fat and calories",
+        "Good source of vitamin B12 and selenium",
+        "Contains phosphorus for bone health",
+        "Light and easy to digest"
+      ]
+    },
+    "stone-bass": {
+      "name": "Stone Bass (Meagre)",
+      "about": "An impressive large fish that's gaining popularity in UK fine dining. Firm, white flesh with a clean, mild flavour similar to sea bass but with a meatier texture. Can grow very large — available from 1kg to 2kg+. Also known as meagre or corvina.",
+      "chefs": [
+        "Meaty texture holds up to grilling, roasting, and bold flavours better than sea bass",
+        "Supremes available in 170/190g portions for consistent plating",
+        "Less well-known means it sparks curiosity on a menu — a talking point",
+        "Large fish means high fillet yield and less waste per kg"
+      ],
+      "stats": [
+        {"stat": "19g", "label": "protein per 100g"},
+        {"stat": "96", "label": "calories per 100g"},
+        {"stat": "2g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "High protein with low fat content",
+        "Good source of omega-3 fatty acids",
+        "Contains selenium and vitamin B12",
+        "Low calorie at under 100 per 100g"
+      ]
+    },
+    "mahi-mahi": {
+      "name": "Mahi Mahi",
+      "about": "A tropical fish with firm, slightly sweet flesh and stunning golden-green iridescent skin. Also known as dolphinfish (no relation to dolphins). Popular across Caribbean, Hawaiian, and modern fusion cuisines. Best grilled, pan-seared, or blackened with bold spice rubs.",
+      "chefs": [
+        "Firm flesh that holds up perfectly on the grill — ideal for summer menus",
+        "The iridescent skin is one of the most beautiful in all of seafood",
+        "Works with bold, punchy flavours — jerk spice, mango salsa, coconut curry",
+        "Available as skinless boneless portions for consistent plating"
+      ],
+      "stats": [
+        {"stat": "18g", "label": "protein per 100g"},
+        {"stat": "85", "label": "calories per 100g"},
+        {"stat": "1g", "label": "fat per 100g"}
+      ],
+      "health": [
+        "Very lean with high protein — excellent for health-conscious diners",
+        "Good source of vitamin B12 and selenium",
+        "Contains potassium and niacin",
+        "Low mercury levels compared to other large tropical fish"
+      ]
+    }
+  }
+}

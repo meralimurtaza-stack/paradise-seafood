@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <rect x="0" y="0" width="1200" height="700" fill="#F5F2EB"/>
+
+  <text x="600" y="140" text-anchor="middle" fill="#B89B5E" font-family="Georgia, 'Times New Roman', serif" font-size="18" letter-spacing="8" font-weight="400">EST. 2007</text>
+
+  <text x="600" y="280" text-anchor="middle" fill="#0C1117" font-family="Georgia, 'Times New Roman', serif" font-size="110" letter-spacing="12" font-weight="400">PARADISE</text>
+
+  <text x="600" y="380" text-anchor="middle" fill="#0C1117" font-family="Georgia, 'Times New Roman', serif" font-size="64" letter-spacing="24" font-weight="400">SEAFOOD</text>
+
+  <line x1="200" y1="430" x2="1000" y2="430" stroke="#B89B5E" stroke-width="0.6" opacity="0.5"/>
+
+  <!-- Fish icon -->
+  <g transform="translate(260, 490)" fill="#0C1117" opacity="0.75">
+    <path d="M0,30 C10,10 30,0 50,5 C65,10 75,22 70,32 L60,50 C52,44 42,40 32,44 C24,48 20,56 24,64 L10,54 C2,46 0,38 0,30 Z" fill="#0C1117"/>
+    <ellipse cx="28" cy="22" rx="3" ry="2.5" fill="#F5F2EB" opacity="0.6"/>
+    <path d="M70,32 L88,24" fill="none" stroke="#0C1117" stroke-width="1.5"/>
+    <path d="M70,36 L86,32" fill="none" stroke="#0C1117" stroke-width="1.5"/>
+  </g>
+
+  <!-- Crab icon -->
+  <g transform="translate(440, 480)" fill="none" stroke="#0C1117" opacity="0.75">
+    <path d="M40,70 C32,50 36,30 50,18 C60,10 76,10 86,18 C92,24 96,32 92,40 C88,48 78,52 72,48 C66,44 66,36 72,30" stroke-width="3.2" stroke-linecap="round"/>
+    <path d="M50,18 L30,2 M50,18 L66,0 M40,34 L20,26 M40,34 L16,42 M86,18 L100,0 M86,18 L106,10 M92,40 L112,32 M92,40 L108,56" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Lobster icon -->
+  <g transform="translate(660, 480)" fill="none" stroke="#0C1117" opacity="0.75">
+    <path d="M30,50 C36,30 50,18 66,22 C76,26 84,38 80,52 C76,64 66,72 56,68 C46,64 42,52 50,44" stroke-width="3.2" stroke-linecap="round"/>
+    <path d="M66,22 L60,6 M66,22 L80,8" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M66,52 L56,68 C52,76 56,84 64,84 L74,80" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Shrimp/Prawn icon -->
+  <g transform="translate(860, 480)" fill="#0C1117" opacity="0.75">
+    <path d="M20,50 C24,38 34,28 48,24 C62,20 78,28 82,40 L86,50 L90,42 L94,54 L84,62 L20,62 Z"/>
+    <path d="M82,40 L102,28 L112,36 L92,48" fill="none" stroke="#0C1117" stroke-width="1.8"/>
+    <path d="M90,42 L106,32" fill="none" stroke="#0C1117" stroke-width="1.4"/>
+    <path d="M20,62 L10,70 L6,62 L14,52" fill="none" stroke="#0C1117" stroke-width="1.8"/>
+    <ellipse cx="36" cy="42" rx="2.5" ry="2" fill="#F5F2EB" opacity="0.5"/>
+  </g>
+
+</svg>

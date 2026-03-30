@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#0C1117"/>
+  
+  <!-- Gold border ring -->
+  <rect x="16" y="16" width="480" height="480" rx="80" fill="none" stroke="#B89B5E" stroke-width="2" opacity="0.3"/>
+  
+  <!-- Fish icon scaled and centered from the Paradise Seafood logo -->
+  <g transform="translate(100, 140) scale(3.8)" fill="#F0ECE2" opacity="0.95">
+    <path d="M0,30 C10,10 30,0 50,5 C65,10 75,22 70,32 L60,50 C52,44 42,40 32,44 C24,48 20,56 24,64 L10,54 C2,46 0,38 0,30 Z"/>
+    <ellipse cx="28" cy="22" rx="3" ry="2.5" fill="#0C1117" opacity="0.6"/>
+    <path d="M70,32 L88,24" fill="none" stroke="#F0ECE2" stroke-width="1.5"/>
+    <path d="M70,36 L86,32" fill="none" stroke="#F0ECE2" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Subtle gold accent line under fish -->
+  <line x1="140" y1="430" x2="372" y2="430" stroke="#B89B5E" stroke-width="2" opacity="0.4"/>
+  
+  <!-- PS monogram -->
+  <text x="256" y="478" text-anchor="middle" fill="#B89B5E" font-family="Georgia, 'Times New Roman', serif" font-size="42" letter-spacing="6" font-weight="400" opacity="0.7">PS</text>
+</svg>
