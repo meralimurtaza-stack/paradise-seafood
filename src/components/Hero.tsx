@@ -71,16 +71,15 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-[921px] flex items-center overflow-hidden pt-24">
-      {/* Background image with subtle zoom */}
-      <div className="absolute inset-0 z-0" style={{ animation: "subtle-zoom 20s infinite alternate" }}>
+      {/* Background image with subtle zoom — matches prototype exactly */}
+      <div className="absolute inset-0 z-0 scale-105" style={{ animation: "subtle-zoom 20s infinite alternate" }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={PROTO_IMAGES.hero}
           alt=""
-          className="w-full h-full object-cover grayscale-[0.3] blur-[1px] scale-[1.02]"
+          className="w-full h-full object-cover grayscale-[0.2] contrast-[1.1]"
         />
-        {/* Heavier vignette to mask pixelation and add depth */}
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(15,20,26,0.55) 0%, rgba(15,20,26,0.3) 40%, rgba(15,20,26,0.95) 100%)" }} />
+        <div className="absolute inset-0 hero-vignette" />
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-20">
