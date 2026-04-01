@@ -70,7 +70,7 @@ export default function Hero() {
   const searchVisible = skipIntro || phase >= 5;
 
   return (
-    <section className="relative h-screen max-h-[921px] flex items-center overflow-hidden pt-24">
+    <section className="relative min-h-[921px] flex items-center overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         {/* eslint-disable-next-line @next/next/no-img-element */}

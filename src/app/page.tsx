@@ -12,6 +12,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-surface">
       <Navbar />
+      <main className="pt-24">
       <Hero />
       <TrustBar />
       <Categories />
@@ -19,6 +20,7 @@ export default function Home() {
       <DeliveryAreas />
       <Reviews />
       <CTA />
+      </main>
       <Footer />
     </div>
   );
