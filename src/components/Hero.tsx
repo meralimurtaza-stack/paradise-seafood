@@ -70,9 +70,9 @@ export default function Hero() {
   const searchVisible = skipIntro || phase >= 5;
 
   return (
-    <section className="relative min-h-[921px] flex items-center overflow-hidden pt-24">
-      {/* Background image with subtle zoom — matches prototype exactly */}
-      <div className="absolute inset-0 z-0 scale-105" style={{ animation: "subtle-zoom 20s infinite alternate" }}>
+    <section className="relative h-screen max-h-[921px] flex items-center overflow-hidden pt-24">
+      {/* Background image */}
+      <div className="absolute inset-0 z-0">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={PROTO_IMAGES.hero}
