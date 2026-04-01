@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { SearchIcon } from "./icons";
 import { useProductSearch } from "@/lib/useProductSearch";
+import { PROTO_IMAGES } from "@/lib/protoImages";
 import SearchResults from "./SearchResults";
 
 const EXAMPLE_QUERIES = [
@@ -70,30 +71,16 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-[921px] flex items-center overflow-hidden pt-24">
-      {/* Background image placeholder — dark gradient fallback */}
-      <div className="absolute inset-0 z-0">
-        <div
-          className="w-full h-full"
-          style={{
-            background: `
-              radial-gradient(ellipse at 50% 20%, rgba(10, 126, 140, 0.12) 0%, transparent 50%),
-              radial-gradient(ellipse at 20% 80%, rgba(226, 195, 130, 0.06) 0%, transparent 40%),
-              radial-gradient(ellipse at 80% 60%, rgba(10, 60, 100, 0.10) 0%, transparent 50%),
-              #0f141a
-            `,
-          }}
+      {/* Background image with subtle zoom */}
+      <div className="absolute inset-0 z-0" style={{ animation: "subtle-zoom 20s infinite alternate" }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={PROTO_IMAGES.hero}
+          alt=""
+          className="w-full h-full object-cover grayscale-[0.2] contrast-[1.1]"
         />
         <div className="absolute inset-0 hero-vignette" />
       </div>
-
-      {/* Breathing glow */}
-      <div
-        className="pointer-events-none absolute inset-0 animate-breath-glow z-[1]"
-        style={{
-          background:
-            "radial-gradient(ellipse 50% 40% at 50% 40%, rgba(226,195,130,0.05) 0%, transparent 70%)",
-        }}
-      />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-20">
         {/* Left column: content */}

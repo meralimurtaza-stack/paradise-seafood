@@ -12,6 +12,7 @@
   body {
     background-color: #0f141a;
     color: #dee3eb;
+    overflow-x: hidden;
   }
 
   ::selection {
@@ -39,4 +40,47 @@
 /* Material Symbols */
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Scroll Reveal Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.2s cubic-bezier(0.215, 0.61, 0.355, 1),
+    transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  will-change: transform, opacity;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered child animations */
+.stagger-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s cubic-bezier(0.215, 0.61, 0.355, 1),
+    transform 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.stagger-container.active .stagger-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+.stagger-container.active .stagger-item:nth-child(1) { transition-delay: 0.1s; }
+.stagger-container.active .stagger-item:nth-child(2) { transition-delay: 0.2s; }
+.stagger-container.active .stagger-item:nth-child(3) { transition-delay: 0.3s; }
+.stagger-container.active .stagger-item:nth-child(4) { transition-delay: 0.4s; }
+.stagger-container.active .stagger-item:nth-child(5) { transition-delay: 0.5s; }
+.stagger-container.active .stagger-item:nth-child(6) { transition-delay: 0.6s; }
+
+/* Hero background zoom */
+@keyframes subtle-zoom {
+  from { transform: scale(1.0); }
+  to { transform: scale(1.1); }
+}
+
+/* Delivery map pulse */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
 }

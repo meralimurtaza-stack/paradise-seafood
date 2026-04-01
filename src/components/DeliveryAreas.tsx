@@ -1,4 +1,6 @@
 import Link from "next/link";
+import ScrollReveal from "./ScrollReveal";
+import { PROTO_IMAGES } from "@/lib/protoImages";
 
 const AREAS = [
   {
@@ -25,9 +27,9 @@ const AREAS = [
 
 export default function DeliveryAreas() {
   return (
-    <section className="py-32 max-w-7xl mx-auto px-6 lg:px-12">
+    <section className="py-32 max-w-7xl mx-auto px-6 lg:px-12 overflow-hidden">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-        <div>
+        <ScrollReveal>
           <span className="text-primary font-label tracking-[0.2em] uppercase text-xs">
             Logistics Network
           </span>
@@ -43,7 +45,7 @@ export default function DeliveryAreas() {
               <Link
                 key={area.slug}
                 href={`/delivery/${area.slug}`}
-                className="flex items-start gap-4 group"
+                className="flex items-start gap-4 group hover:translate-x-2 transition-transform duration-300"
               >
                 <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
                 <div>
@@ -57,13 +59,20 @@ export default function DeliveryAreas() {
               </Link>
             ))}
           </div>
-        </div>
+        </ScrollReveal>
 
-        {/* Right: visual element */}
-        <div className="relative hidden lg:block">
-          <div className="aspect-square rounded-full overflow-hidden border border-white/10 p-8 bg-surface-container-low">
-            <div className="w-full h-full rounded-full bg-surface-container flex items-center justify-center">
-              <div className="bg-primary/10 p-12 rounded-full backdrop-blur-sm border border-primary/20">
+        {/* Right: delivery map visual */}
+        <ScrollReveal delay={0.3} className="relative hidden lg:block">
+          <div className="aspect-square rounded-full overflow-hidden border border-white/10 p-8 bg-surface-container-low relative">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={PROTO_IMAGES.deliveryMap}
+              alt="London delivery coverage"
+              className="w-full h-full object-cover rounded-full grayscale opacity-60"
+              style={{ animation: "pulse-slow 8s infinite" }}
+            />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="bg-primary/10 p-12 rounded-full backdrop-blur-sm border border-primary/20 hover:scale-110 transition-transform duration-500">
                 <span
                   className="material-symbols-outlined text-primary text-6xl"
                   style={{ fontVariationSettings: "'FILL' 1" }}
@@ -73,7 +82,7 @@ export default function DeliveryAreas() {
               </div>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

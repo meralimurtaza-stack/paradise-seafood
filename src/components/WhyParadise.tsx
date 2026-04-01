@@ -1,3 +1,5 @@
+import ScrollReveal, { StaggerItem } from "./ScrollReveal";
+
 const REASONS = [
   {
     icon: "verified",
@@ -35,28 +37,26 @@ export default function WhyParadise() {
   return (
     <section className="bg-surface-container-low py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="text-center mb-24">
+        <ScrollReveal className="text-center mb-24">
           <span className="text-primary font-label tracking-[0.2em] uppercase text-xs">The Paradise Standard</span>
           <h2 className="text-5xl font-headline mt-4">Trusted by London&rsquo;s Finest</h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        </ScrollReveal>
+        <ScrollReveal stagger className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {REASONS.map((reason, i) => (
-            <div
+            <StaggerItem
               key={i}
-              className="p-10 bg-surface-container-highest rounded-xl transition-all duration-300 hover:-translate-y-1"
+              className="p-10 bg-surface-container-highest rounded-xl hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/30 transition-all duration-500"
             >
-              <span
-                className="material-symbols-outlined text-primary text-4xl mb-8 block"
-              >
+              <span className="material-symbols-outlined text-primary text-4xl mb-8 block">
                 {reason.icon}
               </span>
               <h4 className="text-2xl font-headline mb-4">{reason.title}</h4>
               <p className="text-on-surface-variant font-light leading-relaxed">
                 {reason.desc}
               </p>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );
