@@ -38,7 +38,7 @@ function buildCatalogue(): string {
       const certs = p.certifications.length
         ? ` [${p.certifications.join(", ")}]`
         : "";
-      catalogue += `- ${p.name} | ${p.format} | ${p.size_grade} | ${p.unit} | ${p.origin} | ${p.fresh_or_frozen}${certs}\n`;
+      catalogue += `- ${p.name} | slug:${p.slug} | ${p.format} | ${p.size_grade} | ${p.unit} | ${p.origin} | ${p.fresh_or_frozen}${certs}\n`;
     }
   }
   return catalogue;
@@ -59,7 +59,7 @@ RULES:
 - Never make up products that aren't in the catalogue
 - Be conversational but concise in your message field
 - Maximum 8 products in the response unless they specifically ask for more
-- Each product in the products array should have: name, format, size_grade, unit, origin, certifications, fresh_or_frozen, category, subcategory
+- Each product in the products array MUST have: name, slug (copy exactly from catalogue), format, size_grade, unit, origin, certifications, fresh_or_frozen, category (copy exactly from catalogue e.g. "Fresh Fish" not "Fish"), subcategory (copy exactly from catalogue e.g. "Monkfish" not "monkfish")
 
 PRODUCT CATALOGUE:
 ${CATALOGUE}`;

@@ -4,6 +4,7 @@ import { useState, useCallback } from "react";
 
 export interface MatchedProduct {
   name: string;
+  slug: string;
   format: string;
   size_grade: string;
   unit: string;

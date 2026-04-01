@@ -104,9 +104,10 @@ export default function SearchResults({ result, onClear, compact }: Props) {
           }`}
         >
           {result.products.map((p, i) => {
-            const href = `/products/${slugify(p.category)}/${slugify(
-              p.subcategory
-            )}/${slugify(p.name)}`;
+            const catSlug = slugify(p.category);
+            const subSlug = slugify(p.subcategory);
+            const prodSlug = p.slug || slugify(p.name);
+            const href = `/products/${catSlug}/${subSlug}/${prodSlug}`;
             return (
               <Link
                 key={i}
