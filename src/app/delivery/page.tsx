@@ -82,7 +82,7 @@ function MapPinIcon() {
 
 export default function DeliveryPage() {
   return (
-    <div className="min-h-screen bg-brand-dark">
+    <div className="min-h-screen bg-surface">
       <Navbar />
 
       {/* Hero */}

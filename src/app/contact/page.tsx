@@ -38,7 +38,7 @@ function ClockIcon() {
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-brand-dark">
+    <div className="min-h-screen bg-surface">
       <Navbar />
 
       {/* Hero */}
@@ -320,7 +320,7 @@ export default function ContactPage() {
           />
         </div>
         {/* Map label */}
-        <div className="absolute bottom-6 left-6 z-20 rounded-lg border border-white/[0.08] bg-brand-dark/90 px-5 py-3 backdrop-blur-sm">
+        <div className="absolute bottom-6 left-6 z-20 rounded-lg border border-white/[0.08] bg-surface/90 px-5 py-3 backdrop-blur-sm">
           <p className="text-[13px] font-semibold text-brand-cream">
             Paradise Seafood
           </p>

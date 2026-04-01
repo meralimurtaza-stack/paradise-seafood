@@ -62,22 +62,24 @@ const STATS = [
 
 export default function TrustBar() {
   return (
-    <section className="border-y border-white/5 bg-white/[0.015] px-6 py-11">
-      <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-around gap-6">
-        {STATS.map((stat, i) => (
-          <div key={i} className="min-w-[130px] text-center">
-            <div className="font-serif text-[38px] font-bold text-brand-gold">
-              <Counter
-                end={stat.end}
-                prefix={stat.prefix}
-                suffix={stat.suffix}
-              />
+    <section className="bg-surface-container-low py-16 border-y border-white/5">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0">
+          {STATS.map((stat, i) => (
+            <div key={i} className={`text-center ${i < 3 ? "md:border-r border-white/10" : ""}`}>
+              <div className="text-3xl font-serif-num text-on-surface">
+                <Counter
+                  end={stat.end}
+                  prefix={stat.prefix}
+                  suffix={stat.suffix}
+                />
+              </div>
+              <div className="text-[10px] font-label uppercase tracking-[0.2em] text-outline mt-2">
+                {stat.label}
+              </div>
             </div>
-            <div className="mt-1.5 text-[11px] font-medium uppercase tracking-[2.5px] text-[#64748b]">
-              {stat.label}
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -72,7 +72,7 @@ export default function DeliveryAreaPage({
   whatsappMessage,
 }: Props) {
   return (
-    <div className="min-h-screen bg-brand-dark">
+    <div className="min-h-screen bg-surface">
       <Navbar />
 
       <section className="px-6 pb-28 pt-12">

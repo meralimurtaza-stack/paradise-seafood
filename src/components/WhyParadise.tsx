@@ -1,103 +1,57 @@
 const REASONS = [
   {
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-        <path d="m9 12 2 2 4-4" />
-      </svg>
-    ),
+    icon: "verified",
     title: "Superior Quality",
-    desc: "We source only exceptional, sustainable products from trusted suppliers worldwide. MSC certified range available across multiple species.",
+    desc: "Sourcing only the highest grade seafood, ensuring every product meets the standards of Michelin-starred kitchens.",
   },
   {
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-        <path d="M6.5 12c3-6 11-6 14.5 0-3.5 6-11.5 6-14.5 0z" />
-        <circle cx="17" cy="12" r="1" fill="currentColor" />
-        <path d="M2 12s1.5-2 3-2c0 0-1.5 2 0 4-1.5 0-3-2-3-2z" />
-      </svg>
-    ),
+    icon: "schedule",
     title: "Fresh Is Always Fresh",
-    desc: "Daily deliveries Monday to Saturday. Your fish arrives hours from the market, never days.",
+    desc: "Our logistics are optimized for speed, moving products from water to kitchen in record time.",
   },
   {
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-        <path d="M3 21V8l9-5 9 5v13" />
-        <path d="M9 21V13h6v8" />
-        <path d="M3 8h18" />
-      </svg>
-    ),
+    icon: "scale",
     title: "Scale & Reliability",
-    desc: "2,500+ pallet frozen storage facility in North London. One of the largest seafood inventories in the city.",
+    desc: "2,500+ pallet cold storage capacity means we never compromise on availability or temperature control.",
   },
   {
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-        <rect x="1" y="3" width="15" height="13" rx="1" />
-        <path d="M16 8h4l3 3v5h-7V8z" />
-        <circle cx="5.5" cy="18.5" r="2.5" />
-        <circle cx="18.5" cy="18.5" r="2.5" />
-      </svg>
-    ),
+    icon: "map",
     title: "Expanding Reach",
-    desc: "Now delivering to Birmingham and areas outside the M25. The same premium quality, broader coverage.",
+    desc: "From our Watford hub to Central London and beyond, our fleet covers the most demanding territories.",
   },
   {
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-        <path d="M11 17.5L6 12l.7-.7c.9-.9 2.5-.9 3.4 0l1.5 1.5" />
-        <path d="m14 14 2.5 2.5" />
-        <path d="M18 9.5L13.5 14" />
-        <path d="M2 9l4.6-2.7a2 2 0 012-.1L12 8" />
-        <path d="m22 9-4.6-2.7a2 2 0 00-2-.1L12 8" />
-        <path d="M2 9v7l3 3" />
-        <path d="M22 9v7l-3 3" />
-      </svg>
-    ),
+    icon: "restaurant",
     title: "Industry Expertise",
-    desc: "Since 2007, we\u2019ve partnered with London\u2019s top chefs. We advise on specials, seasonal availability, and menu solutions.",
+    desc: "Founded and run by experts who understand the unique pressure and precision required in professional catering.",
   },
   {
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-        <path d="M17 20H7c0-4 2-6 2-10a3 3 0 016 0" />
-        <path d="M6 14h8" />
-      </svg>
-    ),
+    icon: "payments",
     title: "Competitive Pricing",
-    desc: "Extensive stock levels and direct sourcing mean we offer the best rates. Premium doesn\u2019t require premium prices.",
+    desc: "Luxury quality doesn't have to mean inflated margins. We leverage our scale to provide sustainable B2B value.",
   },
 ];
 
 export default function WhyParadise() {
   return (
-    <section
-      className="border-t border-white/[0.04] px-6 py-[100px]"
-      style={{
-        background:
-          "linear-gradient(180deg, rgba(10,125,140,0.04) 0%, transparent 100%)",
-      }}
-    >
-      <div className="mx-auto max-w-[1200px]">
-        <p className="mb-4 text-center text-[13px] font-semibold uppercase tracking-[5px] text-brand-gold">
-          Why Paradise
-        </p>
-        <h2 className="mb-[60px] text-center font-serif text-[clamp(30px,4vw,48px)] font-bold text-brand-cream">
-          Trusted by London&rsquo;s{" "}
-          <span className="italic text-brand-gold">Finest</span>
-        </h2>
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+    <section className="bg-surface-container-low py-32">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="text-center mb-24">
+          <span className="text-primary font-label tracking-[0.2em] uppercase text-xs">The Paradise Standard</span>
+          <h2 className="text-5xl font-headline mt-4">Trusted by London&rsquo;s Finest</h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {REASONS.map((reason, i) => (
             <div
               key={i}
-              className="rounded-[14px] border border-white/5 bg-white/[0.02] px-8 py-9"
+              className="p-10 bg-surface-container-highest rounded-xl transition-all duration-300 hover:-translate-y-1"
             >
-              <div className="mb-5 text-brand-gold">{reason.icon}</div>
-              <h3 className="mb-2.5 font-serif text-[22px] font-bold text-brand-cream">
-                {reason.title}
-              </h3>
-              <p className="text-[14px] leading-[1.7] text-brand-muted">
+              <span
+                className="material-symbols-outlined text-primary text-4xl mb-8 block"
+              >
+                {reason.icon}
+              </span>
+              <h4 className="text-2xl font-headline mb-4">{reason.title}</h4>
+              <p className="text-on-surface-variant font-light leading-relaxed">
                 {reason.desc}
               </p>
             </div>

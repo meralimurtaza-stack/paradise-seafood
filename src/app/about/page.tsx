@@ -50,7 +50,7 @@ const DIFFERENTIATORS = [
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-brand-dark">
+    <div className="min-h-screen bg-surface">
       <Navbar />
 
       {/* Hero */}

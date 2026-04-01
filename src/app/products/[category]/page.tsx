@@ -36,7 +36,7 @@ export default function CategoryPage({ params }: Props) {
   const subcategories = getSubcategories(category);
 
   return (
-    <div className="min-h-screen bg-brand-dark">
+    <div className="min-h-screen bg-surface">
       <Navbar />
       <section className="px-6 pb-[100px] pt-12">
         <div className="mx-auto max-w-[1200px]">

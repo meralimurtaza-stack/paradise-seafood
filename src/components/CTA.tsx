@@ -1,36 +1,35 @@
-import { ArrowIcon, PhoneIcon } from "./icons";
-
 export default function CTA() {
   return (
-    <section className="relative border-t border-white/[0.04] px-6 py-[100px]">
+    <section className="relative py-40 overflow-hidden">
+      {/* Background glow */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 z-0 opacity-20"
         style={{
           background:
-            "radial-gradient(ellipse at 50% 50%, rgba(184,155,94,0.04) 0%, transparent 70%)",
+            "radial-gradient(ellipse at 50% 50%, rgba(226,195,130,0.08) 0%, transparent 60%)",
         }}
       />
-      <div className="relative mx-auto max-w-[700px] text-center">
-        <h2 className="mb-4 font-serif text-[clamp(30px,4vw,44px)] font-bold text-brand-cream">
-          Ready to Elevate Your Menu?
+      <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-12 text-center">
+        <h2 className="text-6xl font-headline mb-8">
+          Ready to <span className="italic">Elevate</span> Your Menu?
         </h2>
-        <p className="mb-10 text-[17px] leading-[1.7] text-brand-muted">
+        <p className="text-xl text-on-surface-variant font-light mb-12 leading-relaxed">
           Join London&rsquo;s top restaurants, hotels, and caterers who trust
           Paradise Seafood for their daily supply. Get a quote in minutes.
         </p>
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-6">
           <a
             href="/contact"
-            className="inline-flex items-center gap-2 rounded-[6px] px-8 py-3.5 text-[13px] font-semibold uppercase tracking-[1px] text-brand-dark transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(184,155,94,0.3)]"
-            style={{ background: "linear-gradient(135deg, #B89B5E, #96793E)" }}
+            className="editorial-gradient text-on-primary px-12 py-5 font-label font-bold tracking-[0.2em] rounded-full text-sm uppercase shadow-2xl shadow-primary/20 active:scale-95 transition-transform"
           >
-            Request A Quote <ArrowIcon />
+            Request A Quote
           </a>
           <a
             href="tel:02078594099"
-            className="inline-flex items-center gap-2.5 rounded-[6px] border border-brand-gold/40 bg-transparent px-7 py-3.5 text-[13px] font-semibold uppercase tracking-[1px] text-brand-gold transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-gold/[0.08]"
+            className="flex items-center gap-3 text-primary font-label tracking-widest text-sm py-4 px-8 border border-primary/20 rounded-full hover:bg-primary/5 transition-colors"
           >
-            <PhoneIcon /> 020 7859 4099
+            <span className="material-symbols-outlined" style={{ fontSize: 18 }}>phone</span>
+            Speak With An Expert
           </a>
         </div>
       </div>

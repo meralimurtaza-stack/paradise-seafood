@@ -1,24 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { PhoneIcon } from "./icons";
-
-function MailIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-      <rect x="2" y="4" width="20" height="16" rx="2" />
-      <path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7" />
-    </svg>
-  );
-}
-
-function PinIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-      <circle cx="12" cy="10" r="3" />
-    </svg>
-  );
-}
 
 const PRODUCT_LINKS = [
   { label: "Fresh Fish", href: "/products/fresh-fish" },
@@ -32,88 +13,94 @@ const COMPANY_LINKS = [
   { label: "About Us", href: "/about" },
   { label: "Why Paradise", href: "/about" },
   { label: "Delivery Areas", href: "/delivery" },
+  { label: "Name That Seafood Quiz", href: "/quiz" },
   { label: "Get A Quote", href: "/contact" },
   { label: "Contact", href: "/contact" },
 ];
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/[0.06] bg-black/30 px-6 pb-10 pt-[60px]">
-      <div className="mx-auto max-w-[1200px]">
-        <div className="mb-10 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          {/* Brand column */}
-          <div>
-            <Image
-              src="/images/paradise_seafood_dark_logo.svg"
-              alt="Paradise Seafood"
-              width={160}
-              height={90}
-              className="mb-4 h-[80px] w-auto"
-            />
-            <p className="text-[14px] leading-[1.7] text-[#64748b]">
-              London&rsquo;s premium fresh & frozen seafood wholesaler.
-              Supplying the finest kitchens since 2007.
-            </p>
-          </div>
-
-          {/* Products column */}
-          <div>
-            <h4 className="mb-5 text-[11px] font-semibold uppercase tracking-[2.5px] text-brand-gold">
-              Products
-            </h4>
-            {PRODUCT_LINKS.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="block py-1.5 text-[14px] text-[#64748b] transition-colors duration-300 hover:text-brand-cream"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-
-          {/* Company column */}
-          <div>
-            <h4 className="mb-5 text-[11px] font-semibold uppercase tracking-[2.5px] text-brand-gold">
-              Company
-            </h4>
-            {COMPANY_LINKS.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="block py-1.5 text-[14px] text-[#64748b] transition-colors duration-300 hover:text-brand-cream"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-
-          {/* Contact column */}
-          <div>
-            <h4 className="mb-5 text-[11px] font-semibold uppercase tracking-[2.5px] text-brand-gold">
-              Contact
-            </h4>
-            <p className="mb-2.5 flex items-center gap-2 text-[14px] text-brand-muted">
-              <PhoneIcon /> 020 7859 4099
-            </p>
-            <p className="mb-2.5 flex items-center gap-2 text-[14px] text-brand-muted">
-              <MailIcon /> inquiries@paradiseseafood.co.uk
-            </p>
-            <p className="flex items-start gap-2 text-[14px] text-brand-muted">
-              <span className="mt-0.5 flex-shrink-0">
-                <PinIcon />
-              </span>
-              Unit 17, Fishers Ind. Estate, Wiggenhall Rd, Watford WD18 0FN
-            </p>
-          </div>
+    <footer className="bg-[#0f141a] border-t border-white/5">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-12 px-6 lg:px-12 py-20 w-full max-w-[1920px] mx-auto">
+        {/* Brand */}
+        <div className="col-span-1 md:col-span-1">
+          <Image
+            src="/images/paradise_seafood_dark_logo.svg"
+            alt="Paradise Seafood"
+            width={160}
+            height={90}
+            className="mb-4 h-[80px] w-auto"
+          />
+          <p className="text-slate-400 text-sm font-body leading-relaxed">
+            Established in 2007, we are London&rsquo;s premier portal for the
+            world&rsquo;s finest seafood. Quality, reliability, and precision are
+            the anchors of our service.
+          </p>
         </div>
 
-        {/* Bottom bar */}
-        <div className="flex flex-wrap items-center justify-between gap-4 border-t border-white/[0.06] pt-6">
-          <p className="text-[12px] text-[#475569]">
-            &copy; 2026 Paradise Seafood Ltd. All rights reserved.
+        {/* Products */}
+        <div>
+          <h6 className="text-primary font-headline text-xl mb-6">Our Range</h6>
+          <ul className="space-y-4">
+            {PRODUCT_LINKS.map((link) => (
+              <li key={link.label}>
+                <Link
+                  href={link.href}
+                  className="text-slate-400 hover:text-primary transition-colors text-sm font-body"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Company */}
+        <div>
+          <h6 className="text-primary font-headline text-xl mb-6">Support</h6>
+          <ul className="space-y-4">
+            {COMPANY_LINKS.map((link) => (
+              <li key={link.label}>
+                <Link
+                  href={link.href}
+                  className="text-slate-400 hover:text-primary transition-colors text-sm font-body"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Contact */}
+        <div>
+          <h6 className="text-primary font-headline text-xl mb-6">Contact</h6>
+          <ul className="space-y-4 text-slate-400 text-sm">
+            <li className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-primary" style={{ fontSize: 16 }}>phone</span>
+              020 7859 4099
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-primary" style={{ fontSize: 16 }}>mail</span>
+              inquiries@paradiseseafood.co.uk
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="material-symbols-outlined text-primary mt-0.5 flex-shrink-0" style={{ fontSize: 16 }}>location_on</span>
+              Unit 17, Fishers Ind. Estate, Wiggenhall Rd, Watford WD18 0FN
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Bottom bar */}
+      <div className="border-t border-white/5 py-8 px-6 lg:px-12">
+        <div className="max-w-[1920px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-slate-500 text-xs font-body tracking-wider">
+            &copy; 2026 Paradise Seafood. Established 2007.
           </p>
-          <p className="text-[12px] text-[#475569]">Built by Hey-Insights</p>
+          <div className="flex gap-8">
+            <span className="text-slate-500 text-xs">Built by Hey-Insights</span>
+          </div>
         </div>
       </div>
     </footer>

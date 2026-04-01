@@ -293,7 +293,7 @@ export default function QuizClient() {
   /* ─── Landing ─── */
   if (phase === "landing") {
     return (
-      <div className="min-h-screen bg-brand-dark">
+      <div className="min-h-screen bg-surface">
         <Navbar />
         <section className="relative flex min-h-[calc(100vh-80px)] items-center justify-center overflow-hidden px-6">
           {/* Collage of species images as faded background */}
@@ -392,7 +392,7 @@ export default function QuizClient() {
     const q = QUESTIONS[current];
 
     return (
-      <div className="min-h-screen bg-brand-dark">
+      <div className="min-h-screen bg-surface">
         <Navbar />
         <section className="relative flex min-h-[calc(100vh-80px)] flex-col overflow-hidden px-6 py-8">
           {/* Full-screen product image background */}
@@ -525,7 +525,7 @@ export default function QuizClient() {
   const title = getTitle(score);
 
   return (
-    <div className="min-h-screen bg-brand-dark">
+    <div className="min-h-screen bg-surface">
       <Navbar />
       <section className="relative overflow-hidden px-6 pb-20 pt-16">
         {/* Background glow based on score */}

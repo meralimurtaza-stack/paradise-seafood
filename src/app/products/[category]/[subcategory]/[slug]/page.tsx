@@ -115,7 +115,7 @@ export default function ProductPage({ params }: Props) {
   };
 
   return (
-    <div className="min-h-screen bg-brand-dark">
+    <div className="min-h-screen bg-surface">
       <Navbar />
 
       {/* Schema.org */}
