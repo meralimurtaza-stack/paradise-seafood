@@ -5,7 +5,6 @@ import Categories from "@/components/Categories";
 import WhyParadise from "@/components/WhyParadise";
 import DeliveryAreas from "@/components/DeliveryAreas";
 import Reviews from "@/components/Reviews";
-import QuizPromo from "@/components/QuizPromo";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
@@ -19,7 +18,6 @@ export default function Home() {
       <WhyParadise />
       <DeliveryAreas />
       <Reviews />
-      <QuizPromo />
       <CTA />
       <Footer />
     </div>
