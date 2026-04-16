@@ -67,38 +67,42 @@ export default function Categories() {
         </div>
       </ScrollReveal>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {CATEGORIES.map((cat) => (
-          <ScrollReveal
-            key={cat.name}
-            className={`${cat.span}`}
-          >
+      {/* Top row: Fresh Fish (2/3) + Shellfish (1/3) */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        {CATEGORIES.filter((c) => c.big || c.name === "Shellfish").map((cat) => (
+          <ScrollReveal key={cat.name} className={`${cat.big ? "md:col-span-2" : ""} flex`}>
             <Link
               href={`/products/${cat.slug}`}
-              className={`group relative ${cat.aspect} overflow-hidden rounded-xl bg-surface-container-highest block hover:shadow-2xl hover:shadow-primary/10 transition-all duration-700`}
+              className={`group relative overflow-hidden rounded-xl bg-surface-container-highest block hover:shadow-2xl hover:shadow-primary/10 transition-all duration-700 w-full ${cat.big ? "aspect-[4/5] md:aspect-[3/2]" : "aspect-[4/5] md:aspect-auto"}`}
             >
-              {/* Background image */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={cat.image}
-                alt={cat.name}
-                className="absolute inset-0 w-full h-full object-cover transition duration-1000 group-hover:scale-105"
-              />
-
-              {/* Gradient overlay */}
+              <img src={cat.image} alt={cat.name} className="absolute inset-0 w-full h-full object-cover transition duration-1000 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/20 to-transparent" />
-
-              {/* Content */}
               <div className={`absolute bottom-0 ${cat.big ? "p-10" : "p-8"} transition-transform duration-700 group-hover:-translate-y-2`}>
-                <h3 className={`font-headline text-on-surface mb-3 ${cat.big ? "text-3xl" : "text-2xl"}`}>
-                  {cat.name}
-                </h3>
-                <p className={`text-on-surface-variant max-w-sm mb-6 ${cat.big ? "" : "text-sm"}`}>
-                  {cat.desc}
-                </p>
-                <span className="inline-flex items-center text-primary font-label uppercase tracking-widest text-xs border-b border-primary/30 pb-1 group-hover:border-primary transition-all">
-                  Explore Range
-                </span>
+                <h3 className={`font-headline text-on-surface mb-3 ${cat.big ? "text-3xl" : "text-2xl"}`}>{cat.name}</h3>
+                <p className={`text-on-surface-variant max-w-sm mb-6 ${cat.big ? "" : "text-sm"}`}>{cat.desc}</p>
+                <span className="inline-flex items-center text-primary font-label uppercase tracking-widest text-xs border-b border-primary/30 pb-1 group-hover:border-primary transition-all">Explore Range</span>
+              </div>
+            </Link>
+          </ScrollReveal>
+        ))}
+      </div>
+
+      {/* Bottom row: Frozen + Smoked + Deli */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {CATEGORIES.filter((c) => !c.big && c.name !== "Shellfish").map((cat) => (
+          <ScrollReveal key={cat.name}>
+            <Link
+              href={`/products/${cat.slug}`}
+              className="group relative aspect-square overflow-hidden rounded-xl bg-surface-container-highest block hover:shadow-2xl hover:shadow-primary/10 transition-all duration-700"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={cat.image} alt={cat.name} className="absolute inset-0 w-full h-full object-cover transition duration-1000 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/20 to-transparent" />
+              <div className="absolute bottom-0 p-8 transition-transform duration-700 group-hover:-translate-y-2">
+                <h3 className="font-headline text-on-surface mb-3 text-2xl">{cat.name}</h3>
+                <p className="text-on-surface-variant max-w-sm mb-6 text-sm">{cat.desc}</p>
+                <span className="inline-flex items-center text-primary font-label uppercase tracking-widest text-xs border-b border-primary/30 pb-1 group-hover:border-primary transition-all">Explore Range</span>
               </div>
             </Link>
           </ScrollReveal>
