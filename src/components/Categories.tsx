@@ -27,7 +27,7 @@ const CATEGORIES = [
     desc: "IQF technology preserving texture and flavor at the peak of freshness.",
     span: "col-span-1",
     aspect: "aspect-square",
-    image: PROTO_IMAGES.frozen,
+    image: "/images/frozen_pic.webp",
     big: false,
   },
   {

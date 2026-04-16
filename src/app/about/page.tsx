@@ -51,28 +51,44 @@ export default function AboutPage() {
             />
           </div>
 
-          {/* Story paragraphs */}
-          <div className="space-y-6 text-[17px] leading-[1.8] text-brand-muted">
-            <p>
-              Paradise Seafood was founded in 2007 by Mohamed, who built the
-              business on a simple principle: supply the best seafood with
-              service that never lets a kitchen down.
-            </p>
-            <p>
-              In 2012, his son Amir joined. A mathematics graduate who&rsquo;d
-              spent two years teaching through Teach First, Amir brought a
-              different energy &mdash; building personal relationships with every
-              chef and kitchen he serves. He knows their menus, understands
-              their standards, and picks up the phone at any hour.
-            </p>
-            <p>
-              That combination &mdash; Mohamed&rsquo;s deep industry knowledge
-              and Amir&rsquo;s relentless focus on relationships and service
-              &mdash; is what turned Paradise Seafood into London&rsquo;s go-to
-              premium wholesaler. Nearly two decades later, the principle
-              hasn&rsquo;t changed: exceptional quality, delivered when you need
-              it, by people who care.
-            </p>
+          {/* Story with Amir photo */}
+          <div className="flex flex-col md:flex-row gap-10 items-start">
+            {/* Amir photo */}
+            <div className="mx-auto md:mx-0 flex-shrink-0">
+              <div className="w-[200px] h-[200px] rounded-[14px] border-2 border-brand-gold/30 overflow-hidden">
+                <Image
+                  src="/images/amir_pic.jpeg"
+                  alt="Amir — Paradise Seafood"
+                  width={200}
+                  height={200}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Story paragraphs */}
+            <div className="space-y-6 text-[17px] leading-[1.8] text-brand-muted">
+              <p>
+                Paradise Seafood was founded in 2007 by Mohamed, who built the
+                business on a simple principle: supply the best seafood with
+                service that never lets a kitchen down.
+              </p>
+              <p>
+                In 2012, his son Amir joined. A mathematics graduate who&rsquo;d
+                spent two years teaching through Teach First, Amir brought a
+                different energy &mdash; building personal relationships with every
+                chef and kitchen he serves. He knows their menus, understands
+                their standards, and picks up the phone at any hour.
+              </p>
+              <p>
+                That combination &mdash; Mohamed&rsquo;s deep industry knowledge
+                and Amir&rsquo;s relentless focus on relationships and service
+                &mdash; is what turned Paradise Seafood into London&rsquo;s go-to
+                premium wholesaler. Nearly two decades later, the principle
+                hasn&rsquo;t changed: exceptional quality, delivered when you need
+                it, by people who care.
+              </p>
+            </div>
           </div>
 
           {/* Amir's Education */}
