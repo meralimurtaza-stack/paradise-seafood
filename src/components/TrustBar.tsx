@@ -59,7 +59,7 @@ const STATS = [
   { end: 2007, prefix: "Est. ", label: "Established", useLocale: false },
   { end: 500, suffix: "+", label: "Premium Products" },
   { end: 6, suffix: " Days", label: "Fresh Deliveries / Week" },
-  { end: 2500, suffix: "+", label: "Pallet Cold Storage" },
+  { static: "-18°C", label: "Frozen Storage Facility" },
 ];
 
 export default function TrustBar() {
@@ -70,12 +70,14 @@ export default function TrustBar() {
           {STATS.map((stat, i) => (
             <div key={i} className={`text-center ${i < 3 ? "md:border-r border-white/10" : ""}`}>
               <div className="text-3xl font-serif-num text-on-surface">
-                <Counter
-                  end={stat.end}
-                  prefix={stat.prefix}
-                  suffix={stat.suffix}
-                  useLocale={stat.useLocale ?? true}
-                />
+                {stat.static ? stat.static : (
+                  <Counter
+                    end={stat.end!}
+                    prefix={stat.prefix}
+                    suffix={stat.suffix}
+                    useLocale={stat.useLocale ?? true}
+                  />
+                )}
               </div>
               <div className="text-[10px] font-label uppercase tracking-[0.2em] text-outline mt-2">
                 {stat.label}
