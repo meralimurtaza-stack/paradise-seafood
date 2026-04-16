@@ -57,7 +57,7 @@ export default function AboutPage() {
             <div className="mx-auto md:mx-0 flex-shrink-0">
               <div className="w-[200px] h-[200px] rounded-[14px] border-2 border-brand-gold/30 overflow-hidden">
                 <Image
-                  src="/images/amir_pic.jpeg"
+                  src="/images/amir_pic.png"
                   alt="Amir — Paradise Seafood"
                   width={200}
                   height={200}
