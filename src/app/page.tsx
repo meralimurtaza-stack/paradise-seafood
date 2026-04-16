@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
+import OurDifference from "@/components/OurDifference";
 import Categories from "@/components/Categories";
 import WhyParadise from "@/components/WhyParadise";
 import DeliveryAreas from "@/components/DeliveryAreas";
@@ -15,6 +16,7 @@ export default function Home() {
       <main className="pt-24">
       <Hero />
       <TrustBar />
+      <OurDifference />
       <Categories />
       <WhyParadise />
       <DeliveryAreas />

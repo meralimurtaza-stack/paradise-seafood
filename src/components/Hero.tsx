@@ -258,7 +258,7 @@ export default function Hero() {
               <div className="text-xs font-label uppercase tracking-widest text-slate-400">Premium Products</div>
             </div>
             <div className="space-y-2">
-              <div className="text-4xl font-serif-num text-primary">Daily</div>
+              <div className="text-4xl font-serif-num text-primary">6 Days</div>
               <div className="text-xs font-label uppercase tracking-widest text-slate-400">Fresh Deliveries</div>
             </div>
           </div>

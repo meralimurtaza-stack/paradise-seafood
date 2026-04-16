@@ -15,7 +15,7 @@ export default function CTA() {
       </div>
       <ScrollReveal className="relative z-10 max-w-4xl mx-auto px-6 lg:px-12 text-center">
         <h2 className="text-6xl font-headline mb-8">
-          Ready to <span className="italic">Elevate</span> Your Menu?
+          How can we <span className="italic">serve</span> you?
         </h2>
         <p className="text-xl text-on-surface-variant font-light mb-12 leading-relaxed">
           Join London&rsquo;s top restaurants, hotels, and caterers who trust

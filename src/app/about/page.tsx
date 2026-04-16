@@ -10,44 +10,6 @@ export const metadata: Metadata = {
     "Family-run since 2007. Learn how Mohamed and Amir built Paradise Seafood into London's go-to premium seafood wholesaler through quality, relationships, and relentless service.",
 };
 
-const DIFFERENTIATORS = [
-  {
-    title: "Quality Without Compromise",
-    desc: "We reject anything that doesn\u2019t meet our standards. Every product is hand-selected.",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-        <path d="m9 12 2 2 4-4" />
-      </svg>
-    ),
-  },
-  {
-    title: "Relationships, Not Transactions",
-    desc: "Amir knows his customers\u2019 menus by heart. We\u2019re partners, not just suppliers.",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-        <path d="M11 17.5L6 12l.7-.7c.9-.9 2.5-.9 3.4 0l1.5 1.5" />
-        <path d="m14 14 2.5 2.5" />
-        <path d="M18 9.5L13.5 14" />
-        <path d="M2 9l4.6-2.7a2 2 0 012-.1L12 8" />
-        <path d="m22 9-4.6-2.7a2 2 0 00-2-.1L12 8" />
-        <path d="M2 9v7l3 3" />
-        <path d="M22 9v7l-3 3" />
-      </svg>
-    ),
-  },
-  {
-    title: "Service At Any Hour",
-    desc: "Need a last-minute order? Call us. We\u2019ll make it happen.",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-        <circle cx="12" cy="12" r="10" />
-        <path d="M12 6v6l4 2" />
-      </svg>
-    ),
-  },
-];
-
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-surface">
@@ -112,34 +74,44 @@ export default function AboutPage() {
               it, by people who care.
             </p>
           </div>
-        </div>
-      </section>
 
-      {/* What Sets Us Apart */}
-      <section className="border-t border-white/[0.04] px-6 py-[100px]">
-        <div className="mx-auto max-w-[1200px]">
-          <p className="mb-4 text-center text-[13px] font-semibold uppercase tracking-[5px] text-brand-gold">
-            Our Difference
-          </p>
-          <h2 className="mb-[60px] text-center font-serif text-[clamp(30px,4vw,48px)] font-bold text-brand-cream">
-            What Sets Us{" "}
-            <span className="italic text-brand-gold">Apart</span>
-          </h2>
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-            {DIFFERENTIATORS.map((item, i) => (
-              <div
-                key={i}
-                className="rounded-[14px] border border-white/5 bg-white/[0.02] px-8 py-9"
-              >
-                <div className="mb-5 text-brand-gold">{item.icon}</div>
-                <h3 className="mb-2.5 font-serif text-[22px] font-bold text-brand-cream">
-                  {item.title}
-                </h3>
+          {/* Amir's Education */}
+          <div className="mt-16 border-t border-white/[0.06] pt-12">
+            <h3 className="mb-6 font-serif text-[26px] font-bold text-brand-cream">
+              Education
+            </h3>
+            <div className="space-y-4">
+              <div>
+                <p className="text-[16px] font-medium text-brand-cream">
+                  University of Warwick
+                </p>
                 <p className="text-[14px] leading-[1.7] text-brand-muted">
-                  {item.desc}
+                  Master&rsquo;s degree, Leadership
+                </p>
+                <p className="mt-0.5 text-[13px] font-medium text-brand-gold">
+                  2014&ndash;2016
                 </p>
               </div>
-            ))}
+              <div>
+                <p className="text-[16px] font-medium text-brand-cream">
+                  University of Nottingham
+                </p>
+                <p className="mt-0.5 text-[13px] font-medium text-brand-gold">
+                  2013&ndash;2014
+                </p>
+              </div>
+              <div>
+                <p className="text-[16px] font-medium text-brand-cream">
+                  Queen Mary University of London
+                </p>
+                <p className="text-[14px] leading-[1.7] text-brand-muted">
+                  Bachelor&rsquo;s degree, Mathematics
+                </p>
+                <p className="mt-0.5 text-[13px] font-medium text-brand-gold">
+                  2010&ndash;2013
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -155,7 +127,7 @@ export default function AboutPage() {
         />
         <div className="relative mx-auto max-w-[700px] text-center">
           <h2 className="mb-4 font-serif text-[clamp(30px,4vw,44px)] font-bold text-brand-cream">
-            Ready to Work With Us?
+            How can we serve you?
           </h2>
           <p className="mb-10 text-[17px] leading-[1.7] text-brand-muted">
             Whether you run a Michelin-starred kitchen or a neighbourhood

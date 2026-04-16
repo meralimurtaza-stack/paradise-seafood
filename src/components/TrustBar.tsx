@@ -7,11 +7,13 @@ function Counter({
   prefix = "",
   suffix = "",
   duration = 2000,
+  useLocale = true,
 }: {
   end: number;
   prefix?: string;
   suffix?: string;
   duration?: number;
+  useLocale?: boolean;
 }) {
   const [count, setCount] = useState(0);
   const [started, setStarted] = useState(false);
@@ -47,15 +49,15 @@ function Counter({
   return (
     <span ref={ref}>
       {prefix}
-      {count.toLocaleString()}
+      {useLocale ? count.toLocaleString() : count}
       {suffix}
     </span>
   );
 }
 
 const STATS = [
-  { end: 2007, prefix: "Est. ", label: "Established" },
-  { end: 500, suffix: "+", label: "Products" },
+  { end: 2007, prefix: "Est. ", label: "Established", useLocale: false },
+  { end: 500, suffix: "+", label: "Premium Products" },
   { end: 6, suffix: " Days", label: "Fresh Deliveries / Week" },
   { end: 2500, suffix: "+", label: "Pallet Cold Storage" },
 ];
@@ -72,6 +74,7 @@ export default function TrustBar() {
                   end={stat.end}
                   prefix={stat.prefix}
                   suffix={stat.suffix}
+                  useLocale={stat.useLocale ?? true}
                 />
               </div>
               <div className="text-[10px] font-label uppercase tracking-[0.2em] text-outline mt-2">
