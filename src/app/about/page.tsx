@@ -74,10 +74,12 @@ export default function AboutPage() {
                 service that never lets a kitchen down.
               </p>
               <p>
-                In 2012, his son Amir joined. A mathematics graduate who&rsquo;d
-                spent two years teaching through Teach First, Amir brought a
-                different energy &mdash; building personal relationships with every
-                chef and kitchen he serves. He knows their menus, understands
+                In 2012, his son Amir joined. A Mathematics graduate from Queen
+                Mary University of London with a Master&rsquo;s in Leadership
+                from the University of Warwick, Amir spent two years teaching
+                through Teach First before bringing that same rigour and
+                relentless focus to Paradise Seafood. He builds personal
+                relationships with every chef and kitchen he serves, understands
                 their standards, and picks up the phone at any hour.
               </p>
               <p>
@@ -91,44 +93,6 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Amir's Education */}
-          <div className="mt-16 border-t border-white/[0.06] pt-12">
-            <h3 className="mb-6 font-serif text-[26px] font-bold text-brand-cream">
-              Education
-            </h3>
-            <div className="space-y-4">
-              <div>
-                <p className="text-[16px] font-medium text-brand-cream">
-                  University of Warwick
-                </p>
-                <p className="text-[14px] leading-[1.7] text-brand-muted">
-                  Master&rsquo;s degree, Leadership
-                </p>
-                <p className="mt-0.5 text-[13px] font-medium text-brand-gold">
-                  2014&ndash;2016
-                </p>
-              </div>
-              <div>
-                <p className="text-[16px] font-medium text-brand-cream">
-                  University of Nottingham
-                </p>
-                <p className="mt-0.5 text-[13px] font-medium text-brand-gold">
-                  2013&ndash;2014
-                </p>
-              </div>
-              <div>
-                <p className="text-[16px] font-medium text-brand-cream">
-                  Queen Mary University of London
-                </p>
-                <p className="text-[14px] leading-[1.7] text-brand-muted">
-                  Bachelor&rsquo;s degree, Mathematics
-                </p>
-                <p className="mt-0.5 text-[13px] font-medium text-brand-gold">
-                  2010&ndash;2013
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
