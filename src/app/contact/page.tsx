@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ContactForm from "@/components/ContactForm";
 import { ArrowIcon, PhoneIcon, WhatsAppIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
@@ -141,101 +142,7 @@ export default function ContactPage() {
               hours.
             </p>
 
-            <form className="space-y-5">
-              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                <div>
-                  <label
-                    htmlFor="business"
-                    className="mb-1.5 block text-[12px] font-semibold uppercase tracking-[2px] text-brand-muted"
-                  >
-                    Business Name
-                  </label>
-                  <input
-                    type="text"
-                    id="business"
-                    name="business"
-                    placeholder="Your restaurant or business"
-                    className="w-full rounded-lg border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-[14px] text-brand-cream placeholder-white/20 outline-none transition-colors focus:border-brand-gold/40 focus:bg-white/[0.05]"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="mb-1.5 block text-[12px] font-semibold uppercase tracking-[2px] text-brand-muted"
-                  >
-                    Contact Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="Your name"
-                    className="w-full rounded-lg border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-[14px] text-brand-cream placeholder-white/20 outline-none transition-colors focus:border-brand-gold/40 focus:bg-white/[0.05]"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="mb-1.5 block text-[12px] font-semibold uppercase tracking-[2px] text-brand-muted"
-                  >
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="you@restaurant.com"
-                    className="w-full rounded-lg border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-[14px] text-brand-cream placeholder-white/20 outline-none transition-colors focus:border-brand-gold/40 focus:bg-white/[0.05]"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="phone"
-                    className="mb-1.5 block text-[12px] font-semibold uppercase tracking-[2px] text-brand-muted"
-                  >
-                    Phone
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    placeholder="Your phone number"
-                    className="w-full rounded-lg border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-[14px] text-brand-cream placeholder-white/20 outline-none transition-colors focus:border-brand-gold/40 focus:bg-white/[0.05]"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label
-                  htmlFor="message"
-                  className="mb-1.5 block text-[12px] font-semibold uppercase tracking-[2px] text-brand-muted"
-                >
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  placeholder="Tell us what you're looking for — products, quantities, delivery requirements..."
-                  className="w-full resize-none rounded-lg border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-[14px] text-brand-cream placeholder-white/20 outline-none transition-colors focus:border-brand-gold/40 focus:bg-white/[0.05]"
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="inline-flex items-center gap-2 rounded-md px-8 py-3.5 text-[13px] font-bold uppercase tracking-[1px] text-brand-dark transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(184,155,94,0.25)]"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #B89B5E 0%, #96793E 100%)",
-                }}
-              >
-                Send Enquiry
-                <ArrowIcon />
-              </button>
-            </form>
+            <ContactForm />
           </div>
 
           {/* Address sidebar */}
