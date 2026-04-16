@@ -20,7 +20,7 @@ const EASE = "cubic-bezier(0.16, 1, 0.3, 1)";
 
 export default function Hero() {
   const [query, setQuery] = useState("");
-  const { loading, result, error, search, clear } = useProductSearch();
+  const { loading, streaming, streamedMessage, result, error, search, clear } = useProductSearch();
   const [skipIntro, setSkipIntro] = useState(true);
   const [phase, setPhase] = useState(0);
 
@@ -221,14 +221,14 @@ export default function Hero() {
             )}
 
             {/* Results */}
-            {result && !loading && (
+            {(result || streaming) && !loading && (
               <div className="mt-4 rounded-xl border border-white/[0.06] bg-surface-container-high p-4">
-                <SearchResults result={result} onClear={handleClear} />
+                <SearchResults result={result} streamedMessage={streamedMessage} streaming={streaming} onClear={handleClear} />
               </div>
             )}
 
             {/* Example chips */}
-            {!result && !loading && (
+            {!result && !streaming && !loading && (
               <div
                 className="mt-4 flex flex-wrap gap-2"
                 style={{

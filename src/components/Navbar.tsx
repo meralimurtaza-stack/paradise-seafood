@@ -18,7 +18,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const { loading, result, error, search, clear } = useProductSearch();
+  const { loading, streaming, streamedMessage, result, error, search, clear } = useProductSearch();
   const searchInputRef = useRef<HTMLInputElement>(null);
   const searchPanelRef = useRef<HTMLDivElement>(null);
 
@@ -214,9 +214,9 @@ export default function Navbar() {
               </div>
             )}
 
-            {result && !loading && (
+            {(result || streaming) && !loading && (
               <div className="mt-4 rounded-xl border border-white/[0.06] bg-surface-container-high p-4">
-                <SearchResults result={result} onClear={handleSearchClear} compact />
+                <SearchResults result={result} streamedMessage={streamedMessage} streaming={streaming} onClear={handleSearchClear} compact />
               </div>
             )}
           </div>

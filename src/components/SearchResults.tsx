@@ -35,21 +35,38 @@ function FormatBadge({ format }: { format: string }) {
   );
 }
 
-interface Props {
-  result: SearchResult;
-  onClear: () => void;
-  compact?: boolean; // for navbar dropdown
+function getCertifications(certs: string[] | string | undefined): string[] {
+  if (!certs) return [];
+  if (Array.isArray(certs)) return certs;
+  return certs
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean);
 }
 
-export default function SearchResults({ result, onClear, compact }: Props) {
+interface Props {
+  result?: SearchResult | null;
+  streamedMessage?: string;
+  streaming?: boolean;
+  onClear: () => void;
+  compact?: boolean;
+}
+
+export default function SearchResults({
+  result,
+  streamedMessage,
+  streaming,
+  onClear,
+  compact,
+}: Props) {
   const whatsappBase = "https://wa.me/442078594099?text=";
+  const displayMessage = result?.message || streamedMessage || "";
+  const showProducts = result && !streaming;
+
+  if (!displayMessage && !streaming) return null;
 
   return (
-    <div
-      className={`${
-        compact ? "max-h-[70vh] overflow-y-auto" : ""
-      }`}
-    >
+    <div className={`${compact ? "max-h-[70vh] overflow-y-auto" : ""}`}>
       {/* Message */}
       <div className="mb-4 flex items-start justify-between gap-4">
         <div className="flex items-start gap-3">
@@ -74,7 +91,10 @@ export default function SearchResults({ result, onClear, compact }: Props) {
               compact ? "text-[13px]" : "text-[15px]"
             } leading-relaxed text-brand-cream`}
           >
-            {result.message}
+            {displayMessage}
+            {streaming && (
+              <span className="ml-0.5 inline-block h-[1em] w-[2px] animate-pulse bg-brand-gold align-middle" />
+            )}
           </p>
         </div>
         <button
@@ -97,7 +117,7 @@ export default function SearchResults({ result, onClear, compact }: Props) {
       </div>
 
       {/* Product cards */}
-      {result.products && result.products.length > 0 && (
+      {showProducts && result.products && result.products.length > 0 && (
         <div
           className={`mb-4 grid gap-2 ${
             compact ? "grid-cols-1" : "grid-cols-1 sm:grid-cols-2"
@@ -108,6 +128,7 @@ export default function SearchResults({ result, onClear, compact }: Props) {
             const subSlug = slugify(p.subcategory);
             const prodSlug = p.slug || slugify(p.name);
             const href = `/products/${catSlug}/${subSlug}/${prodSlug}`;
+            const certs = getCertifications(p.certifications);
             return (
               <Link
                 key={i}
@@ -133,9 +154,9 @@ export default function SearchResults({ result, onClear, compact }: Props) {
                       </span>
                     )}
                   </div>
-                  {p.certifications && p.certifications.length > 0 && (
+                  {certs.length > 0 && (
                     <div className="mt-1.5 flex flex-wrap gap-1">
-                      {p.certifications.map((c) => (
+                      {certs.map((c) => (
                         <CertBadge key={c} cert={c} />
                       ))}
                     </div>
@@ -160,44 +181,46 @@ export default function SearchResults({ result, onClear, compact }: Props) {
       )}
 
       {/* Action buttons */}
-      <div className="flex flex-wrap gap-2">
-        {result.found ? (
-          <>
+      {showProducts && (
+        <div className="flex flex-wrap gap-2">
+          {result.found ? (
+            <>
+              <a
+                href={`${whatsappBase}${encodeURIComponent(
+                  `Hi Paradise Seafood, I'm interested in: ${result.products
+                    .map((p) => p.name)
+                    .slice(0, 3)
+                    .join(", ")}. Can you send me pricing?`
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-md bg-[#25D366] px-4 py-2 text-[12px] font-semibold text-white transition-all hover:bg-[#1da851]"
+              >
+                <WhatsAppIcon className="h-3.5 w-3.5" /> Enquire via WhatsApp
+              </a>
+              <a
+                href="tel:02078594099"
+                className="inline-flex items-center gap-1.5 rounded-md border border-brand-gold/30 px-4 py-2 text-[12px] font-semibold text-brand-gold transition-all hover:border-brand-gold/60 hover:bg-brand-gold/5"
+              >
+                <PhoneIcon className="h-3.5 w-3.5" /> 020 7859 4099
+              </a>
+            </>
+          ) : (
             <a
               href={`${whatsappBase}${encodeURIComponent(
-                `Hi Paradise Seafood, I'm interested in: ${result.products
-                  .map((p) => p.name)
-                  .slice(0, 3)
-                  .join(", ")}. Can you send me pricing?`
+                `Hi Paradise Seafood, I'm looking for: ${
+                  result.whatsappQuery || "a product"
+                }. Do you stock this?`
               )}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 rounded-md bg-[#25D366] px-4 py-2 text-[12px] font-semibold text-white transition-all hover:bg-[#1da851]"
             >
-              <WhatsAppIcon className="h-3.5 w-3.5" /> Enquire via WhatsApp
+              <WhatsAppIcon className="h-3.5 w-3.5" /> Ask Us on WhatsApp
             </a>
-            <a
-              href="tel:02078594099"
-              className="inline-flex items-center gap-1.5 rounded-md border border-brand-gold/30 px-4 py-2 text-[12px] font-semibold text-brand-gold transition-all hover:border-brand-gold/60 hover:bg-brand-gold/5"
-            >
-              <PhoneIcon className="h-3.5 w-3.5" /> 020 7859 4099
-            </a>
-          </>
-        ) : (
-          <a
-            href={`${whatsappBase}${encodeURIComponent(
-              `Hi Paradise Seafood, I'm looking for: ${
-                result.whatsappQuery || "a product"
-              }. Do you stock this?`
-            )}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-md bg-[#25D366] px-4 py-2 text-[12px] font-semibold text-white transition-all hover:bg-[#1da851]"
-          >
-            <WhatsAppIcon className="h-3.5 w-3.5" /> Ask Us on WhatsApp
-          </a>
-        )}
-      </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }
