@@ -13,7 +13,7 @@ export default function BackLink({ href, label }: Props) {
   return (
     <Link
       href={href}
-      className="group mb-4 inline-flex min-h-[44px] items-center gap-2 text-[14px] font-medium text-brand-gold transition-colors hover:text-brand-cream"
+      className="group mb-6 mt-6 inline-flex min-h-[44px] items-center gap-2 text-[14px] font-medium text-brand-gold transition-colors hover:text-brand-cream"
     >
       <svg
         width="16"
