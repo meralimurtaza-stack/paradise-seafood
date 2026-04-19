@@ -3,6 +3,11 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
 import { ArrowIcon, PhoneIcon, WhatsAppIcon } from "@/components/icons";
+import { whatsappUrl } from "@/lib/constants";
+
+const WA_ENQUIRE = whatsappUrl(
+  "Hi Paradise Seafood, I would like to enquire about your products."
+);
 
 export const metadata: Metadata = {
   title: "Contact Us | Paradise Seafood — London's Premium Seafood Wholesaler",
@@ -70,7 +75,7 @@ export default function ContactPage() {
         <div className="mx-auto grid max-w-[1100px] grid-cols-1 gap-5 md:grid-cols-3">
           {/* WhatsApp */}
           <a
-            href="https://wa.me/442078594099?text=Hi%20Paradise%20Seafood%2C%20I%27d%20like%20to%20enquire%20about%20your%20products."
+            href={WA_ENQUIRE}
             target="_blank"
             rel="noopener noreferrer"
             className="group rounded-[14px] border border-[#25D366]/20 bg-[#25D366]/[0.08] px-8 py-8 transition-all duration-300 hover:border-[#25D366]/40 hover:bg-[#25D366]/[0.12]"
@@ -182,7 +187,7 @@ export default function ContactPage() {
 
               <div className="space-y-3">
                 <a
-                  href="https://wa.me/442078594099?text=Hi%20Paradise%20Seafood%2C%20I%27d%20like%20to%20enquire%20about%20your%20products."
+                  href={WA_ENQUIRE}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex w-full items-center justify-center gap-2 rounded-md bg-[#25D366] px-5 py-3 text-[13px] font-semibold text-white transition-all hover:bg-[#1da851]"

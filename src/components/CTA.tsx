@@ -1,5 +1,10 @@
 import ScrollReveal from "./ScrollReveal";
 import { PROTO_IMAGES } from "@/lib/protoImages";
+import { whatsappUrl } from "@/lib/constants";
+
+const WA_QUOTE = whatsappUrl(
+  "Hi Paradise Seafood, I would like to request a quote."
+);
 
 export default function CTA() {
   return (
@@ -23,7 +28,9 @@ export default function CTA() {
         </p>
         <div className="flex flex-col md:flex-row items-center justify-center gap-6">
           <a
-            href="/contact"
+            href={WA_QUOTE}
+            target="_blank"
+            rel="noopener noreferrer"
             className="editorial-gradient text-on-primary px-12 py-5 font-label font-bold tracking-[0.2em] rounded-full text-sm uppercase shadow-2xl shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 active:scale-95 transition-all"
           >
             Request A Quote

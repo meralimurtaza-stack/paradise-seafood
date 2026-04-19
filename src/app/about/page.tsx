@@ -3,6 +3,11 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ArrowIcon, PhoneIcon } from "@/components/icons";
+import { whatsappUrl } from "@/lib/constants";
+
+const WA_QUOTE = whatsappUrl(
+  "Hi Paradise Seafood, I would like to request a quote."
+);
 
 export const metadata: Metadata = {
   title: "About Us | Paradise Seafood — London's Premium Seafood Wholesaler",
@@ -115,7 +120,9 @@ export default function AboutPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="/contact"
+              href={WA_QUOTE}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-[6px] px-8 py-3.5 text-[13px] font-semibold uppercase tracking-[1px] text-brand-dark transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(184,155,94,0.3)]"
               style={{
                 background: "linear-gradient(135deg, #B89B5E, #96793E)",

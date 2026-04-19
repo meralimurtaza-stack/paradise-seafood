@@ -3,6 +3,7 @@
 import Link from "next/link";
 import type { SearchResult } from "@/lib/useProductSearch";
 import { WhatsAppIcon, PhoneIcon } from "./icons";
+import { whatsappUrl, PHONE_NUMBER } from "@/lib/constants";
 
 function slugify(text: string): string {
   return text
@@ -59,7 +60,6 @@ export default function SearchResults({
   onClear,
   compact,
 }: Props) {
-  const whatsappBase = "https://wa.me/442078594099?text=";
   const displayMessage = result?.message || streamedMessage || "";
   const showProducts = result && !streaming;
 
@@ -186,12 +186,12 @@ export default function SearchResults({
           {result.found ? (
             <>
               <a
-                href={`${whatsappBase}${encodeURIComponent(
+                href={whatsappUrl(
                   `Hi Paradise Seafood, I am interested in: ${result.products
                     .map((p) => p.name)
                     .slice(0, 3)
                     .join(", ")}. Can you send me pricing?`
-                )}`}
+                )}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 rounded-md bg-[#25D366] px-4 py-2 text-[12px] font-semibold text-white transition-all hover:bg-[#1da851]"
@@ -199,7 +199,7 @@ export default function SearchResults({
                 <WhatsAppIcon className="h-3.5 w-3.5" /> Enquire via WhatsApp
               </a>
               <a
-                href="tel:02078594099"
+                href={`tel:${PHONE_NUMBER}`}
                 className="inline-flex items-center gap-1.5 rounded-md border border-brand-gold/30 px-4 py-2 text-[12px] font-semibold text-brand-gold transition-all hover:border-brand-gold/60 hover:bg-brand-gold/5"
               >
                 <PhoneIcon className="h-3.5 w-3.5" /> 020 7859 4099
@@ -207,16 +207,16 @@ export default function SearchResults({
             </>
           ) : (
             <a
-              href={`${whatsappBase}${encodeURIComponent(
-                `Hi Paradise Seafood, I am looking for: ${
+              href={whatsappUrl(
+                `Hi Paradise Seafood, I was looking for ${
                   result.whatsappQuery || "a product"
-                }. Do you stock this?`
-              )}`}
+                } on your website. Do you carry this?`
+              )}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 rounded-md bg-[#25D366] px-4 py-2 text-[12px] font-semibold text-white transition-all hover:bg-[#1da851]"
             >
-              <WhatsAppIcon className="h-3.5 w-3.5" /> Ask Us on WhatsApp
+              <WhatsAppIcon className="h-3.5 w-3.5" /> Enquire via WhatsApp
             </a>
           )}
         </div>

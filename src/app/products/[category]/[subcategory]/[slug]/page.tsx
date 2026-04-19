@@ -8,6 +8,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { WhatsAppIcon, PhoneIcon, ArrowIcon } from "@/components/icons";
 import SpeciesInfo from "@/components/SpeciesInfo";
 import { getProductImage } from "@/lib/productImages";
+import { whatsappUrl } from "@/lib/constants";
 import {
   getCategories,
   getSubcategories,
@@ -71,7 +72,7 @@ export default function ProductPage({ params }: Props) {
   const product = getProductBySlug(category, subcategory, params.slug);
   if (!product) notFound();
 
-  const waText = encodeURIComponent(
+  const waHref = whatsappUrl(
     `Hi Paradise Seafood, I would like to enquire about ${product.name}.`
   );
 
@@ -182,7 +183,7 @@ export default function ProductPage({ params }: Props) {
               {/* CTA buttons */}
               <div className="flex flex-wrap gap-3">
                 <a
-                  href={`https://wa.me/442078594099?text=${waText}`}
+                  href={waHref}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2.5 rounded-[6px] bg-[#25D366] px-6 py-3 text-[14px] font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#1da851] hover:shadow-[0_8px_25px_rgba(37,211,102,0.3)]"
@@ -196,7 +197,11 @@ export default function ProductPage({ params }: Props) {
                   <PhoneIcon /> 020 7859 4099
                 </a>
                 <a
-                  href="/contact"
+                  href={whatsappUrl(
+                    "Hi Paradise Seafood, I would like to request a quote."
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-[6px] px-6 py-3 text-[13px] font-semibold uppercase tracking-[1px] text-brand-dark transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(184,155,94,0.3)]"
                   style={{
                     background: "linear-gradient(135deg, #B89B5E, #96793E)",

@@ -8,6 +8,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { WhatsAppIcon, PhoneIcon } from "@/components/icons";
 import SpeciesInfo from "@/components/SpeciesInfo";
 import { getSubcategoryImage } from "@/lib/productImages";
+import { whatsappUrl } from "@/lib/constants";
 import {
   getCategories,
   getSubcategories,
@@ -44,7 +45,7 @@ export function generateMetadata({ params }: Props): Metadata {
 }
 
 function ProductRow({ product, categorySlug, subcategorySlug }: { product: Product; categorySlug: string; subcategorySlug: string }) {
-  const waText = encodeURIComponent(
+  const waHref = whatsappUrl(
     `Hi Paradise Seafood, I would like to enquire about ${product.name}.`
   );
 
@@ -86,7 +87,7 @@ function ProductRow({ product, categorySlug, subcategorySlug }: { product: Produ
       </div>
       <div className="flex items-center gap-2 sm:flex-shrink-0">
         <a
-          href={`https://wa.me/442078594099?text=${waText}`}
+          href={waHref}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-1.5 rounded-md bg-[#25D366] px-3 py-1.5 text-[11px] font-semibold text-white transition-all hover:bg-[#1da851]"
@@ -174,7 +175,7 @@ export default function SubcategoryPage({ params }: Props) {
               Need a quote for {subcategory.toLowerCase()}?
             </span>
             <a
-              href={`https://wa.me/442078594099?text=${encodeURIComponent(`Hi Paradise Seafood, I would like a quote for ${subcategory} products.`)}`}
+              href={whatsappUrl(`Hi Paradise Seafood, I would like to request a quote.`)}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-md bg-[#25D366] px-4 py-2 text-[13px] font-semibold text-white transition-all hover:bg-[#1da851]"

@@ -1,10 +1,9 @@
 import { WhatsAppIcon } from "./icons";
+import { whatsappUrl } from "@/lib/constants";
 
-const WA_URL =
-  "https://wa.me/442078594099?text=" +
-  encodeURIComponent(
-    "Hi Paradise Seafood, I would like to enquire about your products."
-  );
+const WA_URL = whatsappUrl(
+  "Hi Paradise Seafood, I would like to enquire about your products."
+);
 
 export default function FloatingWhatsApp() {
   return (
