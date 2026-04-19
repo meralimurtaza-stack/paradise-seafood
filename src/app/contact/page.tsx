@@ -12,17 +12,8 @@ const WA_ENQUIRE = whatsappUrl(
 export const metadata: Metadata = {
   title: "Contact Us | Paradise Seafood — London's Premium Seafood Wholesaler",
   description:
-    "Get in touch with Paradise Seafood. WhatsApp, phone, or email us for pricing, availability, and delivery enquiries. Unit 6, Fishers Industrial Estate, Watford.",
+    "Get in touch with Paradise Seafood. WhatsApp, phone, or our online enquiry form — we respond within 24 hours. Unit 6, Fishers Industrial Estate, Watford.",
 };
-
-function MailIcon() {
-  return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="2" y="4" width="20" height="16" rx="2" />
-      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-    </svg>
-  );
-}
 
 function MapPinIcon() {
   return (
@@ -72,7 +63,7 @@ export default function ContactPage() {
 
       {/* Contact method cards */}
       <section className="px-6 pb-20 pt-14">
-        <div className="mx-auto grid max-w-[1100px] grid-cols-1 gap-5 md:grid-cols-3">
+        <div className="mx-auto grid max-w-[900px] grid-cols-1 gap-5 md:grid-cols-2">
           {/* WhatsApp */}
           <a
             href={WA_ENQUIRE}
@@ -113,24 +104,6 @@ export default function ContactPage() {
             </span>
           </a>
 
-          {/* Email */}
-          <a
-            href="mailto:inquiries@paradiseseafood.co.uk"
-            className="group rounded-[14px] border border-white/[0.06] bg-white/[0.02] px-8 py-8 transition-all duration-300 hover:border-white/[0.12] hover:bg-white/[0.04]"
-          >
-            <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/[0.08] text-brand-cream">
-              <MailIcon />
-            </div>
-            <h2 className="mb-1.5 font-serif text-[22px] font-bold text-brand-cream">
-              Email
-            </h2>
-            <p className="mb-4 text-[14px] leading-relaxed text-brand-muted">
-              inquiries@paradiseseafood.co.uk
-            </p>
-            <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-brand-cream transition-all group-hover:gap-2.5">
-              Send email <ArrowIcon className="text-brand-cream" />
-            </span>
-          </a>
         </div>
       </section>
 

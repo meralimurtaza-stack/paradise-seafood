@@ -55,7 +55,7 @@ export default function ContactForm() {
           Thank You
         </h3>
         <p className="mb-6 text-[15px] text-brand-muted">
-          We have received your enquiry and will get back to you within a few hours.
+          Thank you &mdash; we have received your enquiry and will respond within 24 hours.
         </p>
         <button
           onClick={() => setStatus("idle")}
@@ -160,14 +160,16 @@ export default function ContactForm() {
       </div>
 
       {status === "error" && (
-        <div className="rounded-lg border border-red-500/20 bg-red-500/[0.08] px-4 py-3 text-[13px] text-red-400">
-          {errorMsg}{" "}
-          <button
-            type="submit"
-            className="font-semibold underline underline-offset-2 hover:text-red-300"
-          >
-            Try again
-          </button>
+        <div className="rounded-lg border border-red-500/20 bg-red-500/[0.08] px-4 py-3 text-[13px] leading-relaxed text-red-300">
+          Something went wrong. Please try again or contact us directly at{" "}
+          <span className="font-semibold text-red-200">
+            inquiries@paradiseseafood.co.uk
+          </span>
+          {errorMsg ? (
+            <span className="block mt-1 text-red-400/70 text-[12px]">
+              Details: {errorMsg}
+            </span>
+          ) : null}
         </div>
       )}
 

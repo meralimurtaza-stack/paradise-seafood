@@ -1,23 +1,40 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+function escapeHtml(input: string): string {
+  return input
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 export async function POST(request: Request) {
+  // Lazy init — do NOT read env or construct Resend at module scope, so the
+  // build does not crash if the key is missing.
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    return NextResponse.json(
+      { error: "Contact form is not configured yet" },
+      { status: 503 }
+    );
+  }
+
   try {
     const body = await request.json();
     const { name, email, phone, business, message, _hp } = body;
 
-    // Honeypot check — if filled, silently reject
+    // Honeypot — silently accept to avoid telling bots they were caught
     if (_hp) {
       return NextResponse.json({ success: true });
     }
 
-    // Validate required fields
+    // Required field validation
     if (!name?.trim() || !email?.trim() || !message?.trim()) {
       return NextResponse.json(
         { error: "Name, email, and message are required." },
@@ -32,19 +49,19 @@ export async function POST(request: Request) {
       );
     }
 
-    if (!process.env.RESEND_API_KEY) {
-      console.error("RESEND_API_KEY is not configured");
-      return NextResponse.json(
-        { error: "Email service is not configured." },
-        { status: 500 }
-      );
-    }
+    const resend = new Resend(apiKey);
+
+    const safeName = escapeHtml(name.trim());
+    const safeEmail = escapeHtml(email.trim());
+    const safePhone = phone?.trim() ? escapeHtml(phone.trim()) : "";
+    const safeBusiness = business?.trim() ? escapeHtml(business.trim()) : "";
+    const safeMessage = escapeHtml(message.trim());
 
     const { error } = await resend.emails.send({
-      from: "Paradise Seafood <noreply@paradiseseafood.co.uk>",
+      from: "Paradise Seafood Website <noreply@paradiseseafood.co.uk>",
       to: "inquiries@paradiseseafood.co.uk",
       replyTo: email.trim(),
-      subject: `New enquiry from ${name.trim()}`,
+      subject: `New website enquiry from ${name.trim()}`,
       html: `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 32px 24px; color: #1a1a1a;">
           <h2 style="font-size: 22px; margin-bottom: 24px; color: #0C1117;">New Website Enquiry</h2>
@@ -52,22 +69,22 @@ export async function POST(request: Request) {
           <table style="width: 100%; border-collapse: collapse; margin-bottom: 24px;">
             <tr>
               <td style="padding: 8px 12px; font-weight: 600; color: #666; width: 120px; vertical-align: top;">Name</td>
-              <td style="padding: 8px 12px;">${name.trim()}</td>
+              <td style="padding: 8px 12px;">${safeName}</td>
             </tr>
-            ${business?.trim() ? `<tr><td style="padding: 8px 12px; font-weight: 600; color: #666; vertical-align: top;">Business</td><td style="padding: 8px 12px;">${business.trim()}</td></tr>` : ""}
+            ${safeBusiness ? `<tr><td style="padding: 8px 12px; font-weight: 600; color: #666; vertical-align: top;">Business</td><td style="padding: 8px 12px;">${safeBusiness}</td></tr>` : ""}
             <tr>
               <td style="padding: 8px 12px; font-weight: 600; color: #666; vertical-align: top;">Email</td>
-              <td style="padding: 8px 12px;"><a href="mailto:${email.trim()}" style="color: #B89B5E;">${email.trim()}</a></td>
+              <td style="padding: 8px 12px;">${safeEmail}</td>
             </tr>
-            ${phone?.trim() ? `<tr><td style="padding: 8px 12px; font-weight: 600; color: #666; vertical-align: top;">Phone</td><td style="padding: 8px 12px;"><a href="tel:${phone.trim()}" style="color: #B89B5E;">${phone.trim()}</a></td></tr>` : ""}
+            ${safePhone ? `<tr><td style="padding: 8px 12px; font-weight: 600; color: #666; vertical-align: top;">Phone</td><td style="padding: 8px 12px;">${safePhone}</td></tr>` : ""}
           </table>
 
           <div style="background: #f7f5f0; border-radius: 8px; padding: 20px; margin-bottom: 24px;">
             <p style="font-weight: 600; color: #666; margin: 0 0 8px;">Message</p>
-            <p style="white-space: pre-wrap; line-height: 1.6; margin: 0;">${message.trim()}</p>
+            <p style="white-space: pre-wrap; line-height: 1.6; margin: 0;">${safeMessage}</p>
           </div>
 
-          <p style="font-size: 12px; color: #999;">Sent from paradiseseafood.co.uk contact form</p>
+          <p style="font-size: 12px; color: #999;">Sent from paradiseseafood.co.uk contact form. Reply to this email to respond directly to the sender.</p>
         </div>
       `,
     });
