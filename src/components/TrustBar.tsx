@@ -59,7 +59,7 @@ const STATS = [
   { end: 2007, prefix: "Est. ", label: "Established", useLocale: false },
   { end: 500, suffix: "+", label: "Premium Products" },
   { end: 6, suffix: " Days", label: "Fresh Deliveries / Week" },
-  { static: "-18°C", label: "Frozen Storage Facility" },
+  { static: "-23°C", label: "Frozen Storage Facility" },
 ];
 
 export default function TrustBar() {
