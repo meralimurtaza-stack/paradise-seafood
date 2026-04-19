@@ -7,7 +7,7 @@ import { ArrowIcon, PhoneIcon, WhatsAppIcon } from "@/components/icons";
 export const metadata: Metadata = {
   title: "Contact Us | Paradise Seafood — London's Premium Seafood Wholesaler",
   description:
-    "Get in touch with Paradise Seafood. WhatsApp, phone, or email us for pricing, availability, and delivery enquiries. Unit 17, Fishers Industrial Estate, Watford.",
+    "Get in touch with Paradise Seafood. WhatsApp, phone, or email us for pricing, availability, and delivery enquiries. Unit 6, Fishers Industrial Estate, Watford.",
 };
 
 function MailIcon() {
@@ -155,7 +155,7 @@ export default function ContactPage() {
                 Visit Us
               </h3>
               <p className="mb-6 text-[14px] leading-[1.7] text-brand-muted">
-                Unit 17, Fishers Industrial Estate,
+                Unit 6, Fishers Industrial Estate,
                 <br />
                 Wiggenhall Road,
                 <br />
@@ -169,12 +169,8 @@ export default function ContactPage() {
               </h3>
               <div className="space-y-2 text-[14px] text-brand-muted">
                 <div className="flex justify-between">
-                  <span>Monday &mdash; Friday</span>
-                  <span className="text-brand-cream">4:00am &mdash; 3:00pm</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Saturday</span>
-                  <span className="text-brand-cream">4:00am &mdash; 12:00pm</span>
+                  <span>Monday &ndash; Saturday</span>
+                  <span className="text-brand-cream">Open until 5pm</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Sunday</span>
@@ -213,7 +209,7 @@ export default function ContactPage() {
             background: "linear-gradient(to bottom, rgba(12,17,23,0.3) 0%, transparent 30%, transparent 70%, rgba(12,17,23,0.5) 100%)",
           }} />
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2477.5!2d-0.3964!3d51.6565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48766a45b7e3b7c1%3A0x4b2a6c8e8c8e8c8e!2sUnit%2017%2C%20Fishers%20Industrial%20Estate%2C%20Wiggenhall%20Rd%2C%20Watford%20WD18%200FN!5e0!3m2!1sen!2suk!4v1700000000000"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2477.5!2d-0.3964!3d51.6565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48766a45b7e3b7c1%3A0x4b2a6c8e8c8e8c8e!2sUnit%206%2C%20Fishers%20Industrial%20Estate%2C%20Wiggenhall%20Rd%2C%20Watford%20WD18%200FN!5e0!3m2!1sen!2suk!4v1700000000000"
             width="100%"
             height="100%"
             style={{
@@ -223,7 +219,7 @@ export default function ContactPage() {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Paradise Seafood location — Unit 17, Fishers Industrial Estate, Watford"
+            title="Paradise Seafood location — Unit 6, Fishers Industrial Estate, Watford"
           />
         </div>
         {/* Map label */}
@@ -232,7 +228,7 @@ export default function ContactPage() {
             Paradise Seafood
           </p>
           <p className="text-[12px] text-brand-muted">
-            Unit 17, Fishers Ind. Estate, Watford WD18 0FN
+            Unit 6, Fishers Ind. Estate, Watford WD18 0FN
           </p>
         </div>
       </section>

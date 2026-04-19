@@ -60,7 +60,7 @@ const localBusinessSchema = {
   priceRange: "$$",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Unit 17, Fishers Industrial Estate, Wiggenhall Road",
+    streetAddress: "Unit 6, Fishers Industrial Estate, Wiggenhall Road",
     addressLocality: "Watford",
     addressRegion: "Hertfordshire",
     postalCode: "WD18 0FN",
@@ -74,15 +74,8 @@ const localBusinessSchema = {
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "04:00",
-      closes: "15:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Saturday",
-      opens: "04:00",
-      closes: "12:00",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      closes: "17:00",
     },
   ],
   areaServed: [

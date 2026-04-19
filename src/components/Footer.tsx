@@ -86,7 +86,11 @@ export default function Footer() {
             </li>
             <li className="flex items-start gap-2">
               <span className="material-symbols-outlined text-primary mt-0.5 flex-shrink-0" style={{ fontSize: 16 }}>location_on</span>
-              Unit 17, Fishers Ind. Estate, Wiggenhall Rd, Watford WD18 0FN
+              Unit 6, Fishers Ind. Estate, Wiggenhall Rd, Watford WD18 0FN
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="material-symbols-outlined text-primary mt-0.5 flex-shrink-0" style={{ fontSize: 16 }}>schedule</span>
+              Monday &ndash; Saturday: Open until 5pm
             </li>
           </ul>
         </div>
