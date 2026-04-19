@@ -13,8 +13,8 @@ const REASONS = [
   },
   {
     icon: "scale",
-    title: "Scale & Reliability",
-    desc: "2,500+ pallet cold storage capacity means we never compromise on availability or temperature control.",
+    title: "Cold Chain Excellence",
+    desc: "Purpose-built cold storage facility with temperature-controlled environments from ambient to -25°C. Every product stored, handled, and delivered under strict cold chain protocols — from our warehouse to your kitchen, nothing breaks the chain.",
   },
   {
     icon: "map",
