@@ -58,8 +58,8 @@ export async function POST(request: Request) {
     const safeMessage = escapeHtml(message.trim());
 
     const { error } = await resend.emails.send({
-      from: "Paradise Seafood Website <noreply@paradiseseafood.co.uk>",
-      to: "inquiries@paradiseseafood.co.uk",
+      from: "Paradise Seafood Website <onboarding@resend.dev>",
+      to: "meralimurtaza@gmail.com",
       replyTo: email.trim(),
       subject: `New website enquiry from ${name.trim()}`,
       html: `
@@ -92,7 +92,7 @@ export async function POST(request: Request) {
     if (error) {
       console.error("Resend error:", error);
       return NextResponse.json(
-        { error: "Failed to send your message. Please try again." },
+        { error: "Failed to send your message. Please try again.", debug: error },
         { status: 500 }
       );
     }
