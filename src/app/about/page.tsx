@@ -93,16 +93,25 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              {/* WhatsApp button */}
-              <a
-                href={WA_AMIR}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center gap-2 rounded-full border border-white/[0.12] bg-white/[0.03] px-4 py-2 text-[13px] font-medium text-brand-cream transition-all duration-200 hover:border-[#25D366]/40 hover:bg-[#25D366]/[0.08]"
-              >
-                <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
-                Message Amir
-              </a>
+              {/* Contact buttons — stack on mobile, side-by-side on desktop */}
+              <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:flex-wrap">
+                <a
+                  href={WA_AMIR}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/[0.12] bg-white/[0.03] px-4 py-2 text-[13px] font-medium text-brand-cream transition-all duration-200 hover:border-[#25D366]/40 hover:bg-[#25D366]/[0.08]"
+                >
+                  <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
+                  Message Amir
+                </a>
+                <a
+                  href="tel:+447864929925"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-brand-gold/30 bg-white/[0.03] px-4 py-2 text-[13px] font-medium text-brand-cream transition-all duration-200 hover:border-brand-gold/60 hover:bg-brand-gold/[0.08]"
+                >
+                  <PhoneIcon className="h-4 w-4 text-brand-gold" />
+                  Call Amir
+                </a>
+              </div>
             </div>
 
             {/* Story paragraphs */}
