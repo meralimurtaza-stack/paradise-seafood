@@ -27,12 +27,7 @@ export async function POST(request: Request) {
 
   try {
     const body = await request.json();
-    const { name, email, phone, business, message, _hp } = body;
-
-    // Honeypot — silently accept to avoid telling bots they were caught
-    if (_hp) {
-      return NextResponse.json({ success: true });
-    }
+    const { name, email, phone, business, message } = body;
 
     // Required field validation
     if (!name?.trim() || !email?.trim() || !message?.trim()) {

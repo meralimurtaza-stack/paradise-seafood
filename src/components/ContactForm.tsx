@@ -19,7 +19,6 @@ export default function ContactForm() {
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
       phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
       message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
-      _hp: (form.elements.namedItem("_hp") as HTMLInputElement).value,
     };
 
     try {
@@ -69,11 +68,6 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
-      {/* Honeypot — hidden from real users */}
-      <div className="absolute -left-[9999px] opacity-0" aria-hidden="true">
-        <input type="text" name="_hp" tabIndex={-1} autoComplete="off" />
-      </div>
-
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div>
           <label
