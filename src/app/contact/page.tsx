@@ -60,7 +60,7 @@ export default function ContactPage() {
           </h1>
           <p className="text-[16px] leading-relaxed text-brand-muted">
             Whether you need a quote, want to discuss your menu, or set up a
-            trade account &mdash; we&rsquo;re here to help.
+            trade account &mdash; we are here to help.
           </p>
         </div>
       </section>
@@ -138,7 +138,7 @@ export default function ContactPage() {
               Send Us an Enquiry
             </h2>
             <p className="mb-10 text-[14px] text-brand-muted">
-              Fill in the form and we&rsquo;ll get back to you within a few
+              Fill in the form and we will get back to you within a few
               hours.
             </p>
 

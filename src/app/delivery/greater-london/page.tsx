@@ -55,7 +55,7 @@ export default function GreaterLondonPage() {
         "No minimum order requirement",
         "Reliable six-day-a-week service",
       ]}
-      whatsappMessage="Hi Paradise Seafood, I'd like to enquire about delivery to Greater London."
+      whatsappMessage="Hi Paradise Seafood, I would like to enquire about delivery to Greater London."
     />
   );
 }

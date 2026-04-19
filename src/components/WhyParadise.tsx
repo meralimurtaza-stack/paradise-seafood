@@ -29,7 +29,7 @@ const REASONS = [
   {
     icon: "payments",
     title: "Competitive Pricing",
-    desc: "Luxury quality doesn't have to mean inflated margins. We leverage our scale to provide sustainable B2B value.",
+    desc: "Luxury quality does not have to mean inflated margins. We leverage our scale to provide sustainable B2B value.",
   },
 ];
 

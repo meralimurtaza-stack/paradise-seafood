@@ -86,8 +86,8 @@ export default function AboutPage() {
                 That combination &mdash; Mohamed&rsquo;s deep industry knowledge
                 and Amir&rsquo;s relentless focus on relationships and service
                 &mdash; is what turned Paradise Seafood into London&rsquo;s go-to
-                premium wholesaler. Nearly two decades later, the principle
-                hasn&rsquo;t changed: exceptional quality, delivered when you need
+                premium wholesaler. Nearly two decades later, the principles
+                have not changed: exceptional quality, delivered when you need
                 it, by people who care.
               </p>
             </div>
@@ -111,7 +111,7 @@ export default function AboutPage() {
           </h2>
           <p className="mb-10 text-[17px] leading-[1.7] text-brand-muted">
             Whether you run a Michelin-starred kitchen or a neighbourhood
-            restaurant, we&rsquo;d love to hear from you.
+            restaurant, we would love to hear from you.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a

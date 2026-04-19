@@ -55,7 +55,7 @@ export default function ContactForm() {
           Thank You
         </h3>
         <p className="mb-6 text-[15px] text-brand-muted">
-          We&rsquo;ve received your enquiry and will get back to you within a few hours.
+          We have received your enquiry and will get back to you within a few hours.
         </p>
         <button
           onClick={() => setStatus("idle")}
@@ -154,7 +154,7 @@ export default function ContactForm() {
           name="message"
           rows={5}
           required
-          placeholder="Tell us what you're looking for — products, quantities, delivery requirements..."
+          placeholder="Tell us what you are looking for — products, quantities, delivery requirements..."
           className="w-full resize-none rounded-lg border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-[14px] text-brand-cream placeholder-white/20 outline-none transition-colors focus:border-brand-gold/40 focus:bg-white/[0.05]"
         />
       </div>

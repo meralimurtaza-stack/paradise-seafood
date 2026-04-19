@@ -55,7 +55,7 @@ export default function CentralLondonPage() {
         "No minimum order requirement",
         "Same day delivery available on request",
       ]}
-      whatsappMessage="Hi Paradise Seafood, I'd like to enquire about delivery to Central London."
+      whatsappMessage="Hi Paradise Seafood, I would like to enquire about delivery to Central London."
     />
   );
 }

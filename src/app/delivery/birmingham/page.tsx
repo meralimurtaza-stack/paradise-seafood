@@ -56,7 +56,7 @@ export default function BirminghamPage() {
         "Same quality and selection as London",
         "Expanding coverage to surrounding areas",
       ]}
-      whatsappMessage="Hi Paradise Seafood, I'd like to enquire about delivery to Birmingham."
+      whatsappMessage="Hi Paradise Seafood, I would like to enquire about delivery to Birmingham."
     />
   );
 }

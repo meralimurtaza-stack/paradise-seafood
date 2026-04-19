@@ -72,7 +72,7 @@ export default function ProductPage({ params }: Props) {
   if (!product) notFound();
 
   const waText = encodeURIComponent(
-    `Hi Paradise Seafood, I'd like to enquire about ${product.name}.`
+    `Hi Paradise Seafood, I would like to enquire about ${product.name}.`
   );
 
   // Related products (same subcategory, exclude current)

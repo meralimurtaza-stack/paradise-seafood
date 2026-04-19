@@ -187,7 +187,7 @@ export default function SearchResults({
             <>
               <a
                 href={`${whatsappBase}${encodeURIComponent(
-                  `Hi Paradise Seafood, I'm interested in: ${result.products
+                  `Hi Paradise Seafood, I am interested in: ${result.products
                     .map((p) => p.name)
                     .slice(0, 3)
                     .join(", ")}. Can you send me pricing?`
@@ -208,7 +208,7 @@ export default function SearchResults({
           ) : (
             <a
               href={`${whatsappBase}${encodeURIComponent(
-                `Hi Paradise Seafood, I'm looking for: ${
+                `Hi Paradise Seafood, I am looking for: ${
                   result.whatsappQuery || "a product"
                 }. Do you stock this?`
               )}`}

@@ -45,7 +45,7 @@ export function generateMetadata({ params }: Props): Metadata {
 
 function ProductRow({ product, categorySlug, subcategorySlug }: { product: Product; categorySlug: string; subcategorySlug: string }) {
   const waText = encodeURIComponent(
-    `Hi Paradise Seafood, I'd like to enquire about ${product.name}.`
+    `Hi Paradise Seafood, I would like to enquire about ${product.name}.`
   );
 
   return (
@@ -174,7 +174,7 @@ export default function SubcategoryPage({ params }: Props) {
               Need a quote for {subcategory.toLowerCase()}?
             </span>
             <a
-              href={`https://wa.me/442078594099?text=${encodeURIComponent(`Hi Paradise Seafood, I'd like a quote for ${subcategory} products.`)}`}
+              href={`https://wa.me/442078594099?text=${encodeURIComponent(`Hi Paradise Seafood, I would like a quote for ${subcategory} products.`)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-md bg-[#25D366] px-4 py-2 text-[13px] font-semibold text-white transition-all hover:bg-[#1da851]"

@@ -44,7 +44,7 @@ const AREAS = [
     badge: "EXPANDING",
     badgeColor: "bg-white/10 text-brand-cream",
     schedule: "Contact us",
-    desc: "We're expanding beyond the M25. Get in touch to check your area.",
+    desc: "We are expanding beyond the M25. Get in touch to check your area.",
     postcodes: "Selected routes",
   },
 ];
@@ -164,7 +164,7 @@ export default function DeliveryPage() {
             Not Sure If We Deliver to You?
           </h2>
           <p className="mb-10 text-[15px] leading-relaxed text-brand-muted">
-            Get in touch and we&rsquo;ll confirm delivery to your postcode, schedule, and any minimum order requirements.
+            Get in touch and we will confirm delivery to your postcode, schedule, and any minimum order requirements.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a

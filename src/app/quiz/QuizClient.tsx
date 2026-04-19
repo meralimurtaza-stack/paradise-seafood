@@ -687,7 +687,7 @@ export default function QuizClient() {
                   <path d="M20 6L9 17l-5-5" />
                 </svg>
                 <span className="text-[15px] font-semibold text-brand-cream">
-                  We&rsquo;ll send your result shortly!
+                  We will send your result shortly!
                 </span>
               </div>
             )}

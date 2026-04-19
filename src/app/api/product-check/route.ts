@@ -56,7 +56,7 @@ RULES:
 - For recommendations: understand what they need and suggest appropriate products with reasoning
 - For quantity questions: calculate based on standard portion sizes (150-200g per person for fish mains)
 - If nothing matches: set found to false and include the original query in whatsappQuery field so we can pre-fill a WhatsApp message
-- Never make up products that aren't in the catalogue
+- Never make up products that are not in the catalogue
 - Maximum 8 products in the response unless they specifically ask for more
 - Each product in the products array MUST have: name, slug (copy exactly from catalogue), format, size_grade, unit, origin, certifications, fresh_or_frozen, category (copy exactly from catalogue e.g. "Fresh Fish" not "Fish"), subcategory (copy exactly from catalogue e.g. "Monkfish" not "monkfish")
 

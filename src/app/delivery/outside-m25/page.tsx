@@ -4,7 +4,7 @@ import DeliveryAreaPage from "@/components/DeliveryAreaPage";
 export const metadata: Metadata = {
   title: "Seafood Delivery Outside M25 | Paradise Seafood",
   description:
-    "We're expanding our fresh and frozen seafood delivery beyond the M25. Contact Paradise Seafood to check if we deliver to your area. Premium quality seafood supplier.",
+    "We are expanding our fresh and frozen seafood delivery beyond the M25. Contact Paradise Seafood to check if we deliver to your area. Premium quality seafood supplier.",
 };
 
 function CalendarIcon() {
@@ -41,7 +41,7 @@ export default function OutsideM25Page() {
       title="Outside M25"
       badge="EXPANDING"
       badgeColor="bg-white/10 text-brand-cream"
-      description="We're expanding our delivery coverage beyond the M25. Contact us to check if we deliver to your area."
+      description="We are expanding our delivery coverage beyond the M25. Contact us to check if we deliver to your area."
       details={[
         { icon: <CalendarIcon />, label: "Schedule", value: "Varies by location" },
         { icon: <MapPinIcon />, label: "Coverage", value: "Selected routes beyond M25" },
@@ -55,7 +55,7 @@ export default function OutsideM25Page() {
         "Growing route network — new areas added regularly",
         "Contact us to check your postcode",
       ]}
-      whatsappMessage="Hi Paradise Seafood, I'd like to check if you deliver to my area outside the M25."
+      whatsappMessage="Hi Paradise Seafood, I would like to check if you deliver to my area outside the M25."
     />
   );
 }
