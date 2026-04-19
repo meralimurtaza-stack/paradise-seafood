@@ -5,38 +5,53 @@ const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
 });
 
-// Build a condensed product catalogue string
-function buildCatalogue(): string {
-  const products = productsData.products as Array<{
-    id: string;
-    name: string;
-    slug: string;
-    category: string;
-    subcategory: string;
-    format: string;
-    size_grade: string;
-    unit: string;
-    origin: string;
-    certifications: string[];
-    fresh_or_frozen: string;
-    case_packing: string;
-  }>;
+type Product = {
+  id: string;
+  name: string;
+  slug: string;
+  category: string;
+  subcategory: string;
+  format: string;
+  size_grade: string;
+  unit: string;
+  origin: string;
+  certifications: string[];
+  fresh_or_frozen: string;
+  case_packing: string;
+};
 
-  // Group by category for readability
-  const grouped: Record<string, typeof products> = {};
-  for (const p of products) {
-    if (!grouped[p.category]) grouped[p.category] = [];
-    grouped[p.category].push(p);
+const ALL_PRODUCTS = productsData.products as Product[];
+
+// Lookup by slug. Multiple products can share a slug (duplicates exist in the
+// catalogue), so the value is an array — we return the first match.
+const PRODUCTS_BY_SLUG = new Map<string, Product[]>();
+for (const p of ALL_PRODUCTS) {
+  const existing = PRODUCTS_BY_SLUG.get(p.slug);
+  if (existing) existing.push(p);
+  else PRODUCTS_BY_SLUG.set(p.slug, [p]);
+}
+
+// Build a condensed product catalogue string, grouped by category → subcategory
+function buildCatalogue(): string {
+  // Group by category then subcategory
+  const byCat: Record<string, Record<string, Product[]>> = {};
+  for (const p of ALL_PRODUCTS) {
+    byCat[p.category] ??= {};
+    byCat[p.category][p.subcategory] ??= [];
+    byCat[p.category][p.subcategory].push(p);
   }
 
   let catalogue = "";
-  for (const [cat, prods] of Object.entries(grouped)) {
+  for (const [cat, subs] of Object.entries(byCat)) {
     catalogue += `\n## ${cat}\n`;
-    for (const p of prods) {
-      const certs = p.certifications.length
-        ? ` [${p.certifications.join(", ")}]`
-        : "";
-      catalogue += `- ${p.name} | slug:${p.slug} | ${p.format} | ${p.size_grade} | ${p.unit} | ${p.origin} | ${p.fresh_or_frozen}${certs}\n`;
+    for (const [sub, prods] of Object.entries(subs)) {
+      catalogue += `\n### ${sub}\n`;
+      for (const p of prods) {
+        const certs = p.certifications.length
+          ? ` [${p.certifications.join(", ")}]`
+          : "";
+        catalogue += `- ${p.name} | slug:${p.slug} | ${p.format} | ${p.size_grade} | ${p.unit} | ${p.origin} | ${p.fresh_or_frozen}${certs}\n`;
+      }
     }
   }
   return catalogue;
@@ -149,6 +164,35 @@ export async function POST(request: Request) {
             } catch {
               // JSON parse failed, use defaults
             }
+          }
+
+          // Canonicalise products by looking up each returned slug in the
+          // authoritative product JSON. This overwrites any AI-guessed
+          // category/subcategory with the real values, so the client can
+          // build correct URLs. Products whose slugs do not match a real
+          // product are dropped to avoid broken links.
+          if (Array.isArray(productsData.products)) {
+            productsData.products = productsData.products
+              .map((p: Partial<Product>) => {
+                const slug = p.slug;
+                if (!slug) return null;
+                const canonical = PRODUCTS_BY_SLUG.get(slug)?.[0];
+                if (!canonical) return null;
+                return {
+                  ...p,
+                  name: canonical.name,
+                  slug: canonical.slug,
+                  category: canonical.category,
+                  subcategory: canonical.subcategory,
+                  format: canonical.format,
+                  size_grade: canonical.size_grade,
+                  unit: canonical.unit,
+                  origin: canonical.origin,
+                  certifications: canonical.certifications,
+                  fresh_or_frozen: canonical.fresh_or_frozen,
+                };
+              })
+              .filter(Boolean) as never;
           }
 
           // Send the final structured data
