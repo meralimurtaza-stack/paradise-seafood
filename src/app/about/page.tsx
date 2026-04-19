@@ -2,11 +2,15 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { ArrowIcon, PhoneIcon } from "@/components/icons";
+import { ArrowIcon, PhoneIcon, WhatsAppIcon } from "@/components/icons";
 import { whatsappUrl } from "@/lib/constants";
 
 const WA_QUOTE = whatsappUrl(
   "Hi Paradise Seafood, I would like to request a quote."
+);
+
+const WA_AMIR = whatsappUrl(
+  "Hi Amir, I found Paradise Seafood online and would like to discuss our seafood requirements."
 );
 
 export const metadata: Metadata = {
@@ -56,19 +60,49 @@ export default function AboutPage() {
             />
           </div>
 
-          {/* Story with Amir photo */}
-          <div className="flex flex-col md:flex-row gap-10 items-start">
-            {/* Amir photo */}
-            <div className="mx-auto md:mx-0 flex-shrink-0">
-              <div className="w-[200px] h-[200px] rounded-[14px] border-2 border-brand-gold/30 overflow-hidden">
+          {/* Story with Amir photo + contact card */}
+          <div className="flex flex-col gap-10 md:flex-row md:items-start">
+            {/* Amir card: photo + name + title + WhatsApp button */}
+            <div className="flex-shrink-0 md:w-[280px]">
+              {/* Photo — square crop, rounded, subtle gold border + hover */}
+              <a
+                href={WA_AMIR}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Message Amir on WhatsApp"
+                className="relative block aspect-square w-full overflow-hidden rounded-[12px] border transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_12px_40px_-10px_rgba(184,155,94,0.45)]"
+                style={{ borderColor: "rgba(184,155,94,0.3)" }}
+              >
                 <Image
-                  src="/images/amir_pic.png"
-                  alt="Amir — Paradise Seafood"
-                  width={200}
-                  height={200}
-                  className="w-full h-full object-cover"
+                  src="/images/amir_pic.jpeg"
+                  alt="Amir Merali, Director of Paradise Seafood"
+                  fill
+                  sizes="(min-width: 768px) 280px, 100vw"
+                  priority
+                  className="object-cover"
                 />
+              </a>
+
+              {/* Name + Title */}
+              <div className="mt-5">
+                <h3 className="font-serif text-[24px] font-semibold leading-tight text-brand-cream">
+                  Amir Merali
+                </h3>
+                <p className="mt-1 text-[14px] font-medium text-brand-gold">
+                  Director
+                </p>
               </div>
+
+              {/* WhatsApp button */}
+              <a
+                href={WA_AMIR}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center gap-2 rounded-full border border-white/[0.12] bg-white/[0.03] px-4 py-2 text-[13px] font-medium text-brand-cream transition-all duration-200 hover:border-[#25D366]/40 hover:bg-[#25D366]/[0.08]"
+              >
+                <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
+                Message Amir
+              </a>
             </div>
 
             {/* Story paragraphs */}
