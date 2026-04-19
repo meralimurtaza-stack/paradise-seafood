@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
+import BackLink from "@/components/BackLink";
 import { WhatsAppIcon, PhoneIcon } from "@/components/icons";
 import SpeciesInfo from "@/components/SpeciesInfo";
 import { getSubcategoryImage } from "@/lib/productImages";
@@ -119,6 +120,11 @@ export default function SubcategoryPage({ params }: Props) {
               { label: category, href: `/products/${params.category}` },
               { label: subcategory },
             ]}
+          />
+
+          <BackLink
+            href={`/products/${params.category}`}
+            label={category}
           />
 
           {/* Species hero image */}

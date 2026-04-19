@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
+import BackLink from "@/components/BackLink";
 import { WhatsAppIcon, PhoneIcon, ArrowIcon } from "@/components/icons";
 import SpeciesInfo from "@/components/SpeciesInfo";
 import { getProductImage } from "@/lib/productImages";
@@ -76,10 +77,17 @@ export default function ProductPage({ params }: Props) {
     `Hi Paradise Seafood, I would like to enquire about ${product.name}.`
   );
 
+  // All products in the subcategory — used for prev/next and related
+  const siblings = getProductsBySubcategory(category, subcategory);
+  const currentIndex = siblings.findIndex((p) => p.id === product.id);
+  const prev = currentIndex > 0 ? siblings[currentIndex - 1] : null;
+  const next =
+    currentIndex >= 0 && currentIndex < siblings.length - 1
+      ? siblings[currentIndex + 1]
+      : null;
+
   // Related products (same subcategory, exclude current)
-  const related = getProductsBySubcategory(category, subcategory)
-    .filter((p) => p.id !== product.id)
-    .slice(0, 4);
+  const related = siblings.filter((p) => p.id !== product.id).slice(0, 4);
 
   // Specs grid data
   const specs = [
@@ -137,6 +145,11 @@ export default function ProductPage({ params }: Props) {
               },
               { label: product.name },
             ]}
+          />
+
+          <BackLink
+            href={`/products/${params.category}/${params.subcategory}`}
+            label={subcategory}
           />
 
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_380px]">
@@ -296,6 +309,77 @@ export default function ProductPage({ params }: Props) {
 
           {/* Species information cards */}
           <SpeciesInfo subcategory={subcategory} />
+
+          {/* Prev / Next product navigation */}
+          {(prev || next) && (
+            <nav
+              aria-label={`${subcategory} product navigation`}
+              className="mt-16 grid grid-cols-1 gap-3 border-t border-white/[0.04] pt-10 sm:grid-cols-2"
+            >
+              {prev ? (
+                <Link
+                  href={`/products/${params.category}/${params.subcategory}/${prev.slug}`}
+                  className="group flex min-h-[44px] items-start gap-3 rounded-xl border border-white/[0.06] bg-white/[0.02] px-5 py-4 transition-all duration-300 hover:border-brand-gold/30 hover:bg-white/[0.04]"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="mt-0.5 flex-shrink-0 text-brand-gold transition-transform group-hover:-translate-x-0.5"
+                    aria-hidden="true"
+                  >
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                  </svg>
+                  <div className="min-w-0 flex-1">
+                    <div className="text-[11px] font-medium uppercase tracking-[2px] text-brand-muted">
+                      Previous
+                    </div>
+                    <div className="mt-1 truncate text-[14px] font-semibold text-brand-gold transition-colors group-hover:text-brand-cream">
+                      {prev.name}
+                    </div>
+                  </div>
+                </Link>
+              ) : (
+                <div aria-hidden="true" />
+              )}
+              {next ? (
+                <Link
+                  href={`/products/${params.category}/${params.subcategory}/${next.slug}`}
+                  className="group flex min-h-[44px] items-start gap-3 rounded-xl border border-white/[0.06] bg-white/[0.02] px-5 py-4 text-right transition-all duration-300 hover:border-brand-gold/30 hover:bg-white/[0.04] sm:justify-end"
+                >
+                  <div className="min-w-0 flex-1 text-right">
+                    <div className="text-[11px] font-medium uppercase tracking-[2px] text-brand-muted">
+                      Next
+                    </div>
+                    <div className="mt-1 truncate text-[14px] font-semibold text-brand-gold transition-colors group-hover:text-brand-cream">
+                      {next.name}
+                    </div>
+                  </div>
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="mt-0.5 flex-shrink-0 text-brand-gold transition-transform group-hover:translate-x-0.5"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              ) : (
+                <div aria-hidden="true" />
+              )}
+            </nav>
+          )}
         </div>
       </section>
       <Footer />

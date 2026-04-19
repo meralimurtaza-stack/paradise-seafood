@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
+import BackLink from "@/components/BackLink";
 import {
   getCategories,
   findCategoryBySlug,
@@ -46,6 +47,8 @@ export default function CategoryPage({ params }: Props) {
               { label: category },
             ]}
           />
+
+          <BackLink href="/products" label="All Products" />
 
           <p className="mb-4 text-[13px] font-semibold uppercase tracking-[5px] text-brand-gold">
             {category}
