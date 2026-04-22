@@ -17,7 +17,7 @@ export interface MatchedProduct {
 
 export interface SearchResult {
   found: boolean;
-  type: "product_match" | "dish_suggestion" | "recommendation" | "not_found";
+  type: "product_match" | "not_found";
   message: string;
   products: MatchedProduct[];
   whatsappQuery?: string;
@@ -93,13 +93,29 @@ export function useProductSearch() {
               const finalMessage = messageText
                 .replace(/\|{2,}.*$/, "")
                 .trimEnd();
+              const products = event.data.products || [];
               setResult({
                 found: event.data.found,
                 type: event.data.type,
                 message: finalMessage,
-                products: event.data.products || [],
+                products,
                 whatsappQuery: event.data.whatsappQuery,
               });
+
+              if (typeof window !== "undefined") {
+                const gtag = (
+                  window as unknown as {
+                    gtag?: (...args: unknown[]) => void;
+                  }
+                ).gtag;
+                if (gtag) {
+                  gtag("event", "ai_search", {
+                    search_query: query,
+                    results_count: products.length.toString(),
+                    had_results: (products.length > 0).toString(),
+                  });
+                }
+              }
             } else if (event.type === "error") {
               throw new Error(event.error);
             }

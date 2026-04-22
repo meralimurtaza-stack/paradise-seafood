@@ -133,10 +133,10 @@ export default function SearchResults({
               <Link
                 key={i}
                 href={href}
-                className="group flex items-start gap-3 rounded-[10px] border border-white/[0.06] bg-white/[0.02] px-4 py-3 transition-all duration-200 hover:border-brand-gold/20 hover:bg-white/[0.04]"
+                className="group flex min-h-[92px] items-start gap-3 rounded-[10px] border border-white/[0.06] bg-white/[0.02] px-4 py-3 transition-all duration-200 hover:border-brand-gold/20 hover:bg-white/[0.04]"
               >
                 <div className="min-w-0 flex-1">
-                  <p className="truncate text-[13px] font-semibold text-brand-cream group-hover:text-brand-gold">
+                  <p className="line-clamp-2 text-[13px] font-semibold leading-snug text-brand-cream group-hover:text-brand-gold">
                     {p.name}
                   </p>
                   <div className="mt-1 flex flex-wrap items-center gap-1.5">

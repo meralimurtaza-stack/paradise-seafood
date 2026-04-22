@@ -171,31 +171,33 @@ export default function Hero() {
           >
             <div className="relative group">
               <div className="absolute -inset-0.5 bg-primary/20 rounded-xl blur transition duration-300 group-hover:bg-primary/30" />
-              <div className="relative flex items-center bg-surface-container-highest rounded-xl p-2 pl-6">
-                <span className="material-symbols-outlined text-primary mr-4" style={{ fontSize: 20 }}>search</span>
-                <input
-                  type="text"
-                  className="bg-transparent border-none text-on-surface placeholder:text-outline-variant focus:ring-0 w-full font-label text-sm outline-none"
-                  placeholder="Ask about any product... try 'monkfish'"
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                  onKeyDown={(e) => e.key === "Enter" && handleSearch()}
-                />
-                {query && !loading && (
-                  <button
-                    onClick={handleClear}
-                    className="flex-shrink-0 text-outline transition-colors hover:text-on-surface mr-2"
-                    aria-label="Clear"
-                  >
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                      <path d="M18 6L6 18M6 6l12 12" />
-                    </svg>
-                  </button>
-                )}
+              <div className="relative flex flex-col gap-2 bg-surface-container-highest rounded-xl p-2 sm:flex-row sm:items-center sm:gap-0 sm:pl-6">
+                <div className="flex flex-1 items-center pl-4 sm:pl-0">
+                  <span className="material-symbols-outlined text-primary mr-3 sm:mr-4" style={{ fontSize: 20 }}>search</span>
+                  <input
+                    type="text"
+                    className="bg-transparent border-none text-on-surface placeholder:text-outline-variant focus:ring-0 w-full font-label text-sm outline-none py-2 sm:py-0"
+                    placeholder="Ask about any product... try 'monkfish'"
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+                  />
+                  {query && !loading && (
+                    <button
+                      onClick={handleClear}
+                      className="flex-shrink-0 text-outline transition-colors hover:text-on-surface mr-2"
+                      aria-label="Clear"
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                        <path d="M18 6L6 18M6 6l12 12" />
+                      </svg>
+                    </button>
+                  )}
+                </div>
                 <button
                   onClick={handleSearch}
                   disabled={loading}
-                  className="bg-primary text-on-primary font-bold text-[10px] tracking-widest px-4 py-2 rounded-lg uppercase disabled:opacity-70"
+                  className="w-full bg-primary text-on-primary font-bold text-[10px] tracking-widest px-4 py-3 sm:py-2 rounded-lg uppercase disabled:opacity-70 sm:w-auto"
                 >
                   {loading ? "..." : "Search"}
                 </button>
