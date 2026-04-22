@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import CookieConsent from "@/components/CookieConsent";
+import Analytics from "@/components/Analytics";
 import "./globals.css";
 
 const SITE_URL = "https://www.paradiseseafood.co.uk";
@@ -116,6 +118,8 @@ export default function RootLayout({
         />
         {children}
         <FloatingWhatsApp />
+        <CookieConsent />
+        <Analytics />
       </body>
     </html>
   );
