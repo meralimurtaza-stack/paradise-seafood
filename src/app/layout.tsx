@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import CookieConsent from "@/components/CookieConsent";
 import Analytics from "@/components/Analytics";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const SITE_URL = "https://www.paradiseseafood.co.uk";
@@ -120,6 +121,7 @@ export default function RootLayout({
         <FloatingWhatsApp />
         <CookieConsent />
         <Analytics />
+        <VercelAnalytics />
       </body>
     </html>
   );
