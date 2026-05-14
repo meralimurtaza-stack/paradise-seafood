@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
+import TrackedLink from "@/components/TrackedLink";
 import { ArrowIcon, PhoneIcon, WhatsAppIcon } from "@/components/icons";
 import { whatsappUrl } from "@/lib/constants";
 
@@ -65,10 +66,11 @@ export default function ContactPage() {
       <section className="px-6 pb-20 pt-14">
         <div className="mx-auto grid max-w-[900px] grid-cols-1 gap-5 md:grid-cols-2">
           {/* WhatsApp */}
-          <a
+          <TrackedLink
             href={WA_ENQUIRE}
             target="_blank"
             rel="noopener noreferrer"
+            trackAction="whatsapp_click"
             className="group rounded-[14px] border border-[#25D366]/20 bg-[#25D366]/[0.08] px-8 py-8 transition-all duration-300 hover:border-[#25D366]/40 hover:bg-[#25D366]/[0.12]"
           >
             <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366]/20 text-[#25D366]">
@@ -83,11 +85,12 @@ export default function ContactPage() {
             <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#25D366] transition-all group-hover:gap-2.5">
               Open WhatsApp <ArrowIcon className="text-[#25D366]" />
             </span>
-          </a>
+          </TrackedLink>
 
           {/* Phone */}
-          <a
+          <TrackedLink
             href="tel:02078594099"
+            trackAction="phone_click"
             className="group rounded-[14px] border border-brand-gold/20 bg-brand-gold/[0.04] px-8 py-8 transition-all duration-300 hover:border-brand-gold/40 hover:bg-brand-gold/[0.08]"
           >
             <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand-gold/15 text-brand-gold">
@@ -102,7 +105,7 @@ export default function ContactPage() {
             <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-brand-gold transition-all group-hover:gap-2.5">
               Call now <ArrowIcon className="text-brand-gold" />
             </span>
-          </a>
+          </TrackedLink>
 
         </div>
       </section>
@@ -159,20 +162,22 @@ export default function ContactPage() {
               <div className="mb-6 mt-6 h-px w-full bg-white/[0.06]" />
 
               <div className="space-y-3">
-                <a
+                <TrackedLink
                   href={WA_ENQUIRE}
                   target="_blank"
                   rel="noopener noreferrer"
+                  trackAction="whatsapp_click"
                   className="flex w-full items-center justify-center gap-2 rounded-md bg-[#25D366] px-5 py-3 text-[13px] font-semibold text-white transition-all hover:bg-[#1da851]"
                 >
                   <WhatsAppIcon /> Chat on WhatsApp
-                </a>
-                <a
+                </TrackedLink>
+                <TrackedLink
                   href="tel:02078594099"
+                  trackAction="phone_click"
                   className="flex w-full items-center justify-center gap-2 rounded-md border border-brand-gold/30 px-5 py-3 text-[13px] font-semibold text-brand-gold transition-all hover:border-brand-gold/60 hover:bg-brand-gold/5"
                 >
                   <PhoneIcon /> 020 7859 4099
-                </a>
+                </TrackedLink>
               </div>
             </div>
           </div>

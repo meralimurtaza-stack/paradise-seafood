@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import CookieConsent from "@/components/CookieConsent";
 import Analytics from "@/components/Analytics";
+import PageViewTracker from "@/components/PageViewTracker";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 import "./globals.css";
 
@@ -121,6 +122,7 @@ export default function RootLayout({
         <FloatingWhatsApp />
         <CookieConsent />
         <Analytics />
+        <PageViewTracker />
         <VercelAnalytics />
       </body>
     </html>

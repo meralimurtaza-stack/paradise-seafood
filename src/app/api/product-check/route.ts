@@ -1,5 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
 import productsData from "../../../../products.json";
+import { trackToSheetServer } from "@/lib/tracking";
 
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
@@ -220,6 +221,21 @@ export async function POST(request: Request) {
                 (productsData.products as unknown[])?.length || 0,
             })
           );
+
+          // Send to Google Sheet (fire-and-forget)
+          const products = (productsData.products as Product[]) || [];
+          const messageText =
+            delimiterIndex !== -1
+              ? fullText.slice(0, delimiterIndex).trim()
+              : fullText.trim();
+          trackToSheetServer({
+            type: "search",
+            query,
+            ai_response: messageText.substring(0, 500),
+            products_found: products.length,
+            product_names: products.map((p) => p.name).join(", "),
+            had_results: products.length > 0,
+          });
 
           controller.close();
         } catch (err) {

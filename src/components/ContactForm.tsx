@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import { ArrowIcon } from "./icons";
+import { trackToSheet } from "@/lib/tracking";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
@@ -33,6 +34,13 @@ export default function ContactForm() {
       if (!res.ok) {
         throw new Error(json.error || "Failed to send message");
       }
+
+      trackToSheet({
+        type: "conversion",
+        action: "contact_form_submit",
+        source: "/contact",
+        details: data.name,
+      });
 
       setStatus("success");
       form.reset();

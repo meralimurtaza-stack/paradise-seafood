@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
 import BackLink from "@/components/BackLink";
+import TrackedLink from "@/components/TrackedLink";
 import { WhatsAppIcon, PhoneIcon, ArrowIcon } from "@/components/icons";
 import SpeciesInfo from "@/components/SpeciesInfo";
 import { getProductImage } from "@/lib/productImages";
@@ -195,33 +196,36 @@ export default function ProductPage({ params }: Props) {
 
               {/* CTA buttons */}
               <div className="flex flex-wrap gap-3">
-                <a
+                <TrackedLink
                   href={waHref}
                   target="_blank"
                   rel="noopener noreferrer"
+                  trackAction="whatsapp_click"
                   className="inline-flex items-center gap-2.5 rounded-[6px] bg-[#25D366] px-6 py-3 text-[14px] font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#1da851] hover:shadow-[0_8px_25px_rgba(37,211,102,0.3)]"
                 >
                   <WhatsAppIcon /> Enquire on WhatsApp
-                </a>
-                <a
+                </TrackedLink>
+                <TrackedLink
                   href="tel:02078594099"
+                  trackAction="phone_click"
                   className="inline-flex items-center gap-2 rounded-[6px] border border-brand-gold/40 px-6 py-3 text-[13px] font-semibold uppercase tracking-[1px] text-brand-gold transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-gold/[0.08]"
                 >
                   <PhoneIcon /> 020 7859 4099
-                </a>
-                <a
+                </TrackedLink>
+                <TrackedLink
                   href={whatsappUrl(
                     "Hi Paradise Seafood, I would like to request a quote."
                   )}
                   target="_blank"
                   rel="noopener noreferrer"
+                  trackAction="quote_click"
                   className="inline-flex items-center gap-2 rounded-[6px] px-6 py-3 text-[13px] font-semibold uppercase tracking-[1px] text-brand-dark transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(184,155,94,0.3)]"
                   style={{
                     background: "linear-gradient(135deg, #B89B5E, #96793E)",
                   }}
                 >
                   Request A Quote <ArrowIcon />
-                </a>
+                </TrackedLink>
               </div>
             </div>
 

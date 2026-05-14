@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import TrackedLink from "@/components/TrackedLink";
 import { ArrowIcon, PhoneIcon, WhatsAppIcon } from "@/components/icons";
 import { whatsappUrl } from "@/lib/constants";
 
@@ -172,10 +173,11 @@ export default function DeliveryPage() {
             Get in touch and we will confirm delivery to your postcode, schedule, and any minimum order requirements.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a
+            <TrackedLink
               href={WA_QUOTE}
               target="_blank"
               rel="noopener noreferrer"
+              trackAction="quote_click"
               className="inline-flex items-center gap-2 rounded-md px-7 py-3.5 text-[13px] font-bold uppercase tracking-[1px] text-brand-dark transition-all hover:brightness-110"
               style={{
                 background: "linear-gradient(135deg, #B89B5E 0%, #96793E 100%)",
@@ -183,14 +185,15 @@ export default function DeliveryPage() {
             >
               Request A Quote
               <ArrowIcon />
-            </a>
-            <a
+            </TrackedLink>
+            <TrackedLink
               href="tel:02078594099"
+              trackAction="phone_click"
               className="inline-flex items-center gap-2 rounded-md border border-brand-gold/30 px-7 py-3.5 text-[13px] font-bold uppercase tracking-[1px] text-brand-gold transition-all hover:border-brand-gold/60 hover:bg-brand-gold/5"
             >
               <PhoneIcon />
               020 7859 4099
-            </a>
+            </TrackedLink>
           </div>
         </div>
       </section>

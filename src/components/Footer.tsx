@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { trackToSheet } from "@/lib/tracking";
 
 const PRODUCT_LINKS = [
   { label: "Fresh Fish", href: "/products/fresh-fish" },
@@ -63,6 +66,16 @@ export default function Footer() {
               <li key={link.label}>
                 <Link
                   href={link.href}
+                  onClick={
+                    link.label === "Get A Quote"
+                      ? () =>
+                          trackToSheet({
+                            type: "conversion",
+                            action: "quote_click",
+                            source: window.location.pathname,
+                          })
+                      : undefined
+                  }
                   className="text-slate-400 hover:text-primary transition-colors text-sm font-body"
                 >
                   {link.label}

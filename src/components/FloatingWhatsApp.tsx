@@ -1,5 +1,7 @@
-import { WhatsAppIcon } from "./icons";
+"use client";
+
 import { whatsappUrl } from "@/lib/constants";
+import { trackToSheet } from "@/lib/tracking";
 
 const WA_URL = whatsappUrl(
   "Hi Paradise Seafood, I would like to enquire about your products."
@@ -11,6 +13,14 @@ export default function FloatingWhatsApp() {
       href={WA_URL}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() =>
+        trackToSheet({
+          type: "conversion",
+          action: "whatsapp_click",
+          source:
+            typeof window !== "undefined" ? window.location.pathname : "",
+        })
+      }
       aria-label="Chat on WhatsApp"
       className="fixed bottom-6 right-6 z-[999] flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_4px_20px_rgba(37,211,102,0.4)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(37,211,102,0.5)]"
     >

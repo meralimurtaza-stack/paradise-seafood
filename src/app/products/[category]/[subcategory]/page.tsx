@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
 import BackLink from "@/components/BackLink";
+import TrackedLink from "@/components/TrackedLink";
 import { WhatsAppIcon, PhoneIcon } from "@/components/icons";
 import SpeciesInfo from "@/components/SpeciesInfo";
 import { getSubcategoryImage } from "@/lib/productImages";
@@ -87,14 +88,15 @@ function ProductRow({ product, categorySlug, subcategorySlug }: { product: Produ
         </div>
       </div>
       <div className="flex items-center gap-2 sm:flex-shrink-0">
-        <a
+        <TrackedLink
           href={waHref}
           target="_blank"
           rel="noopener noreferrer"
+          trackAction="whatsapp_click"
           className="inline-flex items-center gap-1.5 rounded-md bg-[#25D366] px-3 py-1.5 text-[11px] font-semibold text-white transition-all hover:bg-[#1da851]"
         >
           <WhatsAppIcon /> Enquire
-        </a>
+        </TrackedLink>
       </div>
     </Link>
   );
@@ -180,20 +182,22 @@ export default function SubcategoryPage({ params }: Props) {
             <span className="text-[14px] text-brand-muted">
               Need a quote for {subcategory.toLowerCase()}?
             </span>
-            <a
+            <TrackedLink
               href={whatsappUrl(`Hi Paradise Seafood, I would like to request a quote.`)}
               target="_blank"
               rel="noopener noreferrer"
+              trackAction="quote_click"
               className="inline-flex items-center gap-2 rounded-md bg-[#25D366] px-4 py-2 text-[13px] font-semibold text-white transition-all hover:bg-[#1da851]"
             >
               <WhatsAppIcon /> WhatsApp Us
-            </a>
-            <a
+            </TrackedLink>
+            <TrackedLink
               href="tel:02078594099"
+              trackAction="phone_click"
               className="inline-flex items-center gap-2 text-[13px] font-semibold text-brand-gold transition-colors hover:text-brand-cream"
             >
               <PhoneIcon /> 020 7859 4099
-            </a>
+            </TrackedLink>
           </div>
 
           {/* Product list */}

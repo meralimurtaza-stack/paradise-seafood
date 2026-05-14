@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import { SearchIcon } from "./icons";
 import { useProductSearch } from "@/lib/useProductSearch";
+import { trackToSheet } from "@/lib/tracking";
 import SearchResults from "./SearchResults";
 
 const NAV_LINKS = [
@@ -110,6 +111,13 @@ export default function Navbar() {
 
           <Link
             href="/contact"
+            onClick={() =>
+              trackToSheet({
+                type: "conversion",
+                action: "quote_click",
+                source: window.location.pathname,
+              })
+            }
             className="editorial-gradient text-on-primary px-8 py-3 font-label font-bold text-xs tracking-[0.2em] rounded-full active:scale-95 transition-transform uppercase"
           >
             Get A Quote
@@ -239,7 +247,14 @@ export default function Navbar() {
           <Link
             href="/contact"
             className="mt-4 inline-flex editorial-gradient text-on-primary px-8 py-3 font-label font-bold text-xs tracking-[0.2em] rounded-full uppercase"
-            onClick={() => setMobileOpen(false)}
+            onClick={() => {
+              trackToSheet({
+                type: "conversion",
+                action: "quote_click",
+                source: window.location.pathname,
+              });
+              setMobileOpen(false);
+            }}
           >
             Get A Quote
           </Link>

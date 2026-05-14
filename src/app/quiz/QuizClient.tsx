@@ -6,6 +6,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ArrowIcon } from "@/components/icons";
+import { trackToSheet } from "@/lib/tracking";
 
 /* ─── Data ─── */
 
@@ -214,6 +215,11 @@ export default function QuizClient() {
   }, []);
 
   const handleStart = () => {
+    trackToSheet({
+      type: "conversion",
+      action: "quiz_started",
+      source: "/quiz",
+    });
     setPhase("quiz");
     setCurrent(0);
     setAnswers(Array(QUESTIONS.length).fill(null));
@@ -256,6 +262,17 @@ export default function QuizClient() {
     (acc, ans, i) => acc + (ans === QUESTIONS[i].answer ? 1 : 0),
     0
   );
+
+  useEffect(() => {
+    if (phase === "results") {
+      trackToSheet({
+        type: "conversion",
+        action: "quiz_completed",
+        source: "/quiz",
+        details: `Score: ${score} - ${getTitle(score)}`,
+      });
+    }
+  }, [phase, score]);
 
   const handleWhatsAppSubmit = (e: React.FormEvent) => {
     e.preventDefault();
