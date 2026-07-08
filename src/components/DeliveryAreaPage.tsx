@@ -1,8 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
-import TrackedLink from "@/components/TrackedLink";
 import { ArrowIcon, PhoneIcon, WhatsAppIcon } from "@/components/icons";
+import TrackedLink from "@/components/TrackedLink";
 import { whatsappUrl } from "@/lib/constants";
 
 function TruckIcon() {
@@ -150,10 +150,10 @@ export default function DeliveryAreaPage({
             </p>
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
               <TrackedLink
+                action="whatsapp_click"
                 href={whatsappUrl(whatsappMessage)}
                 target="_blank"
                 rel="noopener noreferrer"
-                trackAction="whatsapp_click"
                 className="inline-flex items-center gap-2 rounded-md px-7 py-3.5 text-[13px] font-bold uppercase tracking-[1px] text-brand-dark transition-all hover:brightness-110"
                 style={{
                   background:
@@ -164,8 +164,8 @@ export default function DeliveryAreaPage({
                 <ArrowIcon />
               </TrackedLink>
               <TrackedLink
+                action="phone_click"
                 href="tel:02078594099"
-                trackAction="phone_click"
                 className="inline-flex items-center gap-2 rounded-md border border-brand-gold/30 px-7 py-3.5 text-[13px] font-bold uppercase tracking-[1px] text-brand-gold transition-all hover:border-brand-gold/60 hover:bg-brand-gold/5"
               >
                 <PhoneIcon />

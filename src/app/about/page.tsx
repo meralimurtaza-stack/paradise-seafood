@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import TrackedLink from "@/components/TrackedLink";
 import { ArrowIcon, PhoneIcon, WhatsAppIcon } from "@/components/icons";
+import TrackedLink from "@/components/TrackedLink";
 import { whatsappUrl } from "@/lib/constants";
 
 const WA_QUOTE = whatsappUrl(
@@ -67,10 +67,10 @@ export default function AboutPage() {
             <div className="flex-shrink-0 md:w-[280px]">
               {/* Photo — square crop, rounded, subtle gold border + hover */}
               <TrackedLink
+                action="whatsapp_click"
                 href={WA_AMIR}
                 target="_blank"
                 rel="noopener noreferrer"
-                trackAction="whatsapp_click"
                 aria-label="Message Amir on WhatsApp"
                 className="relative block aspect-square w-full overflow-hidden rounded-[12px] border transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_12px_40px_-10px_rgba(184,155,94,0.45)]"
                 style={{ borderColor: "rgba(184,155,94,0.3)" }}
@@ -98,18 +98,18 @@ export default function AboutPage() {
               {/* Contact buttons — stack on mobile, side-by-side on desktop */}
               <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:flex-wrap">
                 <TrackedLink
+                  action="whatsapp_click"
                   href={WA_AMIR}
                   target="_blank"
                   rel="noopener noreferrer"
-                  trackAction="whatsapp_click"
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-white/[0.12] bg-white/[0.03] px-4 py-2 text-[13px] font-medium text-brand-cream transition-all duration-200 hover:border-[#25D366]/40 hover:bg-[#25D366]/[0.08]"
                 >
                   <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
                   Message Amir
                 </TrackedLink>
                 <TrackedLink
+                  action="phone_click"
                   href="tel:+447864929925"
-                  trackAction="phone_click"
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-brand-gold/30 bg-white/[0.03] px-4 py-2 text-[13px] font-medium text-brand-cream transition-all duration-200 hover:border-brand-gold/60 hover:bg-brand-gold/[0.08]"
                 >
                   <PhoneIcon className="h-4 w-4 text-brand-gold" />
@@ -167,10 +167,10 @@ export default function AboutPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <TrackedLink
+              action="quote_click"
               href={WA_QUOTE}
               target="_blank"
               rel="noopener noreferrer"
-              trackAction="quote_click"
               className="inline-flex items-center gap-2 rounded-[6px] px-8 py-3.5 text-[13px] font-semibold uppercase tracking-[1px] text-brand-dark transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(184,155,94,0.3)]"
               style={{
                 background: "linear-gradient(135deg, #B89B5E, #96793E)",
@@ -179,8 +179,8 @@ export default function AboutPage() {
               Request A Quote <ArrowIcon />
             </TrackedLink>
             <TrackedLink
+              action="phone_click"
               href="tel:02078594099"
-              trackAction="phone_click"
               className="inline-flex items-center gap-2.5 rounded-[6px] border border-brand-gold/40 bg-transparent px-7 py-3.5 text-[13px] font-semibold uppercase tracking-[1px] text-brand-gold transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-gold/[0.08]"
             >
               <PhoneIcon /> 020 7859 4099

@@ -6,8 +6,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
 import BackLink from "@/components/BackLink";
-import TrackedLink from "@/components/TrackedLink";
 import { WhatsAppIcon, PhoneIcon } from "@/components/icons";
+import TrackedLink from "@/components/TrackedLink";
 import SpeciesInfo from "@/components/SpeciesInfo";
 import { getSubcategoryImage } from "@/lib/productImages";
 import { whatsappUrl } from "@/lib/constants";
@@ -89,10 +89,10 @@ function ProductRow({ product, categorySlug, subcategorySlug }: { product: Produ
       </div>
       <div className="flex items-center gap-2 sm:flex-shrink-0">
         <TrackedLink
+          action="whatsapp_click"
           href={waHref}
           target="_blank"
           rel="noopener noreferrer"
-          trackAction="whatsapp_click"
           className="inline-flex items-center gap-1.5 rounded-md bg-[#25D366] px-3 py-1.5 text-[11px] font-semibold text-white transition-all hover:bg-[#1da851]"
         >
           <WhatsAppIcon /> Enquire
@@ -183,17 +183,17 @@ export default function SubcategoryPage({ params }: Props) {
               Need a quote for {subcategory.toLowerCase()}?
             </span>
             <TrackedLink
+              action="quote_click"
               href={whatsappUrl(`Hi Paradise Seafood, I would like to request a quote.`)}
               target="_blank"
               rel="noopener noreferrer"
-              trackAction="quote_click"
               className="inline-flex items-center gap-2 rounded-md bg-[#25D366] px-4 py-2 text-[13px] font-semibold text-white transition-all hover:bg-[#1da851]"
             >
               <WhatsAppIcon /> WhatsApp Us
             </TrackedLink>
             <TrackedLink
+              action="phone_click"
               href="tel:02078594099"
-              trackAction="phone_click"
               className="inline-flex items-center gap-2 text-[13px] font-semibold text-brand-gold transition-colors hover:text-brand-cream"
             >
               <PhoneIcon /> 020 7859 4099

@@ -70,6 +70,7 @@ RULES:
 - Do NOT start with "Great question!", "Great choice!", "Absolutely!" or any praise
 - Do NOT ask "Would you like me to suggest alternatives?" or "Shall I check?" — just show the results
 - The product cards ARE the answer. Your text is just a brief intro like "We carry 8 monkfish products across fresh and frozen:"
+- Your intro text must ONLY mention categories that are actually in your results. If all matches are frozen, say "We carry these in our frozen range:" — do NOT say "across fresh and frozen" unless you are actually returning products from both categories.
 - Return ALL matching products — no maximum limit. If there are 20 matches, return all 20.
 - If nothing matches: set found to false and include the original query in whatsappQuery so we can pre-fill a WhatsApp message
 - Never make up products that are not in the catalogue
@@ -222,19 +223,21 @@ export async function POST(request: Request) {
             })
           );
 
-          // Send to Google Sheet (fire-and-forget)
-          const products = (productsData.products as Product[]) || [];
+          // Track the search to Google Sheets (server-side, captures every
+          // search regardless of cookie consent)
           const messageText =
             delimiterIndex !== -1
-              ? fullText.slice(0, delimiterIndex).trim()
-              : fullText.trim();
+              ? fullText.slice(0, delimiterIndex)
+              : fullText;
+          const trackedProducts = (productsData.products ??
+            []) as Product[];
           trackToSheetServer({
             type: "search",
             query,
             ai_response: messageText.substring(0, 500),
-            products_found: products.length,
-            product_names: products.map((p) => p.name).join(", "),
-            had_results: products.length > 0,
+            products_found: trackedProducts.length,
+            product_names: trackedProducts.map((p) => p.name).join(", "),
+            had_results: trackedProducts.length > 0,
           });
 
           controller.close();

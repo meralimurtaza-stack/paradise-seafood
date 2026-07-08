@@ -215,11 +215,7 @@ export default function QuizClient() {
   }, []);
 
   const handleStart = () => {
-    trackToSheet({
-      type: "conversion",
-      action: "quiz_started",
-      source: "/quiz",
-    });
+    trackToSheet({ type: "conversion", action: "quiz_started", source: "/quiz" });
     setPhase("quiz");
     setCurrent(0);
     setAnswers(Array(QUESTIONS.length).fill(null));
@@ -263,16 +259,18 @@ export default function QuizClient() {
     0
   );
 
+  // Track quiz completion once, when we transition into the results phase.
   useEffect(() => {
     if (phase === "results") {
       trackToSheet({
         type: "conversion",
         action: "quiz_completed",
         source: "/quiz",
-        details: `Score: ${score} - ${getTitle(score)}`,
+        details: "Score: " + score + " - " + getTitle(score),
       });
     }
-  }, [phase, score]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [phase]);
 
   const handleWhatsAppSubmit = (e: React.FormEvent) => {
     e.preventDefault();

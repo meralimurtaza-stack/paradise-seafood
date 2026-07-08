@@ -119,6 +119,7 @@ export default function RootLayout({
           }}
         />
         {children}
+        <PageViewTracker />
         <FloatingWhatsApp />
         <CookieConsent />
         <Analytics />

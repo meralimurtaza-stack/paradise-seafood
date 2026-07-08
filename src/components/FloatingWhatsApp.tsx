@@ -1,5 +1,6 @@
 "use client";
 
+import { WhatsAppIcon } from "./icons";
 import { whatsappUrl } from "@/lib/constants";
 import { trackToSheet } from "@/lib/tracking";
 
@@ -13,15 +14,8 @@ export default function FloatingWhatsApp() {
       href={WA_URL}
       target="_blank"
       rel="noopener noreferrer"
-      onClick={() =>
-        trackToSheet({
-          type: "conversion",
-          action: "whatsapp_click",
-          source:
-            typeof window !== "undefined" ? window.location.pathname : "",
-        })
-      }
       aria-label="Chat on WhatsApp"
+      onClick={() => trackToSheet({ type: "conversion", action: "whatsapp_click", source: window.location.pathname })}
       className="fixed bottom-6 right-6 z-[999] flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_4px_20px_rgba(37,211,102,0.4)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(37,211,102,0.5)]"
     >
       <svg

@@ -1,7 +1,9 @@
+"use client";
+
 import ScrollReveal from "./ScrollReveal";
-import TrackedLink from "./TrackedLink";
 import { PROTO_IMAGES } from "@/lib/protoImages";
 import { whatsappUrl } from "@/lib/constants";
+import { trackToSheet } from "@/lib/tracking";
 
 const WA_QUOTE = whatsappUrl(
   "Hi Paradise Seafood, I would like to request a quote."
@@ -28,23 +30,23 @@ export default function CTA() {
           Paradise Seafood for their daily supply. Get a quote in minutes.
         </p>
         <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-          <TrackedLink
+          <a
             href={WA_QUOTE}
             target="_blank"
             rel="noopener noreferrer"
-            trackAction="quote_click"
+            onClick={() => trackToSheet({ type: "conversion", action: "quote_click", source: window.location.pathname })}
             className="editorial-gradient text-on-primary px-12 py-5 font-label font-bold tracking-[0.2em] rounded-full text-sm uppercase shadow-2xl shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 active:scale-95 transition-all"
           >
             Request A Quote
-          </TrackedLink>
-          <TrackedLink
+          </a>
+          <a
             href="tel:02078594099"
-            trackAction="phone_click"
+            onClick={() => trackToSheet({ type: "conversion", action: "phone_click", source: window.location.pathname })}
             className="flex items-center gap-3 text-primary font-label tracking-widest text-sm py-4 px-8 border border-primary/20 rounded-full hover:bg-primary/5 hover:border-primary/50 transition-all active:scale-95"
           >
             <span className="material-symbols-outlined" style={{ fontSize: 18 }}>phone</span>
             Speak With An Expert
-          </TrackedLink>
+          </a>
         </div>
       </ScrollReveal>
     </section>

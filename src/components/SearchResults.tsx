@@ -195,26 +195,14 @@ export default function SearchResults({
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() =>
-                  trackToSheet({
-                    type: "conversion",
-                    action: "whatsapp_click",
-                    source: window.location.pathname,
-                  })
-                }
+                onClick={() => trackToSheet({ type: "conversion", action: "whatsapp_click", source: window.location.pathname })}
                 className="inline-flex items-center gap-1.5 rounded-md bg-[#25D366] px-4 py-2 text-[12px] font-semibold text-white transition-all hover:bg-[#1da851]"
               >
                 <WhatsAppIcon className="h-3.5 w-3.5" /> Enquire via WhatsApp
               </a>
               <a
                 href={`tel:${PHONE_NUMBER}`}
-                onClick={() =>
-                  trackToSheet({
-                    type: "conversion",
-                    action: "phone_click",
-                    source: window.location.pathname,
-                  })
-                }
+                onClick={() => trackToSheet({ type: "conversion", action: "phone_click", source: window.location.pathname })}
                 className="inline-flex items-center gap-1.5 rounded-md border border-brand-gold/30 px-4 py-2 text-[12px] font-semibold text-brand-gold transition-all hover:border-brand-gold/60 hover:bg-brand-gold/5"
               >
                 <PhoneIcon className="h-3.5 w-3.5" /> 020 7859 4099
@@ -229,13 +217,7 @@ export default function SearchResults({
               )}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() =>
-                trackToSheet({
-                  type: "conversion",
-                  action: "whatsapp_click",
-                  source: window.location.pathname,
-                })
-              }
+              onClick={() => trackToSheet({ type: "conversion", action: "whatsapp_click", source: window.location.pathname })}
               className="inline-flex items-center gap-1.5 rounded-md bg-[#25D366] px-4 py-2 text-[12px] font-semibold text-white transition-all hover:bg-[#1da851]"
             >
               <WhatsAppIcon className="h-3.5 w-3.5" /> Enquire via WhatsApp
