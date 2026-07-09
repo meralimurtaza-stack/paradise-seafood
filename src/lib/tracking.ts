@@ -1,4 +1,4 @@
-const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwMmCSJzr4qDFnw670C2Wno8hDqccPznyj9oWovi-Jm86RDfwqDr7GLQ069fpqS24cZ/exec';
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwVFg1cNS3Ig226Wemjj_4u8qi3OqsHNGcPMceem0Pd4UZEr76MJmzJYqwcvwLQipa7/exec';
 
 // Client-side tracking (for conversions, page views)
 export function trackToSheet(data: Record<string, any>) {

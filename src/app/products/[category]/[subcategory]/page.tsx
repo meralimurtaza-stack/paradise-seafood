@@ -52,10 +52,15 @@ function ProductRow({ product, categorySlug, subcategorySlug }: { product: Produ
   );
 
   return (
-    <Link
-      href={`/products/${categorySlug}/${subcategorySlug}/${product.slug}`}
-      className="group flex flex-col gap-4 rounded-xl border border-white/[0.06] bg-white/[0.02] p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-gold/20 hover:bg-white/[0.04] sm:flex-row sm:items-center sm:justify-between"
-    >
+    <div className="group relative flex flex-col gap-4 rounded-xl border border-white/[0.06] bg-white/[0.02] p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-gold/20 hover:bg-white/[0.04] sm:flex-row sm:items-center sm:justify-between">
+      {/* Whole-card link, stretched to cover the row. Kept as a sibling (not a
+          parent) of the WhatsApp link so we never nest <a> inside <a>, which
+          would break hydration. */}
+      <Link
+        href={`/products/${categorySlug}/${subcategorySlug}/${product.slug}`}
+        aria-label={product.name}
+        className="absolute inset-0 z-[1] rounded-xl"
+      />
       <div className="flex-1">
         <h3 className="mb-1 text-[15px] font-semibold text-brand-cream transition-colors group-hover:text-brand-gold">
           {product.name}
@@ -87,7 +92,7 @@ function ProductRow({ product, categorySlug, subcategorySlug }: { product: Produ
           ))}
         </div>
       </div>
-      <div className="flex items-center gap-2 sm:flex-shrink-0">
+      <div className="relative z-[2] flex items-center gap-2 sm:flex-shrink-0">
         <TrackedLink
           action="whatsapp_click"
           href={waHref}
@@ -98,7 +103,7 @@ function ProductRow({ product, categorySlug, subcategorySlug }: { product: Produ
           <WhatsAppIcon /> Enquire
         </TrackedLink>
       </div>
-    </Link>
+    </div>
   );
 }
 
